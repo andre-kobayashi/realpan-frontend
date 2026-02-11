@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   BASE
+========================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: theme(colors.neutral.50);
+    color: theme(colors.neutral.900);
+    font-family: Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html[lang="ja"] {
+    font-family: "Noto Sans JP", system-ui, sans-serif;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* =========================
+   COMPONENTS
+========================= */
+@layer components {
+  .container-custom {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-custom {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Section spacing tokens */
+  .section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .section-sm {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .section-lg {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-primary-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-700;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100;
+  }
+
+  /* Card */
+  .card {
+    @apply rounded-2xl bg-white p-6 ring-1 ring-neutral-200 transition hover:shadow-md;
+  }
+
+  /* Input */
+  .input {
+    @apply w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm transition focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20;
+  }
+
+  /* Headings */
+  .heading-1 {
+    @apply text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl;
+  }
+
+  .heading-2 {
+    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+  }
+
+  .heading-3 {
+    @apply text-2xl font-semibold tracking-tight sm:text-3xl;
+  }
+}
+
+/* =========================
+   UTILITIES
+========================= */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-20;
+  }
+
+  .section-sm {
+    @apply py-12;
+  }
+
+  .section-lg {
+    @apply py-28;
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "navigation": {
+    "home": "Início",
+    "kodawari": "Nosso Compromisso",
+    "products": "Produtos",
+    "services": "Serviços",
+    "orderGuide": "Guia de Pedidos",
+    "company": "Sobre Nós",
+    "news": "Notícias",
+    "about": "Sobre Nós",
+    "contact": "Contato",
+    "language": "Idioma",
+    "orderBusiness": "Pedido (Pessoa Jurídica)",
+    "orderIndividual": "Pedido (Pessoa Física)"
+  },
+
+  "home": {
+    "hero": {
+      "title": "Pães brasileiros todos os dias no Japão",
+      "subtitle": "Tradição, qualidade e frescor direto da América do Sul",
+      "cta": "Conheça nossos produtos"
+    },
+    "about": {
+      "title": "Sobre a Real Pan",
+      "description": "Levamos a tradição da panificação brasileira ao Japão."
+    },
+    "quality": {
+      "title": "Nosso compromisso com a qualidade",
+      "ingredients": {
+        "title": "Ingredientes selecionados",
+        "description": "Matérias-primas escolhidas com rigor."
+      },
+      "process": {
+        "title": "Processo artesanal",
+        "description": "Tradição aliada à tecnologia moderna."
+      },
+      "safety": {
+        "title": "Segurança alimentar",
+        "description": "Controle rigoroso em todas as etapas."
+      }
+    },
+    "services": {
+      "title": "Soluções para o seu negócio",
+      "description": "Atendemos restaurantes, hotéis e distribuidores."
+    },
+    "products": {
+      "title": "Nossa linha de produtos",
+      "subtitle": "Em preparação",
+      "cta": "Entrar em contato"
+    },
+    "order": {
+      "title": "Como fazer pedidos",
+      "description": "Pedidos simples e logística especializada.",
+      "cta": "Guia de pedidos"
+    },
+    "contact": {
+      "title": "Entre em contato",
+      "description": "Estamos prontos para atender você.",
+      "cta": "Fale conosco"
+    }
+  },
+
+  "products": {
+    "title": "Produtos",
+    "subtitle": "Em preparação",
+    "cta": "Entrar em contato"
+  },
+
+  "contact": {
+    "title": "Contato",
+    "description": "Em preparação",
+    "info": {
+      "address": "Endereço",
+      "phone": "Telefone",
+      "email": "E-mail",
+      "hours": "Horário de Atendimento"
+    },
+    "form": {
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "message": "Mensagem",
+      "send": "Enviar"
+    }
+  },
+
+  "feature": {
+    "hero": {
+      "title": "Nosso Compromisso com a Qualidade",
+      "subtitle": "Excelência em cada detalhe"
+    },
+    "intro": {
+      "text": "Na Real Pan, qualidade começa na origem."
+    },
+    "section1": {
+      "title": "Pilares de Qualidade",
+      "items": {
+        "ingredients": {
+          "title": "Ingredientes Premium",
+          "description": "Fornecedores certificados."
+        },
+        "method": {
+          "title": "Processo Artesanal",
+          "description": "Tradição e tecnologia."
+        },
+        "variety": {
+          "title": "Diversidade",
+          "description": "Portfólio completo."
+        }
+      }
+    },
+    "section2": {
+      "title": "Compromisso com o Cliente",
+      "text": "Entregamos confiança e parceria."
+    },
+    "section3": {
+      "title": "Garantias Real Pan",
+      "items": {
+        "quality": "Controle de qualidade",
+        "hygiene": "Certificações",
+        "allergen": "Informações claras",
+        "delivery": "Logística refrigerada"
+      }
+    },
+    "closing": {
+      "text": "Qualidade e tradição em cada produto."
+    }
+  },
+  "about": {
+    "title": "Sobre a Real Pan",
+    "subtitle": "Tradição e inovação na panificação",
+
+    "greeting": {
+      "title": "Mensagem",
+      "text": "Desde o início, tivemos o compromisso de levar aos nossos clientes produtos de alta qualidade, com sabor especial e cuidado em cada detalhe.\n\nSuperamos diversos desafios ao longo do caminho e tomamos a decisão de manter sempre o mais alto padrão de qualidade.\n\nDesde a escolha dos ingredientes até os processos de fabricação, buscamos segurança, consistência e confiança.\n\nHoje atendemos todo o Japão com uma ampla linha de pães, salgados, doces e sobremesas.",
+      "signature": "Fundadores da Real Pan"
+    },
+
+    "overview": {
+      "title": "Informações da Empresa",
+      "items": {
+        "name": { "label": "Nome da Empresa", "value": "Real Pan Co., Ltd." },
+        "ceo": { "label": "Diretor Executivo", "value": "Toshimitsu Masuko" },
+        "established": { "label": "Fundação", "value": "6 de março de 2019" },
+        "capital": { "label": "Capital Social", "value": "¥8.000.000" },
+        "address": { "label": "Endereço", "value": "1620 Takatsuka-cho, Hamamatsu, Shizuoka" },
+        "contact": { "label": "Contato", "value": "TEL: 053-570-2555 / FAX: 053-570-2560" },
+        "hours": { "label": "Horário de Funcionamento", "value": "10:00 – 17:00" },
+        "employees": { "label": "Funcionários", "value": "32 colaboradores" },
+        "business": { "label": "Atividades", "value": "Fabricação e venda de pães, salgados e confeitaria" },
+        "bank": { "label": "Bancos", "value": "Shizuoka Bank / Hamamatsu Iwata Shinkin Bank" },
+        "invoice": { "label": "Registro Fiscal", "value": "T5080401023513" }
+      }
+    },
+
+    "factory": {
+      "title": "Nossa Fábrica",
+      "description": "Nossa fábrica opera com rigorosos padrões de higiene e controle de qualidade, utilizando tecnologia de congelamento rápido para preservar sabor e textura."
+    },
+
+    "esg": {
+      "title": "Compromisso ESG",
+
+      "environment": {
+        "title": "Meio Ambiente",
+        "description": "Redução de emissões de CO₂, economia de energia e reciclagem de resíduos."
+      },
+      "social": {
+        "title": "Responsabilidade Social",
+        "description": "Promoção da saúde, inclusão social e geração de empregos locais."
+      },
+      "governance": {
+        "title": "Governança",
+        "description": "Gestão transparente, proteção de dados e segurança da informação."
+      }
+    }
+  },
+
+  "footer": {
+    "company": "Empresa",
+    "legal": "Legal",
+    "tagline": "Qualidade e tradição em cada produto.",
+    "rights": "Todos os direitos reservados.",
+    "links": {
+      "about": "Sobre Nós",
+      "products": "Produtos",
+      "contact": "Contato",
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Uso"
+    }
+  }
+}

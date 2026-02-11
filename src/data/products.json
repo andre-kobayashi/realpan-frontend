@@ -1,0 +1,161 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": { "pt": "Todos", "ja": "すべて" }
+    },
+    {
+      "id": "frozen",
+      "name": { "pt": "Congelados", "ja": "冷凍食品" }
+    },
+    {
+      "id": "dry",
+      "name": { "pt": "Secos", "ja": "常温商品" }
+    },
+    {
+      "id": "bread",
+      "name": { "pt": "Pão de Queijo", "ja": "ポンデケージョ" }
+    },
+    {
+      "id": "popsicle",
+      "name": { "pt": "Picolés", "ja": "アイスバー" }
+    }
+  ],
+
+  "products": [
+    {
+      "id": "pao-queijo-tradicional",
+      "slug": "pao-de-queijo-tradicional",
+      "name": {
+        "pt": "Pão de Queijo Tradicional",
+        "ja": "Pão de Queijo Tradicional"
+      },
+      "category": "bread",
+      "type": "frozen",
+      "sales": {
+        "pj": {
+          "enabled": true,
+          "unit": { "pt": "caixa", "ja": "ケース" }
+        },
+        "pf": {
+          "enabled": true,
+          "unit": { "pt": "pacote", "ja": "パック" }
+        }
+      },
+      "description": {
+        "pt": "Pão de queijo congelado, crocante por fora e macio por dentro.",
+        "ja": "Pão de queijo congelado, crocante por fora e macio por dentro."
+      },
+      "image": "/products/pao-de-queijo-tradicional.webp",
+      "tags": ["pão de queijo", "congelado", "tradicional"]
+    },
+
+    {
+      "id": "coxinha-frango",
+      "slug": "coxinha-de-frango",
+      "name": {
+        "pt": "Coxinha de Frango",
+        "ja": "Coxinha de Frango"
+      },
+      "category": "frozen",
+      "type": "frozen",
+      "sales": {
+        "pj": {
+          "enabled": true,
+          "unit": { "pt": "caixa", "ja": "ケース" }
+        },
+        "pf": {
+          "enabled": false,
+          "unit": { "pt": "", "ja": "" }
+        }
+      },
+      "description": {
+        "pt": "Coxinha brasileira tradicional com recheio de frango temperado.",
+        "ja": "Coxinha brasileira tradicional com recheio de frango temperado."
+      },
+      "image": "/products/coxinha-frango.webp",
+      "tags": ["salgados", "congelado", "frango"]
+    },
+
+    {
+      "id": "pao-frances-congelado",
+      "slug": "pao-frances-congelado",
+      "name": {
+        "pt": "Pão Francês Congelado",
+        "ja": "Pão Francês Congelado"
+      },
+      "category": "frozen",
+      "type": "frozen",
+      "sales": {
+        "pj": {
+          "enabled": true,
+          "unit": { "pt": "caixa", "ja": "ケース" }
+        },
+        "pf": {
+          "enabled": false,
+          "unit": { "pt": "", "ja": "" }
+        }
+      },
+      "description": {
+        "pt": "Pão francês congelado para assar, ideal para hotéis e restaurantes.",
+        "ja": "Pão francês congelado para assar, ideal para hotéis e restaurantes."
+      },
+      "image": "/products/pao-frances.webp",
+      "tags": ["pão", "hotelaria", "congelado"]
+    },
+
+    {
+      "id": "mistura-pao-queijo",
+      "slug": "mistura-pao-de-queijo",
+      "name": {
+        "pt": "Mistura para Pão de Queijo",
+        "ja": "Mistura para Pão de Queijo"
+      },
+      "category": "dry",
+      "type": "dry",
+      "sales": {
+        "pj": {
+          "enabled": true,
+          "unit": { "pt": "caixa", "ja": "ケース" }
+        },
+        "pf": {
+          "enabled": true,
+          "unit": { "pt": "pacote", "ja": "パック" }
+        }
+      },
+      "description": {
+        "pt": "Mistura pronta para preparo de pão de queijo.",
+        "ja": "Mistura pronta para preparo de pão de queijo."
+      },
+      "image": "/products/mistura-pao-queijo.webp",
+      "tags": ["secos", "mistura", "pão de queijo"]
+    },
+
+    {
+      "id": "picole-frutas",
+      "slug": "picole-de-frutas",
+      "name": {
+        "pt": "Picolé de Frutas",
+        "ja": "Picolé de Frutas"
+      },
+      "category": "popsicle",
+      "type": "frozen",
+      "sales": {
+        "pj": {
+          "enabled": true,
+          "unit": { "pt": "caixa", "ja": "ケース" }
+        },
+        "pf": {
+          "enabled": true,
+          "unit": { "pt": "unidade", "ja": "個" }
+        }
+      },
+      "description": {
+        "pt": "Picolé artesanal de frutas, refrescante e natural.",
+        "ja": "Picolé artesanal de frutas, refrescante e natural."
+      },
+      "image": "/products/picole-frutas.webp",
+      "tags": ["picolé", "sobremesa", "congelado"]
+    }
+  ]
+}
