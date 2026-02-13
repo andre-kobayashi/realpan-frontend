@@ -1,0 +1,158 @@
+{
+  "products": [
+
+    {
+      "hinban": "114",
+      "slug": "114",
+      "name": { "pt": "Pão de Alho c/3", "ja": "ニンニクパン3個入り" },
+      "description": {
+        "pt": "Pão de alho tradicional, ideal para churrasco.",
+        "ja": "バーベキューに最適なガーリックパン。"
+      },
+      "weight": "3 unidades",
+      "storageType": "frozen",
+      "jan": "4582663637060",
+      "image": "/products/114.webp"
+    },
+
+    {
+      "hinban": "166",
+      "slug": "166",
+      "name": { "pt": "Pão de Okara", "ja": "おからパン" },
+      "description": {
+        "pt": "Pão nutritivo feito com okara, rico em fibras.",
+        "ja": "食物繊維豊富なおから入りパン。"
+      },
+      "storageType": "frozen",
+      "jan": "4582663631662",
+      "image": "/products/166.webp"
+    },
+
+    {
+      "hinban": "777",
+      "slug": "777",
+      "name": { "pt": "Croissant Frango c/ Catupiry (Cru)", "ja": "チキンクリームチーズクロワッサン（生）" },
+      "description": {
+        "pt": "Croissant recheado com frango e creme de queijo.",
+        "ja": "チキンとクリームチーズ入りクロワッサン（未焼成）。"
+      },
+      "weight": "10 unidades",
+      "storageType": "frozen",
+      "jan": "4582663637770",
+      "image": "/products/777.webp"
+    },
+
+    {
+      "hinban": "778",
+      "slug": "778",
+      "name": { "pt": "Croissant Presunto e Queijo (Cru)", "ja": "ハムチーズクロワッサン（生）" },
+      "description": {
+        "pt": "Croissant com presunto e queijo.",
+        "ja": "ハムとチーズ入りクロワッサン（未焼成）。"
+      },
+      "weight": "10 unidades",
+      "storageType": "frozen",
+      "jan": "4582663637787",
+      "image": "/products/778.webp"
+    },
+
+    {
+      "hinban": "780",
+      "slug": "780",
+      "name": { "pt": "Baguete Presunto e Queijo (Cru)", "ja": "ハムチーズバゲット（生）" },
+      "description": {
+        "pt": "Baguete recheada com presunto e queijo.",
+        "ja": "ハムとチーズ入りバゲット（未焼成）。"
+      },
+      "weight": "10 unidades",
+      "storageType": "frozen",
+      "jan": "4582663637800",
+      "image": "/products/780.webp"
+    },
+
+    {
+      "hinban": "779",
+      "slug": "779",
+      "name": { "pt": "Baguete Bacon e Queijo (Cru)", "ja": "ベーコンチーズバゲット（生）" },
+      "description": {
+        "pt": "Baguete recheada com bacon e queijo.",
+        "ja": "ベーコンとチーズ入りバゲット（未焼成）。"
+      },
+      "weight": "10 unidades",
+      "storageType": "frozen",
+      "jan": "4582663637794",
+      "image": "/products/779.webp"
+    },
+
+    {
+      "hinban": "704",
+      "slug": "704",
+      "name": { "pt": "Pão de Mandioca Calabresa (Cru)", "ja": "スモークソーセージタピオカパン（生）" },
+      "description": {
+        "pt": "Pão de mandioca recheado com calabresa defumada.",
+        "ja": "スモークソーセージ入りタピオカパン（未焼成）。"
+      },
+      "weight": "10 unidades",
+      "storageType": "frozen",
+      "jan": "4582663637046",
+      "image": "/products/704.webp"
+    },
+
+    {
+      "hinban": "702",
+      "slug": "702",
+      "name": { "pt": "Pão de Mandioca Carne Desfiada (Cru)", "ja": "牛肉タピオカパン（生）" },
+      "description": {
+        "pt": "Pão de mandioca recheado com carne desfiada.",
+        "ja": "牛肉入りタピオカパン（未焼成）。"
+      },
+      "weight": "10 unidades",
+      "storageType": "frozen",
+      "jan": "4582663637022",
+      "image": "/products/702.webp"
+    },
+
+    {
+      "hinban": "701",
+      "slug": "701",
+      "name": { "pt": "Pão de Mandioca Frango c/ Catupiry (Cru)", "ja": "チキンクリームチーズタピオカパン（生）" },
+      "description": {
+        "pt": "Pão de mandioca recheado com frango e creme de queijo.",
+        "ja": "チキンとクリームチーズ入りタピオカパン（未焼成）。"
+      },
+      "weight": "10 unidades",
+      "storageType": "frozen",
+      "jan": "4582663637015",
+      "image": "/products/701.webp"
+    },
+
+    {
+      "hinban": "724",
+      "slug": "724",
+      "name": { "pt": "Esfiha de Carne", "ja": "牛肉パン（エスフィーハ）" },
+      "description": {
+        "pt": "Esfiha tradicional recheada com carne.",
+        "ja": "牛肉入りエスフィーハ。"
+      },
+      "weight": "2 unidades",
+      "storageType": "frozen",
+      "jan": "4582663637244",
+      "image": "/products/724.webp"
+    },
+
+    {
+      "hinban": "8745",
+      "slug": "8745",
+      "name": { "pt": "Pão de Queijo Assado Congelado", "ja": "焼成冷凍チーズパン" },
+      "description": {
+        "pt": "Pão de queijo tradicional brasileiro já assado e congelado.",
+        "ja": "焼成済みポンデケージョ（冷凍）。"
+      },
+      "weight": "10 unidades (388g)",
+      "storageType": "frozen",
+      "jan": "",
+      "image": "/products/8745.webp"
+    }
+
+  ]
+}

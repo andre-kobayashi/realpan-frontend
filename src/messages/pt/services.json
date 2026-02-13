@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "title": "O pão certo para cada ocasião",
+    "subtitle": "Entregamos o frescor do pão recém-assado — congelado ou embalado individualmente — para restaurantes, hotéis, supermercados e muito mais."
+  },
+  "hotel": {
+    "title": "Hotéis e Restaurantes",
+    "description": "Oferecemos pães para todos os momentos: café da manhã, buffet, jantar. Aceitamos pedidos em grande volume no formato congelado, ou entregamos prontos para gôndola em embalagens individuais. Com os pães congelados, basta tostar a quantidade necessária para servir sempre fresquinho.",
+    "cases": [
+      "Fornecimento para hotéis: pães e salgados para café da manhã e buffet, adaptados à demanda",
+      "Atendimento de grandes volumes para banquetes e serviços de buffet"
+    ]
+  },
+  "supermarket": {
+    "title": "Supermercados e Grandes Varejistas",
+    "description": "Para supermercados, fornecemos produtos assados e embalados individualmente, prontos para exposição nas gôndolas. Nossa linha vai do Pão de Queijo e Pão Francês estilo brasileiro a pães doces, bolos e salgados. Além dos best-sellers, temos produtos únicos que dificilmente se encontram em outros fornecedores — perfeitos para gerar buzz e atrair clientes. Também elaboramos sugestões de mix adaptadas ao perfil da sua loja.",
+    "cases": [
+      "Fornecimento de produtos pré-assados para a padaria ou seção de salgados da loja",
+      "Entrega de produtos prontos (pães, salgados, sorvetes) conforme demanda"
+    ]
+  },
+  "shop": {
+    "title": "Lojas Brasileiras e Nipo-brasileiras",
+    "description": "Preparamos pães insubstituíveis da culinária brasileira, com receitas fiéis à tradição. Mesmo no Japão, entregamos o sabor autêntico que raramente se encontra por aqui. Para quem busca o \"gostinho de casa\", nossa linha vai trazer muito carinho e nostalgia.",
+    "cases": [
+      "Fornecimento para import shops e lojas de produtos brasileiros"
+    ]
+  },
+  "online": {
+    "title": "Loja Online (Rakuten)",
+    "description": "Vendemos para consumidores finais pela nossa loja na Rakuten. Pão Francês estilo brasileiro crocante por fora e macio por dentro, o clássico Pão de Queijo, pão com coco e muito mais — perfeitos para refeições e lanches. O frescor é preservado pelo congelamento rápido: basta aquecer na torradeira para ter a experiência do pão fresquinho.",
+    "cta": "Acessar loja na Rakuten"
+  }
+}

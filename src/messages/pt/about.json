@@ -1,0 +1,76 @@
+{
+  "title": "Sobre a Real Pan",
+  "subtitle": "Tradição e inovação na panificação",
+  "greeting": {
+    "title": "Mensagem dos Fundadores",
+    "text": "Desde o início, nosso compromisso foi oferecer aos clientes \"produtos de qualidade, sabor especial e o gosto da casa\".\n\nSuperamos muitos desafios ao longo do caminho e nos comprometemos a sempre manter o mais alto padrão de qualidade. Com dedicação à escolha dos ingredientes — chegando a cultivar uma pequena horta orgânica para usar nos recheios dos pães — e ao processo de fabricação, buscamos garantir segurança, consistência e confiança.\n\nEssa iniciativa também fortaleceu o espírito de equipe: os colaboradores cultivam juntos, colhem juntos e crescem juntos. É com muito orgulho que damos continuidade a esse projeto.\n\nHoje atendemos todo o Japão com uma ampla linha de pães, salgados, doces, croquetes e sobremesas — incluindo nossos icônicos picolés tropicais.",
+    "signature": "Fundadores da Real Pan — Masuko Toshimitsu & Masuko Sachie"
+  },
+  "overview": {
+    "title": "Informações da Empresa",
+    "items": {
+      "name": { "label": "Razão Social", "value": "株式会社 リアルパン (Real Pan Co., Ltd.)" },
+      "ceo": { "label": "Diretor Executivo", "value": "Masuko Toshimitsu (増子 利光)" },
+      "established": { "label": "Fundação", "value": "6 de março de 2019" },
+      "capital": { "label": "Capital Social", "value": "¥8.000.000" },
+      "address": { "label": "Endereço", "value": "〒435-0016 静岡県浜松市中央区高塚町1620" },
+      "contact": { "label": "Contato", "value": "TEL: 053-570-2555 / FAX: 053-570-2560" },
+      "hours": { "label": "Horário de Funcionamento", "value": "10:00 – 17:00" },
+      "closed": { "label": "Fechado", "value": "Sábados, domingos, feriados e recesso de fim de ano" },
+      "employees": { "label": "Colaboradores", "value": "32 pessoas" },
+      "business": { "label": "Atividades", "value": "Fabricação e venda de pães, salgados e confeitaria" },
+      "bank": { "label": "Bancos", "value": "Shizuoka Bank / Hamamatsu Iwata Shinkin Bank" },
+      "invoice": { "label": "Registro Fiscal (Nota Fiscal)", "value": "T5080401023513" }
+    }
+  },
+  "factory": {
+    "title": "Nossa Fábrica",
+    "subtitle": "Tradição sul-americana com segurança japonesa",
+    "description": "Nossa fábrica opera sob rigorosos padrões de higiene e controle de qualidade. Utilizamos tecnologia de congelamento rápido para preservar o sabor e a textura dos pães logo após o assamento — assim, quando você aquece no forno, é como se estivesse comendo na hora. Combinamos a tradição do pão brasileiro com a disciplina e a precisão da gestão japonesa."
+  },
+  "esg": {
+    "title": "Compromisso ESG",
+    "environment": {
+      "title": "Meio Ambiente",
+      "subtitle": "Compromisso com o planeta",
+      "items": {
+        "co2": {
+          "title": "Redução de CO₂",
+          "description": "Nas fábricas e escritórios, utilizamos energia renovável e equipamentos com eficiência energética — iluminação LED, veículos ecológicos — reduzindo continuamente nossa pegada de carbono."
+        },
+        "waste": {
+          "title": "Redução de Resíduos",
+          "description": "Avançamos no processo de digitalização para eliminar o uso de papel e reforçamos a separação e reciclagem de resíduos. Um rigoroso controle de produção minimiza o desperdício de matéria-prima."
+        }
+      }
+    },
+    "social": {
+      "title": "Responsabilidade Social",
+      "subtitle": "Pessoas e comunidade em primeiro lugar",
+      "items": {
+        "health": {
+          "title": "Saúde e Bem-estar",
+          "description": "Realizamos exames periódicos de saúde e oferecemos suporte especializado aos colaboradores. Trabalhamos para reduzir horas extras e garantir equilíbrio entre vida pessoal e profissional."
+        },
+        "community": {
+          "title": "Comunidade Local",
+          "description": "Contratamos ativamente moradores da região, gerando oportunidades de emprego. Apoiamos o desenvolvimento de habilidades no dia a dia, contribuindo para o crescimento sustentável da comunidade."
+        },
+        "inclusion": {
+          "title": "Inclusão",
+          "description": "Promovemos ativamente a contratação de pessoas com deficiência, ampliando as oportunidades de participação social. Com acompanhamento contínuo, apoiamos o crescimento individual de cada colaborador."
+        }
+      }
+    },
+    "governance": {
+      "title": "Governança",
+      "subtitle": "Gestão transparente e responsável",
+      "items": {
+        "security": {
+          "title": "Segurança da Informação",
+          "description": "Mantemos rigorosos protocolos de segurança da informação para proteger os dados de clientes e parceiros contra acessos não autorizados e vazamentos. Treinamos continuamente nossa equipe para manter a conscientização interna sobre o tema."
+        }
+      }
+    }
+  }
+}

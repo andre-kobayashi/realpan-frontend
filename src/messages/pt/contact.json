@@ -1,0 +1,16 @@
+{
+  "title": "Contato",
+  "info": {
+    "address": "Endereço",
+    "phone": "Telefone",
+    "email": "E-mail",
+    "hours": "Horário de Atendimento"
+  },
+  "form": {
+    "name": "Nome completo",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "message": "Mensagem",
+    "send": "Enviar mensagem"
+  }
+}

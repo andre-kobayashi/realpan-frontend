@@ -4,8 +4,8 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://realpan.co.jp'),
   title: {
-    default: 'Real Pan Real Sabor',
-    template: '%s | Real Pan Real Sabor',
+    default: 'Real Pan',
+    template: '%s | Real Pan',
   },
   description: 'Distribuição de pães premium no Japão.',
   robots: {

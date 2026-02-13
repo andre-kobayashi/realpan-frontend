@@ -1,0 +1,26 @@
+{
+  "category": "salgadinhos",
+  "storageType": "ambient",
+  "items": [
+
+    {
+      "hinban": "14",
+      "slug": "biscoito-polvilho-palito",
+      "name": {
+        "pt": "Biscoito de Polvilho Palito 60g",
+        "ja": "タピオカビスケット 60g"
+      },
+      "jan": "4582663630146"
+    },
+
+    {
+      "hinban": "813",
+      "slug": "biscoito-polvilho-anel",
+      "name": {
+        "pt": "Biscoito de Polvilho Anel 70g",
+        "ja": "タピオカ塩スナックリング 70g"
+      }
+    }
+
+  ]
+}

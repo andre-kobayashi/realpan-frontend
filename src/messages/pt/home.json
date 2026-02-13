@@ -1,0 +1,94 @@
+{
+  "hero": {
+    "title": "Pães brasileiros todos os dias no Japão",
+    "subtitle": "Tradição, qualidade e frescor direto da América do Sul",
+    "cta": "Conheça nossos produtos"
+  },
+  "about": {
+  "eyebrow": "REAL PAN STORY",
+  "title": "Sobre a Real Pan",
+  "intro": "Pães brasileiros para o dia a dia.\nUm sabor que une novidade e tradição.",
+  "description": "A essência sul-americana se integra naturalmente à mesa japonesa.\nLevamos um toque especial para cada refeição.",
+  "corporate": "Unimos tradição brasileira e tecnologia moderna de congelamento para levar qualidade a todo o Japão.",
+  "highlight": {
+    "title": "América do Sul × Japão",
+    "description": "Cultura, tradição e tecnologia moderna unidas para criar um novo padrão de panificação no Japão."
+  }
+},
+  "quality": {
+  "title": "Nosso compromisso com a qualidade",
+  "intro": "Pães brasileiros para o dia a dia.\nUm sabor que une novidade e tradição.\nA essência sul-americana se integra naturalmente à mesa japonesa.\nLevamos um toque especial para cada refeição.",
+  "ingredients": {
+    "title": "Ingredientes selecionados",
+    "description": "Matérias-primas escolhidas com rigor, combinando o melhor do Japão e do Brasil."
+  },
+  "process": {
+    "title": "Processo artesanal",
+    "description": "Tradição sul-americana aliada à tecnologia moderna japonesa."
+  },
+  "safety": {
+    "title": "Segurança alimentar",
+    "description": "Controle rigoroso em todas as etapas, do ingrediente à entrega."
+  }
+},
+ "services": {
+  "eyebrow": "B2B SOLUTIONS",
+  "title": "Soluções para o seu negócio",
+  "description": "Fornecemos produtos de panificação congelados com padrão industrial e qualidade artesanal para empresas em todo o Japão.",
+  "items": {
+    "foodservice": {
+      "title": "Food Service",
+      "description": "Hotéis, restaurantes e cafeterias com fornecimento regular e padronizado."
+    },
+    "retail": {
+      "title": "Varejo",
+      "description": "Supermercados e lojas especializadas com produtos embalados individualmente."
+    },
+    "distribution": {
+      "title": "Distribuidores",
+      "description": "Parcerias estratégicas para expansão regional e nacional."
+    }
+  }
+},
+  "products": {
+    "title": "Nossa linha de produtos",
+    "subtitle": "Pão de queijo, pão francês estilo brasileiro, biscoito de tapioca e muito mais.",
+    "cta": "Ver todos os produtos",
+    "categories": {
+  "bread": "Pães (Ambiente)",
+  "frozen": "Pães Congelados",
+  "savory": "Salgados",
+  "sweets": "Doces",
+  "cake": "Bolos",
+  "ice": "Sorvetes",
+  "spices": "Temperos",
+  "other": "Outros"
+}
+  },
+ "order": {
+  "eyebrow": "ORDER PROCESS",
+  "title": "Como fazer pedidos",
+  "description": "Processo simples e logística especializada em produtos refrigerados e congelados.",
+  "ctaBusiness": "Para Empresas (B2B)",
+  "ctaIndividual": "Para Pessoa Física",
+  "steps": {
+    "step1": {
+      "title": "Escolha os produtos",
+      "description": "Selecione itens conforme sua necessidade."
+    },
+    "step2": {
+      "title": "Entrega refrigerada",
+      "description": "Logística especializada para manter qualidade."
+    },
+    "step3": {
+      "title": "Pagamento seguro",
+      "description": "Processo transparente e confiável."
+    }
+  }
+},
+  "contact": {
+    "title": "Entre em contato",
+    "description": "Estamos prontos para atender você e seu negócio.",
+    "cta": "Fale conosco"
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "products": [
+
+    {
+      "hinban": "123",
+      "slug": "123",
+      "name": { "pt": "Pão com Doce de Leite 3 un", "ja": "キャラメルパン 3個入り" },
+      "description": {
+        "pt": "Pão macio recheado com doce de leite. Ideal para café da manhã ou lanche.",
+        "ja": "やわらかい生地にキャラメルクリームを包んだ人気商品。"
+      },
+      "category": "bread_refrigerated",
+      "storageType": "refrigerated",
+      "weight": "60g x 3",
+      "jan": "4582663631235",
+      "image": "/products/123.webp"
+    },
+
+    {
+      "hinban": "18",
+      "slug": "18",
+      "name": { "pt": "Pão Italiano", "ja": "イタリアンパン" },
+      "description": {
+        "pt": "Pão estilo italiano com textura firme e sabor tradicional.",
+        "ja": "伝統的な味わいのイタリアンスタイルパン。"
+      },
+      "category": "bread_refrigerated",
+      "storageType": "refrigerated",
+      "weight": "300g",
+      "jan": "4582663630184",
+      "image": "/products/18.webp"
+    },
+
+    {
+      "hinban": "33",
+      "slug": "33",
+      "name": { "pt": "Pão Integral Fatiado c/18", "ja": "ライ麦スライス18枚" },
+      "description": {
+        "pt": "Pão integral fatiado com 18 fatias. Rico em fibras.",
+        "ja": "食物繊維豊富な18枚入りライ麦パン。"
+      },
+      "category": "bread_refrigerated",
+      "storageType": "refrigerated",
+      "weight": "350g",
+      "jan": "4582663630337",
+      "image": "/products/33.webp"
+    },
+
+    {
+      "hinban": "32",
+      "slug": "32",
+      "name": { "pt": "Pão Integral Fatiado c/6", "ja": "ライ麦スライス6枚" },
+      "description": {
+        "pt": "Versão menor do pão integral fatiado.",
+        "ja": "6枚入りのライ麦スライスパン。"
+      },
+      "category": "bread_refrigerated",
+      "storageType": "refrigerated",
+      "weight": "120g",
+      "jan": "4582663630320",
+      "image": "/products/32.webp"
+    },
+
+    {
+      "hinban": "9",
+      "slug": "9",
+      "name": { "pt": "Mini Pão Francês c/8", "ja": "ミニフランスパン 8個入り" },
+      "description": {
+        "pt": "Mini pão francês tradicional brasileiro.",
+        "ja": "ブラジル風ミニフランスパン。"
+      },
+      "category": "bread_refrigerated",
+      "storageType": "refrigerated",
+      "weight": "8 unidades",
+      "jan": "4582663630719",
+      "image": "/products/9.webp"
+    },
+
+    {
+      "hinban": "106",
+      "slug": "106",
+      "name": { "pt": "Caracol de Canela", "ja": "シナモンロール" },
+      "description": {
+        "pt": "Rocambole doce com recheio de canela.",
+        "ja": "シナモン香るロールパン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "",
+      "jan": "4582663631068",
+      "image": "/products/106.webp"
+    },
+
+    {
+      "hinban": "41",
+      "slug": "41",
+      "name": { "pt": "Hamburgão 2 un", "ja": "ビッグハンバーガー2個入り" },
+      "description": {
+        "pt": "Pão grande ideal para hambúrguer artesanal.",
+        "ja": "大きめサイズのハンバーガーパン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "2 unidades",
+      "jan": "4582663630412",
+      "image": "/products/41.webp"
+    },
+
+    {
+      "hinban": "42",
+      "slug": "42",
+      "name": { "pt": "Mini Pão para Hambúrguer c/6", "ja": "ミニハンバーガーパン6個入り" },
+      "description": {
+        "pt": "Pão pequeno ideal para mini hambúrgueres.",
+        "ja": "ミニサイズのハンバーガーパン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "50g x 6",
+      "jan": "4582663630429",
+      "image": "/products/42.webp"
+    },
+
+    {
+      "hinban": "34",
+      "slug": "34",
+      "name": { "pt": "Pão Sovado", "ja": "ソヴァドパン" },
+      "description": {
+        "pt": "Pão tradicional brasileiro de textura macia.",
+        "ja": "ブラジル定番のふんわり食感パン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "300g",
+      "jan": "4582663630344",
+      "image": "/products/34.webp"
+    },
+
+    {
+      "hinban": "40",
+      "slug": "40",
+      "name": { "pt": "Mini Sovado", "ja": "ミニソヴァドパン" },
+      "description": {
+        "pt": "Versão mini do pão sovado tradicional.",
+        "ja": "ソヴァドパンのミニサイズ。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "150g",
+      "jan": "4582663630405",
+      "image": "/products/40.webp"
+    },
+
+    {
+      "hinban": "21",
+      "slug": "21",
+      "name": { "pt": "Rosca de Coco", "ja": "ココナッツリング" },
+      "description": {
+        "pt": "Rosca doce com coco, perfeita para café.",
+        "ja": "ココナッツ風味の甘いリングパン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "300g",
+      "jan": "4582663630214",
+      "image": "/products/21.webp"
+    },
+
+    {
+      "hinban": "171",
+      "slug": "171",
+      "name": { "pt": "Bisnaga c/5", "ja": "バターパン5個入り" },
+      "description": {
+        "pt": "Pão tipo bisnaga macio com leve sabor amanteigado.",
+        "ja": "やわらかいバターパン5個入り。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "5 unidades",
+      "jan": "4582663631716",
+      "image": "/products/171.webp"
+    },
+
+    {
+      "hinban": "172",
+      "slug": "172",
+      "name": { "pt": "Bisnaga c/6", "ja": "ミニバターパン6個入り" },
+      "description": {
+        "pt": "Versão mini da bisnaga tradicional.",
+        "ja": "ミニサイズのバターパン6個入り。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "6 unidades",
+      "jan": "4582663631723",
+      "image": "/products/172.webp"
+    },
+
+    {
+      "hinban": "30",
+      "slug": "30",
+      "name": { "pt": "Pão para Hot Dog c/2", "ja": "ホットドッグパン2個入り" },
+      "description": {
+        "pt": "Pão ideal para hot dog tradicional.",
+        "ja": "ホットドッグ用パン2個入り。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "75g x 2",
+      "jan": "4582663630306",
+      "image": "/products/30.webp"
+    },
+
+    {
+      "hinban": "28",
+      "slug": "28",
+      "name": { "pt": "Pão para Hambúrguer c/2", "ja": "ハンバーガーパン2個入り" },
+      "description": {
+        "pt": "Pão clássico para hambúrguer.",
+        "ja": "クラシックハンバーガーパン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "75g x 2",
+      "jan": "4582663630283",
+      "image": "/products/28.webp"
+    },
+
+    {
+      "hinban": "105",
+      "slug": "105",
+      "name": { "pt": "Caracol de Goiabada", "ja": "グアバロール" },
+      "description": {
+        "pt": "Rocambole doce com recheio de goiabada.",
+        "ja": "グアバジャム入りロールパン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "150g",
+      "jan": "4582663631051",
+      "image": "/products/105.webp"
+    },
+
+    {
+      "hinban": "173",
+      "slug": "173",
+      "name": { "pt": "Pão de Milho c/5", "ja": "コーンパン5個入り" },
+      "description": {
+        "pt": "Pão macio com sabor suave de milho.",
+        "ja": "やさしい甘さのコーンパン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "5 unidades",
+      "jan": "4582663631730",
+      "image": "/products/173.webp"
+    },
+
+    {
+      "hinban": "31",
+      "slug": "31",
+      "name": { "pt": "Pão para Hot Dog c/4", "ja": "ホットドッグパン4個入り" },
+      "description": {
+        "pt": "Pão para hot dog em embalagem econômica.",
+        "ja": "ホットドッグ用パン4個入り。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "75g x 4",
+      "jan": "4582663630313",
+      "image": "/products/31.webp"
+    },
+
+    {
+      "hinban": "29",
+      "slug": "29",
+      "name": { "pt": "Pão Hambúrguer com Gergelim", "ja": "ハンバーガーパンごま入り" },
+      "description": {
+        "pt": "Pão para hambúrguer com gergelim.",
+        "ja": "ごま付きハンバーガーパン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "75g x 2",
+      "jan": "4582663630290",
+      "image": "/products/29.webp"
+    },
+
+    {
+      "hinban": "35",
+      "slug": "35",
+      "name": { "pt": "Creme PRECIOSA", "ja": "クリームパン PRECIOSA" },
+      "description": {
+        "pt": "Pão doce recheado com creme.",
+        "ja": "クリーム入り菓子パン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "200g",
+      "jan": "458266360351",
+      "image": "/products/35.webp"
+    },
+
+    {
+      "hinban": "19",
+      "slug": "19",
+      "name": { "pt": "Lingua de Sogra", "ja": "ココナッツスティックパン" },
+      "description": {
+        "pt": "Pão doce com cobertura de coco.",
+        "ja": "ココナッツトッピングの甘いパン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "300g",
+      "jan": "4582663630191",
+      "image": "/products/19.webp"
+    },
+
+    {
+      "hinban": "27",
+      "slug": "27",
+      "name": { "pt": "Pão de Sal", "ja": "塩パン" },
+      "description": {
+        "pt": "Pão tradicional levemente salgado.",
+        "ja": "ほんのり塩味の定番パン。"
+      },
+      "category": "bread_ambient",
+      "storageType": "ambient",
+      "weight": "180g",
+      "jan": "4582663630276",
+      "image": "/products/27.webp"
+    },
+    {
+  "hinban": "21",
+  "slug": "21",
+  "name": {
+    "pt": "Rosca de Coco",
+    "ja": "ココナッツリング"
+  },
+  "description": {
+    "pt": "Rosca tradicional brasileira com cobertura e sabor intenso de coco.",
+    "ja": "ココナッツの風味豊かなブラジル伝統リングパン。"
+  },
+  "weight": "300g",
+  "storageType": "ambient",
+  "jan": "4582663630214",
+  "image": "/products/21.webp"
+},
+{
+  "hinban": "3181",
+  "slug": "3181",
+  "name": {
+    "pt": "Panettone Goiaba com Uva Passa",
+    "ja": "パネトーネ グアバレーズン"
+  },
+  "description": {
+    "pt": "Panettone com recheio de goiabada e uvas passas, sabor marcante e textura macia.",
+    "ja": "グアバジャムとレーズン入りのパネトーネ。しっとりとした食感。"
+  },
+  "weight": "400g",
+  "storageType": "ambient",
+  "jan": "4582663631815",
+  "image": "/products/3181.webp"
+}
+
+  ]
+}

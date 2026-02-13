@@ -1,0 +1,262 @@
+{
+  "category": "sweets",
+  "items": [
+
+    {
+      "hinban": "733",
+      "slug": "733",
+      "name": {
+        "pt": "Quindim (6 unidades)",
+        "ja": "卵プリン（6個）"
+      },
+      "description": {
+        "pt": "Doce tradicional brasileiro à base de gema e coco, textura cremosa e sabor intenso.",
+        "ja": "卵黄とココナッツを使用したブラジル伝統菓子。濃厚でなめらかな食感。"
+      },
+      "storageType": "frozen",
+      "jan": "4582663637336",
+      "image": "/products/733.webp"
+    },
+
+    {
+      "hinban": "804",
+      "slug": "804",
+      "name": {
+        "pt": "Pudim de Leite",
+        "ja": "ミルクプリン"
+      },
+      "description": {
+        "pt": "Clássico pudim brasileiro com textura suave e sabor equilibrado de leite condensado.",
+        "ja": "ブラジル定番のミルクプリン。なめらかな口当たりと優しい甘さ。"
+      },
+      "storageType": "refrigerated",
+      "jan": "4582663638043",
+      "image": "/products/804.webp"
+    },
+
+    {
+      "hinban": "806",
+      "slug": "806",
+      "name": {
+        "pt": "Mini Churros (100 unidades - cru)",
+        "ja": "ミニチュロス（生）100個"
+      },
+      "description": {
+        "pt": "Mini churros prontos para fritar. Ideal para eventos e food service.",
+        "ja": "揚げるだけのミニチュロス。イベントや業務用に最適。"
+      },
+      "storageType": "frozen",
+      "jan": "4582663638067",
+      "image": "/products/806.webp"
+    },
+
+    {
+      "hinban": "732",
+      "slug": "732",
+      "name": {
+        "pt": "Curau de Milho Verde (50ml)",
+        "ja": "コーンクリームプリン"
+      },
+      "description": {
+        "pt": "Doce cremoso tradicional feito com milho verde.",
+        "ja": "とうもろこしを使用したブラジル伝統のクリームデザート。"
+      },
+      "storageType": "refrigerated",
+      "jan": "4582663637329",
+      "image": "/products/732.webp"
+    },
+
+    {
+      "hinban": "39",
+      "slug": "39",
+      "name": {
+        "pt": "Sequilho de Coco",
+        "ja": "ココナツ卵ボール"
+      },
+      "description": {
+        "pt": "Biscoito leve de coco com textura delicada.",
+        "ja": "軽い食感のココナッツビスケット。"
+      },
+      "storageType": "ambient",
+      "jan": "4582663630733",
+      "image": "/products/39.webp"
+    },
+
+    {
+      "hinban": "73",
+      "slug": "73",
+      "name": {
+        "pt": "Suspiro (30g)",
+        "ja": "メレンゲ"
+      },
+      "description": {
+        "pt": "Doce crocante e leve à base de clara de ovo.",
+        "ja": "卵白を使用した軽くサクサクのメレンゲ菓子。"
+      },
+      "storageType": "ambient",
+      "jan": "4582663630733",
+      "image": "/products/73.webp"
+    },
+
+    {
+      "hinban": "74",
+      "slug": "74",
+      "name": {
+        "pt": "Suspiro L (50g)",
+        "ja": "メレンゲLサイズ"
+      },
+      "description": {
+        "pt": "Versão maior do suspiro tradicional brasileiro.",
+        "ja": "大きめサイズのブラジルメレンゲ。"
+      },
+      "storageType": "ambient",
+      "jan": "4582663630740",
+      "image": "/products/74.webp"
+    },
+
+    {
+      "hinban": "20",
+      "slug": "20",
+      "name": {
+        "pt": "Maria Mole de Coco",
+        "ja": "ココナッツマシュマロー"
+      },
+      "description": {
+        "pt": "Doce macio de coco com textura aerada.",
+        "ja": "ふわふわ食感のココナッツ菓子。"
+      },
+      "storageType": "refrigerated",
+      "jan": "4582663630207",
+      "image": "/products/20.webp"
+    },
+
+    {
+      "hinban": "17",
+      "slug": "17",
+      "name": {
+        "pt": "Goiabinha",
+        "ja": "グアバクッキー"
+      },
+      "description": {
+        "pt": "Biscoito recheado com goiabada tradicional.",
+        "ja": "グアバジャム入りクッキー。"
+      },
+      "storageType": "ambient",
+      "jan": "4582663630177",
+      "image": "/products/17.webp"
+    },
+
+    {
+      "hinban": "16",
+      "slug": "16",
+      "name": {
+        "pt": "Cocadinha",
+        "ja": "ココナッツ焼き菓子"
+      },
+      "description": {
+        "pt": "Doce assado de coco com sabor intenso.",
+        "ja": "ココナッツを使用した焼き菓子。"
+      },
+      "storageType": "ambient",
+      "jan": "4582663630160",
+      "image": "/products/16.webp"
+    },
+
+    {
+      "hinban": "7",
+      "slug": "7",
+      "name": {
+        "pt": "Bolacha Nata com Goiabada",
+        "ja": "ミルクグアバビスケット"
+      },
+      "description": {
+        "pt": "Biscoito amanteigado recheado com goiabada.",
+        "ja": "グアバ入りミルクビスケット。"
+      },
+      "storageType": "ambient",
+      "jan": "4582663630078",
+      "image": "/products/7.webp"
+    },
+
+    {
+      "hinban": "8103",
+      "slug": "8103",
+      "name": {
+        "pt": "Rosca de Goiabada",
+        "ja": "グアバロール"
+      },
+      "description": {
+        "pt": "Rosca macia com recheio de goiabada e coco.",
+        "ja": "グアバジャム入りリングパン。"
+      },
+      "storageType": "ambient",
+      "jan": "",
+      "image": "/products/8103.webp"
+    },
+
+    {
+      "hinban": "8733",
+      "slug": "8733",
+      "name": {
+        "pt": "Quindim (Congelado)",
+        "ja": "卵プリン（冷凍）"
+      },
+      "description": {
+        "pt": "Versão congelada do tradicional quindim brasileiro.",
+        "ja": "冷凍タイプのブラジル伝統菓子クインジン。"
+      },
+      "storageType": "frozen",
+      "jan": "",
+      "image": "/products/8733.webp"
+    },
+
+    {
+      "hinban": "38",
+      "slug": "38",
+      "name": {
+        "pt": "Queijadinha (3 unidades)",
+        "ja": "ココナッツチーズケーキ"
+      },
+      "description": {
+        "pt": "Mini cheesecake brasileiro com coco.",
+        "ja": "ココナッツ風味のブラジルチーズケーキ。"
+      },
+      "storageType": "refrigerated",
+      "jan": "",
+      "image": "/products/38.webp"
+    },
+
+    {
+      "hinban": "0812",
+      "slug": "0812",
+      "name": {
+        "pt": "Brigadeiro (6 unidades)",
+        "ja": "チョコスプレーソフトキャンディー"
+      },
+      "description": {
+        "pt": "Doce brasileiro de chocolate com granulado.",
+        "ja": "ブラジル定番チョコレートスイーツ。"
+      },
+      "storageType": "refrigerated",
+      "jan": "",
+      "image": "/products/0812.webp"
+    },
+
+    {
+      "hinban": "0801",
+      "slug": "0801",
+      "name": {
+        "pt": "Bala de Coco Macia",
+        "ja": "ココナッツソフトキャンディ"
+      },
+      "description": {
+        "pt": "Doce macio de coco, ideal para festas.",
+        "ja": "柔らかいココナッツキャンディー。"
+      },
+      "storageType": "refrigerated",
+      "jan": "",
+      "image": "/products/0801.webp"
+    }
+
+  ]
+}

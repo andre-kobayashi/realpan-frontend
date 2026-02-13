@@ -1,11 +1,11 @@
 import {
   HeroSection,
+  FlashDealsSection,
   AboutSection,
+  ProductsSection,
   QualitySection,
   ServicesSection,
-  ProductsSection,
   OrderGuideSection,
-  ContactSection
 } from '@/components/home';
 
 export const dynamic = 'force-dynamic';
@@ -14,12 +14,12 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <FlashDealsSection />
       <AboutSection />
+      <ProductsSection />
       <QualitySection />
       <ServicesSection />
-      <ProductsSection />
       <OrderGuideSection />
-      <ContactSection />
     </>
   );
 }

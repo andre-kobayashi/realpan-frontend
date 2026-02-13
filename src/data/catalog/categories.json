@@ -1,0 +1,21 @@
+{
+  "categories": [
+    { "id": "all", "name": { "pt": "Todos", "ja": "すべて" } },
+
+    { "id": "breads", "name": { "pt": "Pães", "ja": "パン" } },
+
+    { "id": "frozen", "name": { "pt": "Pães Congelados", "ja": "冷凍パン" } },
+
+    { "id": "savory", "name": { "pt": "Salgados", "ja": "惣菜" } },
+
+    { "id": "pastel", "name": { "pt": "Pastéis", "ja": "パステル" } },
+
+    { "id": "sweets", "name": { "pt": "Doces", "ja": "お菓子・スイーツ" } },
+
+    { "id": "cakes", "name": { "pt": "Bolos", "ja": "ケーキ" } },
+
+    { "id": "spices", "name": { "pt": "Temperos", "ja": "香辛料" } },
+
+    { "id": "others", "name": { "pt": "Outros Produtos", "ja": "その他" } }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Termos de Uso",
+  "subtitle": "Condições para utilização dos nossos serviços",
+
+  "intro": "Os presentes Termos de Uso regulam a utilização do site e dos serviços oferecidos pela Real Pan Co., Ltd.",
+
+  "section1": {
+    "title": "Artigo 1 – Aplicação",
+    "content": "Estes Termos aplicam-se a todas as relações entre o usuário e a empresa referentes ao uso dos serviços."
+  },
+
+  "section2": {
+    "title": "Artigo 2 – Registro",
+    "content": "O registro será concluído mediante aprovação da empresa após solicitação realizada pelo usuário conforme os procedimentos definidos."
+  },
+
+  "section3": {
+    "title": "Artigo 3 – Pagamentos",
+    "content": "Serviços pagos poderão ser cobrados conforme tabela vigente. Pagamentos poderão ser processados por provedores externos como Stripe, estando sujeitos às políticas e termos dessas plataformas."
+  },
+
+  "section4": {
+    "title": "Artigo 4 – Proibições",
+    "content": "É proibido praticar atos ilícitos, fornecer informações falsas, realizar acessos não autorizados ou qualquer atividade considerada inadequada pela empresa."
+  },
+
+  "section5": {
+    "title": "Artigo 5 – Isenção de Responsabilidade",
+    "content": "A empresa não garante ausência de falhas técnicas ou interrupções no serviço."
+  },
+
+  "section6": {
+    "title": "Artigo 6 – Alterações",
+    "content": "A empresa poderá alterar estes Termos sem aviso prévio quando julgar necessário."
+  },
+
+  "section7": {
+    "title": "Artigo 7 – Legislação e Foro",
+    "content": "Estes Termos serão regidos pelas leis do Japão. Eventuais disputas serão submetidas ao foro competente da sede da empresa."
+  }
+}

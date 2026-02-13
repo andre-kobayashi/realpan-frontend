@@ -1,0 +1,13 @@
+{
+  "company": "Empresa",
+  "legal": "Legal",
+  "tagline": "Qualidade e tradição em cada produto.",
+  "rights": "Todos os direitos reservados.",
+  "links": {
+    "about": "Sobre Nós",
+    "products": "Produtos",
+    "contact": "Contato",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
+  }
+}

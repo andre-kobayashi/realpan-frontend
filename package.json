@@ -11,11 +11,12 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "lucide-react": "^0.263.1",
+    "lucide-react": "^0.563.0",
     "next": "^14.2.18",
     "next-intl": "^4.8.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@types/node": "^20.17.9",

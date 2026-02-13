@@ -1,0 +1,70 @@
+{
+  "hero": {
+    "title": "Um pão especial, nascido na América do Sul",
+    "subtitle": "Levamos o melhor da culinária sul-americana para as mesas do Japão"
+  },
+  "intro": "Na América do Sul, a cultura europeia encontrou ingredientes e costumes locais únicos, dando origem a uma gastronomia de panificação singular. O Pão de Queijo, o Pão Francês estilo brasileiro e tantos outros são frescos, reconfortantes e nunca enjoam. Nos últimos anos, essa popularidade só cresce no Japão.\n\nA Real Pan mantém os métodos de produção originais para trazer os sabores que a América do Sul consagrou — direto para a sua mesa, seja em casa, em hotéis ou restaurantes.",
+  "section1": {
+    "title": "Nosso compromisso com ingredientes e produção",
+    "subtitle": "01",
+    "items": {
+      "ingredients": {
+        "title": "Seleção de ingredientes",
+        "description": "Nossa produção começa pela escolha dos ingredientes certos. Utilizamos principalmente matérias-primas nacionais (japonesas), selecionadas para reproduzir fielmente o sabor original brasileiro. Combinamos a segurança dos insumos locais com a riqueza da culinária sul-americana — uma experiência que só a Real Pan oferece."
+      },
+      "method": {
+        "title": "Método de produção",
+        "description": "Valorizamos as técnicas de panificação originais do Brasil. O uso de polvilho (fécula de mandioca) garante a textura macia e elástica característica. Ajustes na modelagem e na temperatura de assamento resultam em uma casca crocante por fora e macia por dentro — a perfeição que a tradição local aprimorou."
+      },
+      "variety": {
+        "title": "O sabor do Brasil, aqui",
+        "description": "Do Pão de Queijo ao Pão Francês estilo brasileiro, passando pelo Biscoito de Tapioca, o Coxinha e bolos tradicionais — nossa linha reúne o melhor e mais variado do universo da panificação brasileira para você descobrir."
+      }
+    }
+  },
+  "section2": {
+    "title": "Congelamento rápido: frescor preservado",
+    "subtitle": "02",
+    "intro": "Assim que um pão sai do forno, ele começa a perder sabor e aroma. Por isso, capturamos o melhor momento — logo após o assamento — com tecnologia de congelamento ultrarrápido.\n\nBasta esquentar no forno ou torradeira para que o aroma e a textura de pão fresquinho se revelem novamente. Sem conservantes. Com toda a confiança.",
+    "comparison": {
+      "normal": {
+        "title": "Pão comum",
+        "description": "O amido começa a se degradar rapidamente, a umidade é perdida e a textura fica seca e dura. A oxidação faz o aroma e o sabor desaparecerem progressivamente."
+      },
+      "frozen": {
+        "title": "Pão congelado Real Pan",
+        "description": "A umidade e os aromas são congelados instantaneamente logo após o assamento, interrompendo a deterioração. Ao torrar, a casca fica crocante e o interior fica fofinho e úmido — como se acabasse de sair do forno."
+      }
+    },
+    "steps": {
+      "bake": "Assamento",
+      "freeze": "Congelamento rápido",
+      "freezeDesc": "O congelamento ultrarrápido preserva a estrutura interna do pão, mantendo sua maciez e umidade originais.",
+      "serve": "Na mesa, como se fosse fresquinho",
+      "serveDesc": "Basta aquecer na torradeira. A fragrância do trigo e da manteiga se espalha no primeiro mordida — a felicidade do pão fresquinho, em casa."
+    }
+  },
+  "section3": {
+    "title": "Qualidade e segurança, juntas",
+    "subtitle": "03",
+    "intro": "Além do sabor, nossa prioridade é entregar pães seguros e confiáveis. Por isso, mantemos controle rigoroso de qualidade e higiene em cada etapa.",
+    "items": {
+      "quality": {
+        "title": "Controle de qualidade",
+        "description": "Da seleção da matéria-prima até a expedição, cada etapa é monitorada. Os pães congelados saem diretamente da fábrica em estado de conservação bacteriológica total — garantindo estabilidade e uniformidade em cada lote."
+      },
+      "hygiene": {
+        "title": "Controle de higiene",
+        "description": "A fábrica opera com protocolos rigorosos contra contaminação: proteção contra poeira, limpeza contínua de equipamentos e ambientes. Segurança e limpeza fazem parte da nossa cultura diária."
+      },
+      "allergen": {
+        "title": "Gestão de alérgenos",
+        "description": "Para que todos possam comer com tranquilidade, gerenciamos as informações de alérgenos de forma clara e acessível. Reforçamos a limpeza dos equipamentos e mantemos controles rígidos de separação para evitar contaminação cruzada."
+      },
+      "delivery": {
+        "title": "Controle logístico",
+        "description": "Cada produto é entregue na temperatura adequada: veículos e caixas de frio dedicados para congelados e refrigerados. Pães frios e de temperatura ambiente são embalados individualmente; pães congelados são protegidos com material de amortecimento."
+      }
+    }
+  }
+}

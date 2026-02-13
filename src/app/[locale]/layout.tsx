@@ -26,15 +26,13 @@ export default async function LocaleLayout({
   children,
   params: { locale },
 }: Props) {
-  // ✅ ESTE é o modo que você confirmou que FUNCIONA
-  const messages = await getMessages({ locale });
+  // next-intl v4: getMessages() sem parâmetros (infere o locale automaticamente)
+  const messages = await getMessages();
 
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${
-        locale === 'ja' ? notoSansJP.variable : ''
-      }`}
+      className={`${inter.variable} ${locale === 'ja' ? notoSansJP.variable : ''}`}
     >
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>

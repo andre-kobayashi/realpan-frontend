@@ -1,0 +1,32 @@
+{
+  "title": "Política de Privacidade",
+  "subtitle": "Diretrizes sobre proteção e tratamento de dados pessoais",
+  "intro": "A Real Pan Co., Ltd. (doravante denominada \"Empresa\") compromete-se a proteger a privacidade dos usuários que utilizam este website.",
+
+  "policyText": "Para a prestação de nossos serviços, podemos coletar informações pessoais dos clientes.\n\nA Empresa adota medidas adequadas para proteger a privacidade e manter a confidencialidade dessas informações.\n\nNão vendemos, trocamos ou utilizamos dados pessoais de forma indevida.\n\nMediante solicitação, o cliente poderá confirmar, corrigir ou solicitar a exclusão de seus dados pessoais.",
+
+  "section1": {
+    "title": "1. Finalidade da Coleta de Dados",
+    "content": "As informações coletadas são utilizadas para:\n\n• Confirmação, fornecimento e execução de serviços e produtos\n• Atendimento a consultas e solicitações dos clientes"
+  },
+
+  "section2": {
+    "title": "2. Divulgação de Informações",
+    "content": "A Empresa poderá divulgar informações pessoais sem consentimento prévio nos seguintes casos:\n\n• Quando exigido por autoridades legais ou judiciais\n• Quando necessário para proteger a vida, segurança ou propriedade de terceiros"
+  },
+
+  "section3": {
+    "title": "3. Gestão de Informações",
+    "content": "Adotamos medidas adequadas para prevenir acesso não autorizado, perda, vazamento ou danos às informações pessoais.\n\nQuando houver compartilhamento com terceiros ou terceirização, garantimos supervisão adequada."
+  },
+
+  "google": {
+    "title": "Uso do Google Analytics",
+    "content": "Este site utiliza o Google Analytics para melhorar nossos serviços.\n\nCookies podem coletar informações como endereço IP, porém esses dados não identificam indivíduos.\n\nOs dados são gerenciados conforme a política de privacidade do Google."
+  },
+
+  "microsoft": {
+    "title": "Uso do Microsoft Clarity",
+    "content": "Utilizamos o Microsoft Clarity para analisar o comportamento de navegação dos usuários.\n\nAs informações coletadas não identificam indivíduos.\n\nOs dados são tratados conforme as políticas de privacidade da Microsoft."
+  }
+}

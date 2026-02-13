@@ -1,7 +1,5 @@
 'use client';
 
-export const dynamic = 'force-dynamic';
-
 import { useTranslations, useLocale } from 'next-intl';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { useState } from 'react';
@@ -25,28 +23,28 @@ export default function ContactPage() {
     {
       icon: MapPin,
       label: t('info.address'),
-      value: locale === 'pt' ? 'Japão' : '日本',
+      value: '静岡県浜松市中央区高塚町1620',
     },
     {
       icon: Phone,
       label: t('info.phone'),
-      value: '+81 XX-XXXX-XXXX',
+      value: '053-570-2555',
     },
     {
       icon: Mail,
       label: t('info.email'),
-      value: 'contato@realpan.co.jp',
+      value: 'info@realpan.co.jp',
     },
     {
       icon: Clock,
       label: t('info.hours'),
-      value: locale === 'pt' ? 'Seg-Sex: 9:00 - 18:00' : '月〜金: 9:00 - 18:00',
+      value: locale === 'pt' ? 'Seg-Sex: 10:00 – 17:00' : '月〜金: 10:00 ～ 17:00',
     },
   ];
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="bg-gradient-to-br from-primary-50 to-white py-20">
         <div className="container-custom">
           <div className="mx-auto max-w-3xl text-center">
@@ -59,7 +57,8 @@ export default function ContactPage() {
       <section className="py-16">
         <div className="container-custom">
           <div className="grid gap-12 lg:grid-cols-2">
-            {/* Contact Form */}
+
+            {/* Form */}
             <div className="card">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -123,7 +122,7 @@ export default function ContactPage() {
               </form>
             </div>
 
-            {/* Contact Information */}
+            {/* Contact Info */}
             <div className="space-y-6">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
