@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Check, ExternalLink } from 'lucide-react';
+import { Check, ExternalLink, ArrowRight } from 'lucide-react';
 
 type ServiceKey = 'hotel' | 'supermarket' | 'shop' | 'online';
 
@@ -28,86 +28,133 @@ export default function ServicesPage() {
   const serviceKeys: ServiceKey[] = ['hotel', 'supermarket', 'shop', 'online'];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-white">
 
-      {/* ── HERO ── */}
-      <section className="relative h-[420px] bg-primary-800 overflow-hidden">
-        <Image
-          src="/services/service-hero.webp"
-          alt=""
-          fill
-          priority
-          className="object-cover opacity-30"
-        />
-        <div className="relative z-10 flex h-full items-center justify-center text-center px-4">
-          <div>
-            <p className="mb-3 text-accent-400 text-sm font-semibold tracking-widest uppercase">
-              Services / サービス案内
-            </p>
-            <h1 className="heading-1 text-white mb-6">{t('hero.title')}</h1>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
-              {t('hero.subtitle')}
-            </p>
+      {/* ═══════ HERO STYLEBREAD ═══════ */}
+      <section className="relative bg-beige-50 py-16 lg:py-24 overflow-hidden">
+        {/* Imagem de fundo sutil */}
+        <div className="absolute inset-0 opacity-5">
+          <Image
+            src="/services/service-hero.webp"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        <div className="container-custom relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
+            <span>💼</span>
+            <span>{locale === 'pt' ? 'SERVIÇOS B2B' : '法人向けサービス'}</span>
+          </div>
+
+          <h1 className="font-abril text-4xl lg:text-6xl text-gray-900 mb-6 tracking-wide">
+            {t('hero.title')}
+          </h1>
+
+          <p className="text-gray-600 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
+            {t('hero.subtitle')}
+          </p>
+
+          {/* Decoração */}
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <div className="h-px w-16 bg-orange-300" />
+            <div className="h-2 w-2 rounded-full bg-orange-400" />
+            <div className="h-px w-16 bg-orange-300" />
           </div>
         </div>
       </section>
 
-      {/* ── SERVICES ── */}
-      <div className="divide-y divide-neutral-100">
+      {/* ═══════ SERVICES ALTERNADOS ═══════ */}
+      <div>
         {serviceKeys.map((key, i) => {
           if (key === 'online') return null; // online tem seção própria
+          
           const service = t.raw(key) as { title: string; description: string; cases: string[] };
           const isEven = i % 2 === 0;
 
-          return (
-            <section key={key} className="py-20">
-              <div className="container-custom">
-                <div className={`grid gap-12 lg:grid-cols-2 items-center ${!isEven ? 'lg:grid-flow-dense' : ''}`}>
+          // Alternar backgrounds: white → cream → white
+          const bgClass = isEven ? 'bg-white' : 'bg-cream-50';
 
-                  {/* Imagem */}
-                  <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card ${!isEven ? 'lg:col-start-2' : ''}`}>
+          return (
+            <section key={key} className={`py-16 lg:py-24 ${bgClass}`}>
+              <div className="container-custom">
+                <div className={`grid gap-8 lg:gap-16 lg:grid-cols-2 items-center ${!isEven ? 'lg:grid-flow-dense' : ''}`}>
+
+                  {/* ─── IMAGEM ─── */}
+                  <div className={`relative aspect-[4/3] overflow-hidden rounded-3xl ${!isEven ? 'lg:col-start-2' : ''}`}>
                     <Image
                       src={serviceImages[key]}
                       alt={service.title}
                       fill
                       className="object-cover"
                     />
-                    {/* Badge */}
-                    <div className="absolute top-4 left-4 bg-primary-800/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2">
-                      <span className="text-xl">{serviceIcons[key]}</span>
+                    
+                    {/* Badge icon */}
+                    <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg flex items-center gap-2">
+                      <span className="text-2xl">{serviceIcons[key]}</span>
+                      <span className="text-sm font-semibold text-gray-900">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Texto */}
+                  {/* ─── CONTEÚDO ─── */}
                   <div className={!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                    <p className="text-accent-500 text-xs font-semibold tracking-widest uppercase mb-2">
-                      {String(i + 1).padStart(2, '0')}
-                    </p>
-                    <h2 className="heading-2 text-primary-800 mb-4">{service.title}</h2>
-                    <p className="text-neutral-600 leading-relaxed mb-6">{service.description}</p>
+                    
+                    {/* Número */}
+                    <div className="inline-flex items-center gap-2 text-orange-600 text-sm font-bold mb-3">
+                      <div className="h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center">
+                        {String(i + 1).padStart(2, '0')}
+                      </div>
+                      <span className="uppercase tracking-wider">
+                        {locale === 'pt' ? 'Serviço' : 'サービス'}
+                      </span>
+                    </div>
 
-                    {/* Cases */}
-                    <div className="rounded-xl bg-primary-50 border border-primary-100 p-5">
-                      <p className="text-xs font-semibold text-primary-700 uppercase tracking-wider mb-3">
-                        Case — 事例紹介
-                      </p>
-                      <ul className="space-y-2">
+                    {/* Título */}
+                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                      {service.title}
+                    </h2>
+
+                    {/* Descrição */}
+                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                      {service.description}
+                    </p>
+
+                    {/* Cases - Card branco */}
+                    <div className="bg-white rounded-2xl border border-orange-100 p-6 shadow-sm">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="h-1 w-8 bg-orange-400 rounded-full" />
+                        <p className="text-xs font-bold text-orange-700 uppercase tracking-wider">
+                          {locale === 'pt' ? 'Casos de Uso' : '事例紹介'}
+                        </p>
+                      </div>
+
+                      <ul className="space-y-3">
                         {service.cases.map((c: string, ci: number) => (
-                          <li key={ci} className="flex items-start gap-2 text-sm text-primary-800">
-                            <Check className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent-500" />
-                            <span>{c}</span>
+                          <li key={ci} className="flex items-start gap-3 text-gray-800">
+                            <div className="mt-0.5 flex-shrink-0">
+                              <Check className="h-5 w-5 text-orange-500" strokeWidth={2.5} />
+                            </div>
+                            <span className="leading-relaxed">{c}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     {/* CTA */}
-                    <div className="mt-6">
-                      <Link href={`/${locale}/order/business`} className="btn-primary">
-                        {locale === 'pt' ? 'Fazer pedido' : 'ご注文はこちら'}
+                    <div className="mt-8">
+                      <Link 
+                        href={`/${locale}/order/business`} 
+                        className="inline-flex items-center gap-2 btn-orange text-base group"
+                      >
+                        {locale === 'pt' ? 'Fazer Pedido' : 'ご注文はこちら'}
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </div>
                   </div>
+
                 </div>
               </div>
             </section>
@@ -115,63 +162,99 @@ export default function ServicesPage() {
         })}
       </div>
 
-      {/* ── ONLINE SHOP ── */}
+      {/* ═══════ ONLINE SHOP - DESTAQUE ═══════ */}
       {(() => {
         const online = t.raw('online') as { title: string; description: string; cta: string };
         return (
-          <section className="bg-primary-800 py-20">
+          <section className="bg-gradient-to-br from-orange-500 to-orange-600 py-16 lg:py-24 text-white">
             <div className="container-custom">
               <div className="grid gap-12 lg:grid-cols-2 items-center">
 
+                {/* Conteúdo */}
                 <div>
-                  <p className="text-accent-400 text-xs font-semibold tracking-widest uppercase mb-2">
-                    04
+                  <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6">
+                    <span>🛒</span>
+                    <span>04</span>
+                  </div>
+
+                  <h2 className="font-abril text-3xl lg:text-5xl text-white mb-6 leading-tight">
+                    {online.title}
+                  </h2>
+
+                  <p className="text-white/90 text-lg leading-relaxed mb-8">
+                    {online.description}
                   </p>
-                  <h2 className="heading-2 text-white mb-4">{online.title}</h2>
-                  <p className="text-white/75 leading-relaxed mb-8">{online.description}</p>
+
                   <a
-                    href="https://www.rakuten.co.jp"
+                    href="https://www.rakuten.co.jp/realsabor/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-accent inline-flex items-center gap-2"
+                    className="inline-flex items-center gap-2 bg-white text-orange-600 font-bold px-8 py-4 rounded-full hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 text-base"
                   >
                     {online.cta}
-                    <ExternalLink className="h-4 w-4" />
+                    <ExternalLink className="h-5 w-5" />
                   </a>
                 </div>
 
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-navy">
+                {/* Imagem */}
+                <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl border-4 border-white/20">
                   <Image
                     src="/services/service-online.webp"
                     alt="Loja Online"
                     fill
-                    className="object-cover opacity-80"
+                    className="object-cover"
                   />
                 </div>
+
               </div>
             </div>
           </section>
         );
       })()}
 
-      {/* ── CTA FINAL ── */}
-      <section className="py-20 bg-cream-50">
-        <div className="container-custom text-center max-w-2xl">
-          <h2 className="heading-2 text-primary-800 mb-4">
-            {locale === 'pt' ? 'Pronto para começar?' : 'ご相談・ご注文はお気軽に'}
+      {/* ═══════ CTA FINAL STYLEBREAD ═══════ */}
+      <section className="py-16 lg:py-24 bg-beige-50">
+        <div className="container-custom text-center max-w-3xl">
+          
+          {/* Decoração superior */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-px w-12 bg-orange-300" />
+            <div className="h-2 w-2 rounded-full bg-orange-400" />
+            <div className="h-px w-12 bg-orange-300" />
+          </div>
+
+          <h2 className="font-abril text-3xl lg:text-5xl text-gray-900 mb-6">
+            {locale === 'pt' ? 'Pronto para Começar?' : 'ご相談・ご注文はお気軽に'}
           </h2>
-          <p className="text-neutral-600 mb-8">
+
+          <p className="text-gray-600 text-lg leading-relaxed mb-10">
             {locale === 'pt'
               ? 'Entre em contato para orçamentos personalizados ou acesse nosso guia de pedidos.'
               : '法人・個人を問わず、ご質問やお見積りはお気軽にお問い合わせください。'}
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href={`/${locale}/contact`} className="btn-primary">
-              {locale === 'pt' ? 'Fale conosco' : 'お問い合わせ'}
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href={`/${locale}/contact`} 
+              className="btn-orange text-base"
+            >
+              {locale === 'pt' ? '💬 Fale Conosco' : '💬 お問い合わせ'}
             </Link>
-            <Link href={`/${locale}/order-guide`} className="btn-secondary">
-              {locale === 'pt' ? 'Guia de pedidos' : '注文ガイド'}
+            
+            <Link 
+              href={`/${locale}/order-guide`} 
+              className="btn-orange-outline text-base"
+            >
+              {locale === 'pt' ? '📋 Guia de Pedidos' : '📋 注文ガイド'}
             </Link>
+          </div>
+
+          {/* Decoração inferior */}
+          <div className="flex items-center justify-center gap-3 mt-10">
+            <div className="h-px w-12 bg-orange-300" />
+            <div className="h-2 w-2 rounded-full bg-orange-400" />
+            <div className="h-px w-12 bg-orange-300" />
           </div>
         </div>
       </section>

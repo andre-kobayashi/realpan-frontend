@@ -1,266 +1,447 @@
 {
-  "category": "temperos",
-  "storageType": "ambient",
-  "items": [
-
+  "products": [
     {
       "hinban": "313",
       "slug": "coentro-po-20g-10",
-      "name": {
-        "pt": "Coentro em Pó 20g x10",
-        "ja": "コリアンダーパウダー 20g×10"
-      },
+      "name": { "pt": "Coentro em Pó 20g x10", "ja": "コリアンダーパウダー 20g×10" },
+      "description": { "pt": "Coentro moído para uso culinário.", "ja": "料理用コリアンダーパウダー。" },
+      "category": "temperos",
+      "image": "/products/313.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "20g x10",
+      "storageType": "ambient",
       "jan": "4582663633130"
     },
-
     {
       "hinban": "310",
       "slug": "cravo-po-15g-10",
-      "name": {
-        "pt": "Cravo da Índia em Pó 15g x10",
-        "ja": "クローブパウダー 15g×10"
-      },
+      "name": { "pt": "Cravo da Índia em Pó 15g x10", "ja": "クローブパウダー 15g×10" },
+      "description": { "pt": "Cravo moído para temperos e doces.", "ja": "料理・製菓用クローブパウダー。" },
+      "category": "temperos",
+      "image": "/products/310.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "15g x10",
+      "storageType": "ambient",
       "jan": "4582663633109"
     },
-
     {
       "hinban": "309",
       "slug": "cravo-15g-10",
-      "name": {
-        "pt": "Cravo da Índia 15g x10",
-        "ja": "クローブ 15g×10"
-      },
+      "name": { "pt": "Cravo da Índia 15g x10", "ja": "クローブ 15g×10" },
+      "description": { "pt": "Cravo inteiro para uso culinário.", "ja": "料理用クローブ（ホール）。" },
+      "category": "temperos",
+      "image": "/products/309.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "15g x10",
+      "storageType": "ambient",
       "jan": "4582663633093"
     },
-
     {
       "hinban": "321",
       "slug": "linhaca-semente-30g-10",
-      "name": {
-        "pt": "Linhaça em Semente 30g x10",
-        "ja": "亜麻仁種 30g×10"
-      },
+      "name": { "pt": "Linhaça em Semente 30g x10", "ja": "亜麻仁種 30g×10" },
+      "description": { "pt": "Linhaça em semente rica em fibras.", "ja": "食物繊維豊富な亜麻仁種。" },
+      "category": "temperos",
+      "image": "/products/321.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "30g x10",
+      "storageType": "ambient",
       "jan": "4582663633215"
     },
-
     {
       "hinban": "320",
       "slug": "linhaca-semente-250g",
-      "name": {
-        "pt": "Linhaça em Semente 250g",
-        "ja": "亜麻仁種 250g"
-      },
+      "name": { "pt": "Linhaça em Semente 250g", "ja": "亜麻仁種 250g" },
+      "description": { "pt": "Linhaça em semente para consumo e receitas.", "ja": "亜麻仁種 250g。" },
+      "category": "temperos",
+      "image": "/products/320.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "250g",
+      "storageType": "ambient",
       "jan": "4582663633208"
     },
-
     {
       "hinban": "318",
       "slug": "linhaca-po-250g",
-      "name": {
-        "pt": "Linhaça em Pó 250g",
-        "ja": "亜麻仁パウダー 250g"
-      },
+      "name": { "pt": "Linhaça em Pó 250g", "ja": "亜麻仁パウダー 250g" },
+      "description": { "pt": "Linhaça em pó para receitas e vitaminas.", "ja": "亜麻仁パウダー 250g。" },
+      "category": "temperos",
+      "image": "/products/318.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "250g",
+      "storageType": "ambient",
       "jan": "4582663633185"
     },
-
     {
       "hinban": "319",
       "slug": "linhaca-po-30g-10",
-      "name": {
-        "pt": "Linhaça em Pó 30g x10",
-        "ja": "亜麻仁パウダー 30g×10"
-      },
+      "name": { "pt": "Linhaça em Pó 30g x10", "ja": "亜麻仁パウダー 30g×10" },
+      "description": { "pt": "Linhaça em pó em porções pequenas.", "ja": "亜麻仁パウダー 30g×10。" },
+      "category": "temperos",
+      "image": "/products/319.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "30g x10",
+      "storageType": "ambient",
       "jan": "4582663633192"
     },
-
     {
       "hinban": "336",
       "slug": "chia-25g-10",
-      "name": {
-        "pt": "Semente de Chia 25g x10",
-        "ja": "チアシード 25g×10"
-      },
+      "name": { "pt": "Semente de Chia 25g x10", "ja": "チアシード 25g×10" },
+      "description": { "pt": "Chia em sementes.", "ja": "チアシード 25g×10。" },
+      "category": "temperos",
+      "image": "/products/336.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "25g x10",
+      "storageType": "ambient",
       "jan": "4582663633369"
     },
-
     {
       "hinban": "329",
       "slug": "pimenta-reino-po-20g-10",
-      "name": {
-        "pt": "Pimenta do Reino em Pó 20g x10",
-        "ja": "黒こしょうパウダー 20g×10"
-      },
+      "name": { "pt": "Pimenta do Reino em Pó 20g x10", "ja": "黒こしょうパウダー 20g×10" },
+      "description": { "pt": "Pimenta-do-reino moída.", "ja": "黒こしょうパウダー。" },
+      "category": "temperos",
+      "image": "/products/329.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "20g x10",
+      "storageType": "ambient",
       "jan": "4582663633291"
     },
-
     {
       "hinban": "328",
       "slug": "pimenta-reino-grao-20g-10",
-      "name": {
-        "pt": "Pimenta do Reino em Grão 20g x10",
-        "ja": "黒こしょう 20g×10"
-      },
+      "name": { "pt": "Pimenta do Reino em Grão 20g x10", "ja": "黒こしょう 20g×10" },
+      "description": { "pt": "Pimenta-do-reino em grãos.", "ja": "黒こしょう（ホール）。" },
+      "category": "temperos",
+      "image": "/products/328.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "20g x10",
+      "storageType": "ambient",
       "jan": "4582663633284"
     },
-
     {
       "hinban": "333",
       "slug": "pimenta-vermelha-picada-4g-10",
-      "name": {
-        "pt": "Pimenta Vermelha Picada 4g x10",
-        "ja": "スライス唐辛子 4g×10"
-      },
+      "name": { "pt": "Pimenta Vermelha Picada 4g x10", "ja": "スライス唐辛子 4g×10" },
+      "description": { "pt": "Pimenta vermelha em flocos/rodelas.", "ja": "スライス唐辛子。" },
+      "category": "temperos",
+      "image": "/products/333.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "4g x10",
+      "storageType": "ambient",
       "jan": "4582663633338"
     },
-
     {
       "hinban": "332",
       "slug": "pimenta-vermelha-inteira-10g-10",
-      "name": {
-        "pt": "Pimenta Vermelha Inteira 10g x10",
-        "ja": "赤唐辛子 10g×10"
-      },
+      "name": { "pt": "Pimenta Vermelha Inteira 10g x10", "ja": "赤唐辛子 10g×10" },
+      "description": { "pt": "Pimenta vermelha inteira.", "ja": "赤唐辛子（ホール）。" },
+      "category": "temperos",
+      "image": "/products/332.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "10g x10",
+      "storageType": "ambient",
       "jan": "4582663633321"
     },
-
     {
       "hinban": "324",
       "slug": "oregano-8g-10",
-      "name": {
-        "pt": "Orégano 8g x10",
-        "ja": "オレガノ 8g×10"
-      },
+      "name": { "pt": "Orégano 8g x10", "ja": "オレガノ 8g×10" },
+      "description": { "pt": "Orégano seco.", "ja": "オレガノ。" },
+      "category": "temperos",
+      "image": "/products/324.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "8g x10",
+      "storageType": "ambient",
       "jan": "4582663633246"
     },
-
     {
       "hinban": "322",
       "slug": "manjericao-8g-10",
-      "name": {
-        "pt": "Manjericão 8g x10",
-        "ja": "バジル 8g×10"
-      },
+      "name": { "pt": "Manjericão 8g x10", "ja": "バジル 8g×10" },
+      "description": { "pt": "Manjericão seco.", "ja": "バジル。" },
+      "category": "temperos",
+      "image": "/products/322.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "8g x10",
+      "storageType": "ambient",
       "jan": "4582663633222"
     },
-
     {
       "hinban": "301",
       "slug": "alecrim-15g-10",
-      "name": {
-        "pt": "Alecrim 15g x10",
-        "ja": "ローズマリー 15g×10"
-      },
+      "name": { "pt": "Alecrim 15g x10", "ja": "ローズマリー 15g×10" },
+      "description": { "pt": "Alecrim seco.", "ja": "ローズマリー。" },
+      "category": "temperos",
+      "image": "/products/301.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "15g x10",
+      "storageType": "ambient",
       "jan": "4582663633017"
     },
-
     {
       "hinban": "315",
       "slug": "louro-4g-10",
-      "name": {
-        "pt": "Folha de Louro 4g x10",
-        "ja": "ローレル 4g×10"
-      },
+      "name": { "pt": "Folha de Louro 4g x10", "ja": "ローレル 4g×10" },
+      "description": { "pt": "Folhas de louro secas.", "ja": "ローレル（ローリエ）。" },
+      "category": "temperos",
+      "image": "/products/315.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "4g x10",
+      "storageType": "ambient",
       "jan": "4582663633154"
     },
-
     {
       "hinban": "308",
       "slug": "canela-po-20g-10",
-      "name": {
-        "pt": "Canela em Pó 20g x10",
-        "ja": "シナモンパウダー 20g×10"
-      },
+      "name": { "pt": "Canela em Pó 20g x10", "ja": "シナモンパウダー 20g×10" },
+      "description": { "pt": "Canela em pó.", "ja": "シナモンパウダー。" },
+      "category": "temperos",
+      "image": "/products/308.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "20g x10",
+      "storageType": "ambient",
       "jan": "4582663633086"
     },
-
     {
       "hinban": "307",
       "slug": "canela-cacos-15g-10",
-      "name": {
-        "pt": "Canela em Cacos 15g x10",
-        "ja": "シナモンのかけら 15g×10"
-      },
+      "name": { "pt": "Canela em Cacos 15g x10", "ja": "シナモンのかけら 15g×10" },
+      "description": { "pt": "Canela em pedaços.", "ja": "シナモン（カケラ）。" },
+      "category": "temperos",
+      "image": "/products/307.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "15g x10",
+      "storageType": "ambient",
       "jan": "4582663633079"
     },
-
     {
       "hinban": "305",
       "slug": "acafrao-25g-10",
-      "name": {
-        "pt": "Açafrão 25g x10",
-        "ja": "アザフラン 25g×10"
-      },
+      "name": { "pt": "Açafrão 25g x10", "ja": "アザフラン 25g×10" },
+      "description": { "pt": "Açafrão em pó (cúrcuma) para tempero.", "ja": "料理用アザフラン（ターメリック）。" },
+      "category": "temperos",
+      "image": "/products/305.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "25g x10",
+      "storageType": "ambient",
       "jan": "4582663633055"
     },
 
     {
       "hinban": "339",
       "slug": "chimichurri-15g-10",
-      "name": {
-        "pt": "Chimichurri 15g x10",
-        "ja": "チミチュリ 15g×10"
-      }
+      "name": { "pt": "Chimichurri 15g x10", "ja": "チミチュリ 15g×10" },
+      "description": { "pt": "Mix de temperos tipo chimichurri.", "ja": "チミチュリミックススパイス。" },
+      "category": "temperos",
+      "image": "/products/339.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "15g x10",
+      "storageType": "ambient",
+      "jan": ""
     },
-
     {
       "hinban": "325",
       "slug": "paprica-25g-10",
-      "name": {
-        "pt": "Páprica 25g x10",
-        "ja": "パプリカ 25g×10"
-      },
+      "name": { "pt": "Páprica 25g x10", "ja": "パプリカ 25g×10" },
+      "description": { "pt": "Páprica para temperar carnes e molhos.", "ja": "料理用パプリカ。" },
+      "category": "temperos",
+      "image": "/products/325.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "25g x10",
+      "storageType": "ambient",
       "jan": "4582663633253"
     },
-
     {
       "hinban": "326",
       "slug": "paprica-150g",
-      "name": {
-        "pt": "Páprica 150g",
-        "ja": "パプリカ 150g"
-      },
+      "name": { "pt": "Páprica 150g", "ja": "パプリカ 150g" },
+      "description": { "pt": "Páprica em embalagem maior.", "ja": "パプリカ 150g。" },
+      "category": "temperos",
+      "image": "/products/326.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "150g",
+      "storageType": "ambient",
       "jan": "4582663633260"
     },
-
     {
       "hinban": "303",
       "slug": "alho-po-25g-10",
-      "name": {
-        "pt": "Alho em Pó 25g x10",
-        "ja": "にんにくパウダー 25g×10"
-      },
+      "name": { "pt": "Alho em Pó 25g x10", "ja": "にんにくパウダー 25g×10" },
+      "description": { "pt": "Alho em pó para temperar.", "ja": "にんにくパウダー。" },
+      "category": "temperos",
+      "image": "/products/303.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "25g x10",
+      "storageType": "ambient",
       "jan": "4582663633031"
     },
-
     {
       "hinban": "302",
       "slug": "alho-flocos-25g-10",
-      "name": {
-        "pt": "Alho em Flocos 25g x10",
-        "ja": "スライスにんにく 25g×10"
-      },
+      "name": { "pt": "Alho em Flocos 25g x10", "ja": "スライスにんにく 25g×10" },
+      "description": { "pt": "Alho desidratado em flocos.", "ja": "スライスにんにく。" },
+      "category": "temperos",
+      "image": "/products/302.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "25g x10",
+      "storageType": "ambient",
       "jan": "4582663633024"
     },
-
     {
       "hinban": "334",
       "slug": "realcador-sabor-30g-10",
-      "name": {
-        "pt": "Realçador de Sabor 30g x10",
-        "ja": "うま味調味料 30g×10"
-      },
+      "name": { "pt": "Realçador de Sabor 30g x10", "ja": "うま味調味料 30g×10" },
+      "description": { "pt": "Realçador de sabor para uso culinário.", "ja": "うま味調味料。" },
+      "category": "temperos",
+      "image": "/products/334.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "30g x10",
+      "storageType": "ambient",
       "jan": "4582663633345"
     },
-
     {
       "hinban": "306",
       "slug": "bicarbonato-30g-10",
-      "name": {
-        "pt": "Bicarbonato de Sódio 30g x10",
-        "ja": "重炭酸ナトリウム 30g×10"
-      },
+      "name": { "pt": "Bicarbonato de Sódio 30g x10", "ja": "重炭酸ナトリウム 30g×10" },
+      "description": { "pt": "Bicarbonato de sódio para uso culinário.", "ja": "料理用重曹。" },
+      "category": "temperos",
+      "image": "/products/306.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "30g x10",
+      "storageType": "ambient",
       "jan": "4582663633062"
     }
-
   ]
 }

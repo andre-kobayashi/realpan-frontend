@@ -6,10 +6,10 @@ type Props = {
 export function CategoryHeader({ title, count }: Props) {
   return (
     <div className="mb-8">
-      <h1 className="text-2xl font-bold text-primary-900 tracking-tight">
+      <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
         {title}
         {count !== undefined && (
-          <span className="ml-3 text-base font-normal text-neutral-400">
+          <span className="ml-3 text-base font-normal text-gray-400">
             ({count})
           </span>
         )}

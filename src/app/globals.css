@@ -1,145 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* =========================
-   BASE
-========================= */
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    background-color: #fafafa;
-    color: #171717;
-    font-family: Inter, system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    /* Evita overflow horizontal em mobile */
-    overflow-x: hidden;
-  }
-
-  html[lang="ja"] body {
-    font-family: "Noto Sans JP", system-ui, sans-serif;
-    letter-spacing: 0.04em;
-  }
+/* ═══════════════════════════════════════════════════
+   VARIÁVEIS STYLEBREAD
+   ═══════════════════════════════════════════════════ */
+:root {
+  --color-beige: #FAF7F2;
+  --color-cream: #FFF8F0;
+  --color-mint: #E8F5F0;
+  --color-orange: #FF6B35;
+  --color-brown: #8B5E3C;
 }
 
-/* Container (fora do @layer para suportar @media) */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(17, 24, 39);
+  background: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   FONTE ABRIL FATFACE
+   ═══════════════════════════════════════════════════ */
+.font-abril {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ═══════════════════════════════════════════════════
+   UTILITÁRIOS STYLEBREAD
+   ═══════════════════════════════════════════════════ */
+
+/* Container custom */
 .container-custom {
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 @media (min-width: 640px) {
-  .container-custom { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .container-custom {
+    padding: 0 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
-  .container-custom { padding-left: 2rem; padding-right: 2rem; }
-}
-
-/* =========================
-   COMPONENTS
-========================= */
-@layer components {
-
-  /* Sections */
-  .section    { padding-top: 5rem; padding-bottom: 5rem; }
-  .section-sm { padding-top: 3rem; padding-bottom: 3rem; }
-  .section-lg { padding-top: 7rem; padding-bottom: 7rem; }
-
-  /* ── Padding extra para bottom nav em mobile ── */
-  .page-bottom {
-    @apply pb-20 lg:pb-0;
-  }
-
-  /* ===========================
-     BOTÕES — Identidade Real Pan
-     Azul Marinho + Dourado
-  =========================== */
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full
-           bg-primary-700 px-6 py-3 text-sm font-semibold text-white
-           shadow-sm transition hover:bg-primary-800 active:scale-95;
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full
-           border-2 border-primary-700 bg-white px-6 py-3 text-sm
-           font-semibold text-primary-700 transition
-           hover:bg-primary-50 active:scale-95;
-  }
-
-  .btn-accent {
-    @apply inline-flex items-center justify-center gap-2 rounded-full
-           bg-accent-400 px-6 py-3 text-sm font-semibold text-primary-900
-           shadow-sm transition hover:bg-accent-500 active:scale-95;
-  }
-
-  .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 rounded-full
-           border border-neutral-300 bg-white px-6 py-3 text-sm
-           font-medium text-neutral-700 transition hover:bg-neutral-100;
-  }
-
-  /* Card */
-  .card {
-    @apply rounded-2xl bg-white p-6 ring-1 ring-neutral-200
-           transition hover:shadow-md;
-  }
-
-  /* Input */
-  .input {
-    @apply w-full rounded-xl border border-neutral-300 bg-white px-4 py-3
-           text-sm transition focus:border-primary-500 focus:outline-none
-           focus:ring-2 focus:ring-primary-500/20;
-  }
-
-  /* Tipografia */
-  .heading-1 {
-    @apply text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl;
-  }
-  .heading-2 {
-    @apply text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl;
-  }
-  .heading-3 {
-    @apply text-xl font-semibold tracking-tight sm:text-2xl lg:text-3xl;
-  }
-
-  /* Badge de número de seção */
-  .section-number {
-    @apply inline-block text-5xl font-black text-accent-400 leading-none lg:text-6xl;
+  .container-custom {
+    padding: 0 2rem;
   }
 }
 
-/* =========================
-   UTILITIES
-========================= */
-@layer utilities {
-  .animate-fade-in  { animation: fadeIn .4s ease-out; }
-  .animate-slide-up { animation: slideUp .4s ease-out; }
-
-  /* Oculta scrollbar */
-  .scrollbar-hide::-webkit-scrollbar { display: none; }
-  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-
-  /* Safe area para iOS (bottom nav) */
-  .pb-safe {
-    padding-bottom: max(4rem, calc(4rem + env(safe-area-inset-bottom)));
-  }
+/* Scrollbar hide */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-/* Keyframes */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* Botões StyleBread */
+.btn-orange {
+  @apply inline-flex items-center justify-center gap-2 
+         bg-gradient-to-r from-orange-500 to-orange-600 
+         text-white font-semibold 
+         px-6 py-3 rounded-full 
+         hover:shadow-lg hover:scale-[1.02] 
+         active:scale-95 
+         transition-all duration-200;
+}
+
+.btn-orange-outline {
+  @apply inline-flex items-center justify-center gap-2 
+         border-2 border-orange-500 
+         text-orange-600 font-semibold 
+         px-6 py-3 rounded-full 
+         hover:bg-orange-50 
+         active:scale-95 
+         transition-all duration-200;
+}
+
+/* Safe area (iOS) */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
+/* Line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

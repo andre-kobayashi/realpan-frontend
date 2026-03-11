@@ -1,23 +1,28 @@
 {
-  "category": "cakes",
-  "items": [
-
+  "products": [
     {
       "hinban": "11",
       "slug": "11",
       "name": {
         "pt": "Bolo de Fubá (300g)",
-        "ja": "コーンミールカステラ 300g"
+        "ja": "コーンミールケーキ 300g"
       },
       "description": {
         "pt": "Bolo tradicional brasileiro de fubá, textura macia e sabor caseiro.",
         "ja": "ブラジル伝統のコーンミールケーキ。しっとり食感。"
       },
+      "category": "cakes",
+      "image": "/products/11.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "300g",
       "storageType": "ambient",
-      "jan": "4582663630115",
-      "image": "/products/11.webp"
+      "jan": "4582663630115"
     },
-
     {
       "hinban": "164",
       "slug": "164",
@@ -27,29 +32,43 @@
       },
       "description": {
         "pt": "Versão aromática do bolo de fubá com sementes de erva doce.",
-        "ja": "アニス風味のコーンミールケーキ。香り豊かな味わい。"
+        "ja": "アニス風味のコーンミールケーキ。"
       },
+      "category": "cakes",
+      "image": "/products/164.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "300g",
       "storageType": "ambient",
-      "jan": "",
-      "image": "/products/164.webp"
+      "jan": ""
     },
-
     {
       "hinban": "739",
       "slug": "739",
       "name": {
         "pt": "Bolo Gelado de Coco (150g)",
-        "ja": "ココナッツジェラートケーキ"
+        "ja": "ココナッツ冷蔵ケーキ 150g"
       },
       "description": {
         "pt": "Bolo gelado com coco, textura úmida e refrescante.",
-        "ja": "ココナッツ風味の冷たいケーキ。しっとり食感。"
+        "ja": "ココナッツ風味の冷たいケーキ。"
       },
+      "category": "cakes",
+      "image": "/products/739.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "150g",
       "storageType": "refrigerated",
-      "jan": "4582663637398",
-      "image": "/products/739.webp"
+      "jan": "4582663637398"
     },
-
     {
       "hinban": "738",
       "slug": "738",
@@ -58,173 +77,135 @@
         "ja": "パイナップルココナッツカップケーキ"
       },
       "description": {
-        "pt": "Bolo tropical com combinação de abacaxi e coco.",
+        "pt": "Bolo tropical com abacaxi e coco.",
         "ja": "パイナップルとココナッツの南国風ケーキ。"
       },
+      "category": "cakes",
+      "image": "/products/738.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "300ml",
       "storageType": "refrigerated",
-      "jan": "4582663637381",
-      "image": "/products/738.webp"
+      "jan": "4582663637381"
     },
-
     {
       "hinban": "736",
       "slug": "736",
       "name": {
         "pt": "Bolo de Doce de Leite no Pote",
-        "ja": "キャラメルケーキインカップ"
+        "ja": "キャラメルケーキカップ"
       },
       "description": {
         "pt": "Bolo cremoso com doce de leite em pote individual.",
         "ja": "ドゥセ・デ・レイテ入りカップケーキ。"
       },
+      "category": "cakes",
+      "image": "/products/736.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "150g",
       "storageType": "refrigerated",
-      "jan": "4582663637367",
-      "image": "/products/736.webp"
+      "jan": "4582663637367"
     },
-
     {
       "hinban": "737",
       "slug": "737",
       "name": {
         "pt": "Bolo Brigadeiro no Pote",
-        "ja": "チョコスプレーケーキインカップ"
+        "ja": "ブラジレイロチョコカップケーキ"
       },
       "description": {
         "pt": "Bolo de chocolate estilo brigadeiro em pote.",
         "ja": "ブラジレイロ風チョコレートケーキ。"
       },
+      "category": "cakes",
+      "image": "/products/737.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "150g",
       "storageType": "refrigerated",
-      "jan": "4582663637374",
-      "image": "/products/737.webp"
+      "jan": "4582663637374"
     },
-
     {
       "hinban": "731",
       "slug": "731",
       "name": {
         "pt": "Bolo de Ameixa com Doce de Leite",
-        "ja": "キャラメルプルンケーキ"
+        "ja": "プルーンキャラメルケーキ"
       },
       "description": {
-        "pt": "Bolo com ameixa e pedaços de doce de leite.",
+        "pt": "Bolo com ameixa e doce de leite.",
         "ja": "プルーンとドゥセ・デ・レイテ入りケーキ。"
       },
+      "category": "cakes",
+      "image": "/products/731.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "300g",
       "storageType": "ambient",
-      "jan": "4582663637312",
-      "image": "/products/731.webp"
+      "jan": "4582663637312"
     },
-
     {
       "hinban": "730",
       "slug": "730",
       "name": {
         "pt": "Bolo de Nozes (250g)",
-        "ja": "くるみケーキ"
+        "ja": "くるみケーキ 250g"
       },
       "description": {
         "pt": "Bolo tradicional com pedaços de nozes.",
         "ja": "くるみ入りケーキ。"
       },
+      "category": "cakes",
+      "image": "/products/730.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "250g",
       "storageType": "ambient",
-      "jan": "4582663637305",
-      "image": "/products/730.webp"
+      "jan": "4582663637305"
     },
-
-    {
-      "hinban": "726",
-      "slug": "726",
-      "name": {
-        "pt": "Bolo Prestígio (Coco & Chocolate)",
-        "ja": "ココナッツチョコケーキ"
-      },
-      "description": {
-        "pt": "Combinação clássica de chocolate com coco.",
-        "ja": "チョコレートとココナッツの人気ケーキ。"
-      },
-      "storageType": "ambient",
-      "jan": "4582663637268",
-      "image": "/products/726.webp"
-    },
-
-    {
-      "hinban": "728",
-      "slug": "728",
-      "name": {
-        "pt": "Bolo Doce de Leite (250g)",
-        "ja": "キャラメルプルケーキ"
-      },
-      "description": {
-        "pt": "Bolo com recheio de doce de leite.",
-        "ja": "ドゥセ・デ・レイテ入りケーキ。"
-      },
-      "storageType": "ambient",
-      "jan": "4582663637282",
-      "image": "/products/728.webp"
-    },
-
-    {
-      "hinban": "727",
-      "slug": "727",
-      "name": {
-        "pt": "Bolo de Abacaxi (250g)",
-        "ja": "パイナップルケーキ"
-      },
-      "description": {
-        "pt": "Bolo macio com sabor tropical de abacaxi.",
-        "ja": "パイナップル風味のケーキ。"
-      },
-      "storageType": "ambient",
-      "jan": "4582663637275",
-      "image": "/products/727.webp"
-    },
-
-    {
-      "hinban": "729",
-      "slug": "729",
-      "name": {
-        "pt": "Bolo Brigadeiro (250g)",
-        "ja": "チョコスプレーケーキ"
-      },
-      "description": {
-        "pt": "Bolo de chocolate estilo brigadeiro tradicional.",
-        "ja": "ブラジレイロ風チョコレートケーキ。"
-      },
-      "storageType": "ambient",
-      "jan": "4582663637299",
-      "image": "/products/729.webp"
-    },
-
-    {
-      "hinban": "10",
-      "slug": "10",
-      "name": {
-        "pt": "Bolo Fazendeiro (Coco)",
-        "ja": "ココナッツソフトケーキ"
-      },
-      "description": {
-        "pt": "Bolo macio de coco com textura caseira.",
-        "ja": "ココナッツ風味のしっとりケーキ。"
-      },
-      "storageType": "ambient",
-      "jan": "4582663630108",
-      "image": "/products/10.webp"
-    },
-
     {
       "hinban": "8740",
       "slug": "8740",
       "name": {
         "pt": "Bolo Gelado de Chocolate",
-        "ja": "チョコアイスケーキ"
+        "ja": "冷凍チョコレートケーキ"
       },
       "description": {
         "pt": "Bolo gelado de chocolate com textura cremosa.",
         "ja": "冷凍チョコレートケーキ。濃厚な味わい。"
       },
+      "category": "cakes",
+      "image": "/products/8740.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": true,
+      "isBestseller": false,
+      "weight": "300g",
       "storageType": "frozen",
-      "jan": "",
-      "image": "/products/8740.webp"
+      "jan": ""
     }
-
   ]
 }

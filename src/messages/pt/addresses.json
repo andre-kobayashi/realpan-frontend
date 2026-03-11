@@ -1,0 +1,32 @@
+{
+  "title": "Endereços de Entrega",
+  "addButton": "Adicionar Endereço",
+  "editButton": "Editar Endereço",
+  "empty": "Nenhum endereço cadastrado",
+  "addFirst": "+ Adicionar endereço",
+  "default": "Padrão",
+  "form": {
+    "titleAdd": "Adicionar Endereço",
+    "titleEdit": "Editar Endereço",
+    "postalCode": "CEP",
+    "prefecture": "Prefeitura",
+    "city": "Cidade",
+    "ward": "Bairro",
+    "streetAddress": "Endereço",
+    "building": "Complemento",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "saving": "Salvando...",
+    "placeholders": {
+      "postalCode": "123-4567",
+      "prefecture": "Tokyo",
+      "city": "Shibuya",
+      "ward": "Jinnan",
+      "streetAddress": "1-2-3",
+      "building": "Apartamento 101"
+    },
+    "zipHelper": "Digite o CEP (7 dígitos) para buscar automaticamente"
+  },
+  "success": "Endereço atualizado com sucesso!",
+  "error": "Erro ao salvar endereço"
+}

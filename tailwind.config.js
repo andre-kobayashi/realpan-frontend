@@ -15,12 +15,27 @@ const config = {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         ja: ['"Noto Sans JP"', 'system-ui', 'sans-serif'],
+         abril: ["var(--font-abril)", "serif"],
       },
 
       // =============================================
       // PALETA REAL PAN — Azul Marinho + Dourado
       // =============================================
       colors: {
+        beige: {
+      light: '#FAF7F2',
+      DEFAULT: '#F5F1E8',
+    },
+    mint: {
+      light: '#E8F5F0',
+      DEFAULT: '#D1EBE3',
+    },
+    brand: {
+      orange: '#FF6B35',
+      'orange-dark': '#E85A2A',
+      teal: '#4ECDC4',
+      green: '#95E1D3',
+    },
         // Azul Marinho — cor principal da marca
         primary: {
           50:  '#f0f4f9',

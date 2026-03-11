@@ -1,7 +1,7 @@
 import { getRequestConfig } from 'next-intl/server';
 
-export const locales = ['pt', 'ja'] as const;
-export const defaultLocale = 'pt' as const;
+export const locales = ['ja', 'pt'] as const;
+export const defaultLocale = 'ja' as const; // ✅ JAPONÊS COMO PADRÃO
 export type Locale = (typeof locales)[number];
 
 // Namespaces registrados — adicione novos arquivos aqui ao criar novas páginas
@@ -16,6 +16,8 @@ const namespaces = [
   'footer',
   'privacy',
   'terms',
+  'auth',
+  'addresses',
 ] as const;
 
 export default getRequestConfig(async ({ requestLocale }) => {

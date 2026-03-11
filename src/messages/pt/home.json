@@ -1,94 +1,155 @@
 {
   "hero": {
-    "title": "Pães brasileiros todos os dias no Japão",
-    "subtitle": "Tradição, qualidade e frescor direto da América do Sul",
-    "cta": "Conheça nossos produtos"
-  },
-  "about": {
-  "eyebrow": "REAL PAN STORY",
-  "title": "Sobre a Real Pan",
-  "intro": "Pães brasileiros para o dia a dia.\nUm sabor que une novidade e tradição.",
-  "description": "A essência sul-americana se integra naturalmente à mesa japonesa.\nLevamos um toque especial para cada refeição.",
-  "corporate": "Unimos tradição brasileira e tecnologia moderna de congelamento para levar qualidade a todo o Japão.",
-  "highlight": {
-    "title": "América do Sul × Japão",
-    "description": "Cultura, tradição e tecnologia moderna unidas para criar um novo padrão de panificação no Japão."
-  }
-},
-  "quality": {
-  "title": "Nosso compromisso com a qualidade",
-  "intro": "Pães brasileiros para o dia a dia.\nUm sabor que une novidade e tradição.\nA essência sul-americana se integra naturalmente à mesa japonesa.\nLevamos um toque especial para cada refeição.",
-  "ingredients": {
-    "title": "Ingredientes selecionados",
-    "description": "Matérias-primas escolhidas com rigor, combinando o melhor do Japão e do Brasil."
-  },
-  "process": {
-    "title": "Processo artesanal",
-    "description": "Tradição sul-americana aliada à tecnologia moderna japonesa."
-  },
-  "safety": {
-    "title": "Segurança alimentar",
-    "description": "Controle rigoroso em todas as etapas, do ingrediente à entrega."
-  }
-},
- "services": {
-  "eyebrow": "B2B SOLUTIONS",
-  "title": "Soluções para o seu negócio",
-  "description": "Fornecemos produtos de panificação congelados com padrão industrial e qualidade artesanal para empresas em todo o Japão.",
-  "items": {
-    "foodservice": {
-      "title": "Food Service",
-      "description": "Hotéis, restaurantes e cafeterias com fornecimento regular e padronizado."
+    "slide1": {
+      "title": "Sabor do Brasil,\nFeito no Japão",
+      "subtitle": "Pão de queijo artesanal congelado direto para sua casa",
+      "cta": "Experimente Agora"
     },
-    "retail": {
-      "title": "Varejo",
-      "description": "Supermercados e lojas especializadas com produtos embalados individualmente."
+    "slide2": {
+      "title": "Presentes Premium",
+      "subtitle": "Kits especiais para empresas e ocasiões especiais",
+      "cta": "Ver Presentes"
     },
-    "distribution": {
-      "title": "Distribuidores",
-      "description": "Parcerias estratégicas para expansão regional e nacional."
+    "slide3": {
+      "title": "Frescor Garantido",
+      "subtitle": "Congelamento rápido preserva o sabor caseiro",
+      "cta": "Saiba Mais"
+    },
+    "banner": "Frete GRÁTIS para pedidos acima de ¥5,000"
+  },
+  "tagline": {
+    "title": "O sabor caseiro que você lembra,\ndireto do freezer para sua mesa",
+    "description": "Nosso pão de queijo é feito com ingredientes selecionados e congelado rapidamente\npara preservar o frescor e sabor autêntico do Brasil, agora no Japão."
+  },
+  "quickLinks": {
+    "products": {
+      "title": "Produtos",
+      "description": "Conheça nossa linha completa",
+      "cta": "Ver mais"
+    },
+    "gifts": {
+      "title": "Presentes",
+      "description": "Kits corporativos e especiais",
+      "cta": "Ver mais"
+    },
+    "recipes": {
+      "title": "Receitas",
+      "description": "Inspire-se com nosso pão",
+      "cta": "Ver mais"
     }
-  }
-},
-  "products": {
-    "title": "Nossa linha de produtos",
-    "subtitle": "Pão de queijo, pão francês estilo brasileiro, biscoito de tapioca e muito mais.",
-    "cta": "Ver todos os produtos",
-    "categories": {
-  "bread": "Pães (Ambiente)",
-  "frozen": "Pães Congelados",
-  "savory": "Salgados",
-  "sweets": "Doces",
-  "cake": "Bolos",
-  "ice": "Sorvetes",
-  "spices": "Temperos",
-  "other": "Outros"
-}
   },
- "order": {
-  "eyebrow": "ORDER PROCESS",
-  "title": "Como fazer pedidos",
-  "description": "Processo simples e logística especializada em produtos refrigerados e congelados.",
-  "ctaBusiness": "Para Empresas (B2B)",
-  "ctaIndividual": "Para Pessoa Física",
-  "steps": {
-    "step1": {
-      "title": "Escolha os produtos",
-      "description": "Selecione itens conforme sua necessidade."
+  "freshQuality": {
+    "title": "Esse pão de queijo é fresco?",
+    "common": {
+      "title": "Pão de Queijo Comum",
+      "description": "A deterioração do sabor e qualidade começa logo após o cozimento.",
+      "features": {
+        "1": "Perde umidade rapidamente",
+        "2": "Fica duro em poucas horas",
+        "3": "Necessita conservantes"
+      }
     },
-    "step2": {
-      "title": "Entrega refrigerada",
-      "description": "Logística especializada para manter qualidade."
-    },
-    "step3": {
-      "title": "Pagamento seguro",
-      "description": "Processo transparente e confiável."
+    "realPan": {
+      "title": "Real Pan Congelado",
+      "description": "Congelamento rápido preserva o frescor, sabor e textura originais.",
+      "features": {
+        "1": "Mantém 100% da umidade",
+        "2": "Fresco como recém-feito",
+        "3": "Sem conservantes necessários"
+      }
     }
-  }
-},
-  "contact": {
-    "title": "Entre em contato",
-    "description": "Estamos prontos para atender você e seu negócio.",
-    "cta": "Fale conosco"
+  },
+  "freezingTech": {
+    "title": "Feito na hora,\ncongelado a -45°C.\nFrescor garantido.",
+    "description": "Real Pan congela na hora após o preparo a -45°C,\npreservando a textura e sabor autênticos.",
+    "steps": {
+      "preparation": {
+        "title": "Preparo",
+        "description": "Massa fresca preparada com ingredientes premium"
+      },
+      "freezing": {
+        "title": "Congelamento",
+        "description": "Rápido a -45°C para preservar qualidade"
+      },
+      "delivery": {
+        "title": "Entrega",
+        "description": "Direto para sua casa, mantendo o frio"
+      }
+    }
+  },
+  "trustBadges": {
+    "title": "Confiança e Qualidade",
+    "description": "Real Pan é escolhido por empresas e famílias em todo Japão",
+    "b2b": {
+      "title": "B2B",
+      "subtitle": "Parceiro Corporativo",
+      "description": "Fornecemos para restaurantes, cafés e empresas em todo o Japão. Kits personalizados e entregas programadas.",
+      "features": {
+        "1": "Pedidos em grande volume",
+        "2": "Preços especiais B2B",
+        "3": "Faturamento corporativo"
+      }
+    },
+    "b2c": {
+      "title": "B2C",
+      "subtitle": "Direto para Casa",
+      "description": "Entrega para residências em todo o Japão. Sabor brasileiro sem sair de casa.",
+      "features": {
+        "1": "Entrega refrigerada",
+        "2": "Pacotes familiares",
+        "3": "Frete grátis acima de ¥5,000"
+      }
+    }
+  },
+  "howToUse": {
+    "title": "Como Aproveitar\nReal Pan",
+    "description": "Do pedido até sua mesa, em 3 passos simples",
+    "steps": {
+      "order": {
+        "title": "Faça seu Pedido",
+        "description": "Escolha seus produtos favoritos em nossa loja online. Entrega para todo o Japão."
+      },
+      "receive": {
+        "title": "Receba Congelado",
+        "description": "Pão de queijo fresco, congelado e embalado com cuidado, direto para seu freezer."
+      },
+      "enjoy": {
+        "title": "Asse e Saboreie",
+        "description": "Direto do freezer para o forno. 15 minutos para o sabor perfeito."
+      }
+    },
+    "link": "Como Preparar"
+  },
+  "reviews": {
+    "title": "Depoimentos",
+    "description": "O que nossos clientes dizem sobre Real Pan",
+    "items": {
+      "1": {
+        "text": "O melhor pão de queijo que já comi fora do Brasil! A textura é perfeita e o sabor é autêntico.",
+        "author": "Maria S.",
+        "role": "Cliente desde 2023"
+      },
+      "2": {
+        "text": "Meus filhos adoram! Sempre tenho no freezer para um lanche rápido e delicioso.",
+        "author": "Carlos T.",
+        "role": "Família em Tokyo"
+      },
+      "3": {
+        "text": "Uso no meu café e meus clientes japoneses amam! Qualidade excepcional.",
+        "author": "Ana P.",
+        "role": "Café em Osaka"
+      }
+    }
+  },
+  "instagram": {
+    "title": "Real Pan no Dia a Dia",
+    "description": "Veja como nossos clientes aproveitam nossos produtos",
+    "follow": "Siga @realpan_jp"
+  },
+  "cta": {
+    "title": "Pronto para Experimentar?",
+    "description": "Faça seu primeiro pedido e descubra o sabor autêntico do Brasil sem sair de casa.",
+    "viewProducts": "Ver Produtos",
+    "contactUs": "Fale Conosco"
   }
 }

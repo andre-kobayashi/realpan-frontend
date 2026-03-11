@@ -1,8 +1,5 @@
 {
-  "category": "salgadinhos",
-  "storageType": "ambient",
-  "items": [
-
+  "products": [
     {
       "hinban": "14",
       "slug": "biscoito-polvilho-palito",
@@ -10,17 +7,44 @@
         "pt": "Biscoito de Polvilho Palito 60g",
         "ja": "タピオカビスケット 60g"
       },
+      "description": {
+        "pt": "Biscoito crocante de polvilho em formato palito.",
+        "ja": "スティックタイプのタピオカスナック。サクサク食感。"
+      },
+      "category": "salgadinhos",
+      "image": "/products/14.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "60g",
+      "storageType": "ambient",
       "jan": "4582663630146"
     },
-
     {
       "hinban": "813",
       "slug": "biscoito-polvilho-anel",
       "name": {
         "pt": "Biscoito de Polvilho Anel 70g",
         "ja": "タピオカ塩スナックリング 70g"
-      }
+      },
+      "description": {
+        "pt": "Biscoito de polvilho em formato anel, leve e crocante.",
+        "ja": "リングタイプのタピオカ塩スナック。軽くてサクサク。"
+      },
+      "category": "salgadinhos",
+      "image": "/products/813.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "70g",
+      "storageType": "ambient",
+      "jan": ""
     }
-
   ]
 }

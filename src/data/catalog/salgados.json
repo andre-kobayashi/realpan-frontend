@@ -8,28 +8,68 @@
       "slug": "pao-mandioca-frango",
       "name": {
         "pt": "Pão de Mandioca Assado Frango Catupiry (2 un)",
-        "ja": "タピオカパン チキンクリームチーズ 2個"
+        "ja": "タピオカパン チキンクリームチーズ 2個入り"
       },
+      "description": {
+        "pt": "Pão de mandioca assado recheado com frango e catupiry. Produto congelado, pronto para aquecer.",
+        "ja": "チキンとクリームチーズを包んだタピオカパン。加熱用冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/705.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "2 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "100g x 2",
+      "storageType": "frozen",
       "jan": "45822663637053"
     },
-
     {
       "hinban": "706",
       "slug": "pao-mandioca-carne",
       "name": {
         "pt": "Pão de Mandioca Assado Carne Desfiada (2 un)",
-        "ja": "タピオカパン 牛肉 2個"
+        "ja": "タピオカパン 牛肉 2個入り"
       },
+      "description": {
+        "pt": "Pão de mandioca assado recheado com carne desfiada. Produto congelado, pronto para aquecer.",
+        "ja": "牛肉入りタピオカパン。加熱用冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/706.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "2 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "100g x 2",
+      "storageType": "frozen",
       "jan": "4582663637060"
     },
-
     {
       "hinban": "723",
       "slug": "empada-frango",
       "name": {
         "pt": "Empada de Frango",
-        "ja": "チキンエンパーダ"
+        "ja": "チキンエンパーダ 1個"
       },
+      "description": {
+        "pt": "Empada tradicional recheada com frango. Produto congelado, ideal para forno ou air fryer.",
+        "ja": "チキン入り伝統的なエンパーダ。オーブンやエアフライヤー対応の冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/723.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "120g",
+      "storageType": "frozen",
       "jan": "4582663637237"
     },
 
@@ -38,129 +78,299 @@
       "slug": "mini-empada-frango",
       "name": {
         "pt": "Mini Empada de Frango",
-        "ja": "ミニチキンエンパーダ"
+        "ja": "ミニチキンエンパーダ 1個"
       },
+      "description": {
+        "pt": "Mini empada tradicional recheada com frango. Produto congelado.",
+        "ja": "チキン入りミニエンパーダ。冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/757.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "60g",
+      "storageType": "frozen",
       "jan": "4582663637572"
     },
-
     {
       "hinban": "724",
       "slug": "esfiha-carne",
       "name": {
         "pt": "Esfiha de Carne (2 un)",
-        "ja": "牛肉エスフィーハ 2個"
+        "ja": "牛肉エスフィーハ 2個入り"
       },
+      "description": {
+        "pt": "Esfiha tradicional recheada com carne temperada. Produto congelado.",
+        "ja": "味付け牛肉入りエスフィーハ。冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/724.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "2 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "80g x 2",
+      "storageType": "frozen",
       "jan": "4582663637244"
     },
-
     {
       "hinban": "763",
       "slug": "mini-coxinha-industrial",
       "name": {
         "pt": "Mini Coxinha Frango (100 un – Industrial)",
-        "ja": "チキンコロッケミニ業務用 100個"
+        "ja": "チキンコロッケミニ業務用 100個入り"
       },
+      "description": {
+        "pt": "Mini coxinha de frango versão industrial, ideal para eventos e food service.",
+        "ja": "業務用ミニチキンコロッケ。イベントや業務向け。冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/763.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "100 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "20g x 100",
+      "storageType": "frozen",
       "jan": "4582663637633"
     },
-
     {
       "hinban": "8725",
       "slug": "coxinha-6-un",
       "name": {
         "pt": "Coxinha de Frango (6 un)",
-        "ja": "チキンコロッケ 6個"
-      }
+        "ja": "チキンコロッケ 6個入り"
+      },
+      "description": {
+        "pt": "Coxinha tradicional de frango. Produto congelado.",
+        "ja": "チキン入りコロッケ。冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/8725.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "6 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "80g x 6",
+      "storageType": "frozen",
+      "jan": ""
     },
-
     {
       "hinban": "772",
       "slug": "coxinha-l",
       "name": {
         "pt": "Coxinha L (10 un)",
-        "ja": "チキンコロッケ L 10個"
+        "ja": "チキンコロッケ L 10個入り"
       },
+      "description": {
+        "pt": "Coxinha tamanho L, ideal para festas e eventos.",
+        "ja": "Lサイズのチキンコロッケ。パーティー向け。冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/772.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "100g x 10",
+      "storageType": "frozen",
       "jan": "4582663637725"
     },
-
     {
       "hinban": "771",
       "slug": "kibe-l",
       "name": {
         "pt": "Kibe L (10 un)",
-        "ja": "牛肉キーベ L 10個"
+        "ja": "牛肉キーベ L 10個入り"
       },
+      "description": {
+        "pt": "Kibe tradicional de carne bovina tamanho L.",
+        "ja": "牛肉キーベ Lサイズ。冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/771.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "100g x 10",
+      "storageType": "frozen",
       "jan": "4582663637732"
     },
-
     {
       "hinban": "776",
       "slug": "croquete-calabresa-queijo",
       "name": {
         "pt": "Croquete Calabresa e Queijo L (10 un)",
-        "ja": "スモークソーセージチーズコロッケ L"
+        "ja": "スモークソーセージチーズコロッケ L 10個入り"
       },
+      "description": {
+        "pt": "Croquete recheado com calabresa e queijo, tamanho L.",
+        "ja": "スモークソーセージとチーズ入りコロッケ Lサイズ。冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/776.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "100g x 10",
+      "storageType": "frozen",
       "jan": "4582663637763"
     },
-
-    {
+{
       "hinban": "775",
       "slug": "bolinho-carne-l",
       "name": {
         "pt": "Bolinho de Carne L (10 un)",
-        "ja": "牛肉コロッケ L"
+        "ja": "牛肉コロッケ L 10個入り"
       },
+      "description": {
+        "pt": "Bolinho de carne bovina tamanho L. Ideal para festas e eventos.",
+        "ja": "牛肉入りコロッケ Lサイズ。パーティー向け冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/775.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "100g x 10",
+      "storageType": "frozen",
       "jan": "4582663637756"
     },
-
     {
       "hinban": "774",
       "slug": "bolinho-queijo-l",
       "name": {
         "pt": "Bolinho de Queijo L (10 un)",
-        "ja": "チーズコロッケ L"
+        "ja": "チーズコロッケ L 10個入り"
       },
+      "description": {
+        "pt": "Bolinho de queijo tamanho L, crocante por fora e macio por dentro.",
+        "ja": "チーズ入りコロッケ Lサイズ。外はサクサク、中はとろける冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/774.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "10 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "100g x 10",
+      "storageType": "frozen",
       "jan": "4582663637749"
     },
-
     {
       "hinban": "766",
       "slug": "mini-kibe",
       "name": {
         "pt": "Mini Kibe (15 un)",
-        "ja": "ミニ牛肉キーベ 15個"
+        "ja": "ミニ牛肉キーベ 15個入り"
       },
+      "description": {
+        "pt": "Mini kibe tradicional de carne bovina. Ideal para petiscos.",
+        "ja": "ミニ牛肉キーベ。おつまみに最適な冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/766.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "15 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "25g x 15",
+      "storageType": "frozen",
       "jan": "4582663637664"
     },
-
     {
       "hinban": "765",
       "slug": "mini-coxinha",
       "name": {
         "pt": "Mini Coxinha (15 un)",
-        "ja": "ミニチキンコロッケ 15個"
+        "ja": "ミニチキンコロッケ 15個入り"
       },
+      "description": {
+        "pt": "Mini coxinha tradicional de frango. Ideal para festas.",
+        "ja": "ミニチキンコロッケ。パーティー向け冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/765.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "15 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "25g x 15",
+      "storageType": "frozen",
       "jan": "4582663637657"
     },
-
     {
       "hinban": "767",
       "slug": "mini-bolinho-carne",
       "name": {
         "pt": "Mini Bolinho de Carne (15 un)",
-        "ja": "ミニ牛肉コロッケ 15個"
+        "ja": "ミニ牛肉コロッケ 15個入り"
       },
+      "description": {
+        "pt": "Mini bolinho de carne bovina. Ideal para aperitivos.",
+        "ja": "ミニ牛肉コロッケ。おつまみに最適な冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/767.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "15 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "25g x 15",
+      "storageType": "frozen",
       "jan": "4582663637671"
     },
-
     {
       "hinban": "768",
       "slug": "mini-bolinho-queijo",
       "name": {
         "pt": "Mini Bolinho de Queijo (15 un)",
-        "ja": "ミニチーズコロッケ 15個"
+        "ja": "ミニチーズコロッケ 15個入り"
       },
+      "description": {
+        "pt": "Mini bolinho de queijo crocante. Produto congelado.",
+        "ja": "ミニチーズコロッケ。冷凍商品。"
+      },
+      "category": "salgados",
+      "image": "/products/768.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "15 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "25g x 15",
+      "storageType": "frozen",
       "jan": "4582663637688"
     }
-
   ]
 }

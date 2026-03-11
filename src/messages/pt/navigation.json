@@ -1,14 +1,20 @@
 {
   "home": "Início",
-  "kodawari": "Nosso Compromisso",
   "products": "Produtos",
-  "services": "Serviços",
-  "orderGuide": "Guia de Pedidos",
-  "company": "Sobre Nós",
-  "news": "Notícias",
+  "gifts": "Presentes",
   "about": "Sobre Nós",
+  "recipes": "Receitas",
   "contact": "Contato",
   "language": "Idioma",
-  "orderBusiness": "Pedido (Pessoa Jurídica)",
-  "orderIndividual": "Pedido (Pessoa Física)"
+  "cart": "Carrinho",
+  "login": "Entrar",
+  "menu": "Menu",
+  "close": "Fechar",
+  "company": "Empresa",
+  "kodawari": "Nosso Compromisso",
+  "orderGuide": "Guia de Pedidos",
+  "news": "Notícias",
+  "services": "Serviços",
+  "orderBusiness": "Pedido (Empresas)",
+  "orderIndividual": "Pedido (Individual)"
 }

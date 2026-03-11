@@ -1,4 +1,3 @@
-import { getTranslations } from 'next-intl/server';
 
 export default async function NewsPage() {
   return (

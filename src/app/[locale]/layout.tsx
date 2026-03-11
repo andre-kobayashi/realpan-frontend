@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Inter, Noto_Sans_JP } from 'next/font/google';
 import { ReactNode } from 'react';
+import { AuthProvider } from '@/contexts/AuthContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,10 +36,13 @@ export default async function LocaleLayout({
       className={`${inter.variable} ${locale === 'ja' ? notoSansJP.variable : ''}`}
     >
       <body>
+        <AuthProvider>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
+      </AuthProvider>
       </body>
+    
     </html>
   );
 }

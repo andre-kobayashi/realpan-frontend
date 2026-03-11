@@ -1,0 +1,32 @@
+{
+  "title": "配送先住所",
+  "addButton": "住所を追加",
+  "editButton": "住所を編集",
+  "empty": "登録された住所がありません",
+  "addFirst": "+ 住所を追加",
+  "default": "デフォルト",
+  "form": {
+    "titleAdd": "住所を追加",
+    "titleEdit": "住所を編集",
+    "postalCode": "郵便番号",
+    "prefecture": "都道府県",
+    "city": "市区町村",
+    "ward": "町域",
+    "streetAddress": "番地・号",
+    "building": "建物名・部屋番号",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "saving": "保存中...",
+    "placeholders": {
+      "postalCode": "123-4567",
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "ward": "神南",
+      "streetAddress": "1-2-3",
+      "building": "〇〇マンション101号室"
+    },
+    "zipHelper": "郵便番号を入力すると自動で住所を検索します"
+  },
+  "success": "住所が更新されました！",
+  "error": "住所の保存に失敗しました"
+}

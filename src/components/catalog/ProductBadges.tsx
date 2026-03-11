@@ -1,16 +1,26 @@
+'use client';
+
 type Props = {
-  storage?: 'ambient' | 'chilled' | 'frozen';
-  sell?: { allowed?: string[] };
+  isNew?: boolean;
+  discount?: number;
 };
 
-export function ProductBadges({ storage, sell }: Props) {
-  const storageLabel: Record<string, string> = { ambient: '常温', chilled: '冷蔵', frozen: '冷凍' };
-  const allowed = sell?.allowed ?? [];
-  if (!storage && allowed.length === 0) return null;
+export function ProductBadges({ isNew, discount }: Props) {
+  if (!isNew && !discount) return null;
+
   return (
-    <div className="flex flex-wrap gap-2 text-xs">
-      {storage && (
-        <span className="rounded border px-2 py-1 text-neutral-600">{storageLabel[storage]}</span>
+    <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
+      {isNew && (
+        <div className="bg-[#D85D3E] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-md">
+          <span className="text-xs font-bold">New</span>
+        </div>
+      )}
+      {discount && (
+        <div className="bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-dashed border-orange-400 px-3 py-1 rounded-full">
+          <span className="text-orange-700 text-xs font-bold">
+            {discount}% OFF
+          </span>
+        </div>
       )}
     </div>
   );

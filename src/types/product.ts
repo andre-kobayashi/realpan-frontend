@@ -1,30 +1,41 @@
-export type LocaleText = {
+export type BilingualText = {
   pt: string;
   ja: string;
 };
 
-export type StorageType = 'frozen' | 'refrigerated' | 'ambient';
-
 export type Product = {
   id: string;
   slug: string;
-  name: LocaleText;
-  subtitle?: LocaleText;
-  description: LocaleText;
+  name: BilingualText;
+  description: BilingualText;
   image: string;
   category: string;
-  storageType: StorageType;
+  
+  // Preço (André vai preencher depois)
+  price: number;
+  originalPrice?: number; // Para mostrar desconto
+  
+  // Info adicional
+  weight?: string;
+  quantity?: string; // Ex: "3個入り", "1袋"
+  jan?: string;
+  storageType?: 'refrigerated' | 'frozen' | 'ambient';
+  
+  // Badges opcionais
   isNew?: boolean;
   isBestseller?: boolean;
-  sales: {
-    pj: { enabled: boolean; unit: LocaleText };
-    pf: { enabled: boolean; unit: LocaleText };
-  };
-  weight?: LocaleText;
-  tags: string[];
+  freeShipping?: boolean;
 };
 
 export type Category = {
   id: string;
-  name: LocaleText;
+  name: BilingualText;
+  slug: string;
+  description?: BilingualText;
+  icon?: string;
+};
+
+export type RawProduct = Omit<Product, 'id' | 'slug'> & {
+  hinban: string;
+  slug?: string;
 };

@@ -1,187 +1,244 @@
 {
-  "category": "pasteis",
-  "storageType": "frozen",
-  "items": [
-
+  "products": [
     {
       "hinban": "720",
       "slug": "pastel-queijo-m",
-      "name": {
-        "pt": "Pastel de Queijo M (50g x6)",
-        "ja": "チーズパステル M 50g×6"
-      },
+      "name": { "pt": "Pastel de Queijo M (50g x6)", "ja": "チーズパステル M 50g×6" },
       "description": {
         "pt": "Pastel tradicional recheado com queijo.",
         "ja": "チーズ入りブラジル風パステル。"
       },
-      "jan": "4582663637206",
-      "image": "/products/720.webp"
+      "category": "pasteis",
+      "image": "/products/720.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "6 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "50g x6",
+      "storageType": "frozen",
+      "jan": "4582663637206"
     },
-
     {
       "hinban": "718",
       "slug": "pastel-pizza-m",
-      "name": {
-        "pt": "Pastel de Pizza M (50g x6)",
-        "ja": "ハムチーズパステル M 50g×6"
-      },
+      "name": { "pt": "Pastel de Pizza M (50g x6)", "ja": "ハムチーズパステル M 50g×6" },
       "description": {
         "pt": "Recheio de presunto e queijo estilo pizza.",
         "ja": "ハムとチーズのピザ風パステル。"
       },
-      "jan": "4582663637183",
-      "image": "/products/718.webp"
+      "category": "pasteis",
+      "image": "/products/718.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "6 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "50g x6",
+      "storageType": "frozen",
+      "jan": "4582663637183"
     },
-
     {
       "hinban": "716",
       "slug": "pastel-frango-m",
-      "name": {
-        "pt": "Pastel de Frango com Catupiry M (50g x6)",
-        "ja": "チキンクリームチーズパステル M 50g×6"
-      },
+      "name": { "pt": "Pastel de Frango com Catupiry M (50g x6)", "ja": "チキンクリームチーズパステル M 50g×6" },
       "description": {
         "pt": "Frango com creme de queijo.",
         "ja": "鶏肉とクリームチーズ入り。"
       },
-      "jan": "4582663637169",
-      "image": "/products/716.webp"
+      "category": "pasteis",
+      "image": "/products/716.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "6 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "50g x6",
+      "storageType": "frozen",
+      "jan": "4582663637169"
     },
-
     {
       "hinban": "714",
       "slug": "pastel-carne-m",
-      "name": {
-        "pt": "Pastel de Carne M (50g x6)",
-        "ja": "牛肉パステル M 50g×6"
-      },
+      "name": { "pt": "Pastel de Carne M (50g x6)", "ja": "牛肉パステル M 50g×6" },
       "description": {
         "pt": "Pastel recheado com carne temperada.",
         "ja": "味付け牛肉入りパステル。"
       },
-      "jan": "4582663637145",
-      "image": "/products/714.webp"
+      "category": "pasteis",
+      "image": "/products/714.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "6 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "50g x6",
+      "storageType": "frozen",
+      "jan": "4582663637145"
     },
-
     {
       "hinban": "719",
       "slug": "pastel-queijo-l",
-      "name": {
-        "pt": "Pastel de Queijo L (90g x4)",
-        "ja": "チーズパステル L 90g×4"
-      },
+      "name": { "pt": "Pastel de Queijo L (90g x4)", "ja": "チーズパステル L 90g×4" },
       "description": {
         "pt": "Versão grande recheada com queijo.",
         "ja": "チーズ入り大サイズ。"
       },
-      "jan": "4582663637190",
-      "image": "/products/719.webp"
+      "category": "pasteis",
+      "image": "/products/719.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "4 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "90g x4",
+      "storageType": "frozen",
+      "jan": "4582663637190"
     },
-
     {
       "hinban": "717",
       "slug": "pastel-pizza-l",
-      "name": {
-        "pt": "Pastel de Pizza L (90g x4)",
-        "ja": "ハムチーズパステル L"
-      },
+      "name": { "pt": "Pastel de Pizza L (90g x4)", "ja": "ハムチーズパステル L 90g×4" },
       "description": {
         "pt": "Versão grande sabor presunto e queijo.",
         "ja": "ハムとチーズの大サイズ。"
       },
-      "jan": "4582663637176",
-      "image": "/products/717.webp"
+      "category": "pasteis",
+      "image": "/products/717.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "4 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "90g x4",
+      "storageType": "frozen",
+      "jan": "4582663637176"
     },
-
     {
       "hinban": "715",
       "slug": "pastel-frango-l",
-      "name": {
-        "pt": "Pastel de Frango com Catupiry L (90g x4)",
-        "ja": "チキンクリームチーズパステル L 90g×4"
-      },
+      "name": { "pt": "Pastel de Frango com Catupiry L (90g x4)", "ja": "チキンクリームチーズパステル L 90g×4" },
       "description": {
         "pt": "Frango com creme de queijo, versão grande.",
         "ja": "鶏肉とクリームチーズ入り大サイズ。"
       },
-      "jan": "4582663637152",
-      "image": "/products/715.webp"
+      "category": "pasteis",
+      "image": "/products/715.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "4 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "90g x4",
+      "storageType": "frozen",
+      "jan": "4582663637152"
     },
-
     {
       "hinban": "713",
       "slug": "pastel-carne-l",
-      "name": {
-        "pt": "Pastel de Carne L (110g x4)",
-        "ja": "牛肉パステル L 110g×4"
-      },
+      "name": { "pt": "Pastel de Carne L (110g x4)", "ja": "牛肉パステル L 110g×4" },
       "description": {
         "pt": "Pastel grande recheado com carne.",
         "ja": "牛肉入り大サイズ。"
       },
-      "jan": "4582663637138",
-      "image": "/products/713.webp"
+      "category": "pasteis",
+      "image": "/products/713.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "4 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "110g x4",
+      "storageType": "frozen",
+      "jan": "4582663637138"
     },
-
     {
       "hinban": "722",
       "slug": "massa-pastel-rolo",
-      "name": {
-        "pt": "Massa de Pastel Caseira (500g)",
-        "ja": "パステルロール 500g"
-      },
+      "name": { "pt": "Massa de Pastel Caseira (500g)", "ja": "パステルロール 500g" },
       "description": {
         "pt": "Massa fresca em rolo para preparo artesanal.",
         "ja": "手作り用パステル生地ロール。"
       },
-      "jan": "45826637220",
-      "image": "/products/722.webp"
+      "category": "pasteis",
+      "image": "/products/722.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "1 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "500g",
+      "storageType": "frozen",
+      "jan": "45826637220"
     },
-
     {
       "hinban": "754",
       "slug": "mini-pastel-carne",
-      "name": {
-        "pt": "Mini Pastel de Carne (14g x24)",
-        "ja": "ミニパステル 牛肉 14g×24"
-      },
+      "name": { "pt": "Mini Pastel de Carne (14g x24)", "ja": "ミニパステル 牛肉 14g×24" },
       "description": {
         "pt": "Mini pastéis recheados com carne.",
         "ja": "牛肉入りミニパステル。"
       },
-      "jan": "4582663637541",
-      "image": "/products/754.webp"
+      "category": "pasteis",
+      "image": "/products/754.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "24 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "14g x24",
+      "storageType": "frozen",
+      "jan": "4582663637541"
     },
-
     {
       "hinban": "756",
       "slug": "mini-pastel-pizza",
-      "name": {
-        "pt": "Mini Pastel de Pizza (14g x24)",
-        "ja": "ミニパステル ハムチーズ 14g×24"
-      },
+      "name": { "pt": "Mini Pastel de Pizza (14g x24)", "ja": "ミニパステル ハムチーズ 14g×24" },
       "description": {
         "pt": "Mini pastéis sabor presunto e queijo.",
         "ja": "ハムチーズ入りミニパステル。"
       },
-      "jan": "4582663637565",
-      "image": "/products/756.webp"
+      "category": "pasteis",
+      "image": "/products/756.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "24 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": false,
+      "weight": "14g x24",
+      "storageType": "frozen",
+      "jan": "4582663637565"
     },
-
     {
       "hinban": "755",
       "slug": "mini-pastel-queijo",
-      "name": {
-        "pt": "Mini Pastel de Queijo (14g x24)",
-        "ja": "ミニパステル チーズ 14g×24"
-      },
+      "name": { "pt": "Mini Pastel de Queijo (14g x24)", "ja": "ミニパステル チーズ 14g×24" },
       "description": {
         "pt": "Mini pastéis recheados com queijo.",
         "ja": "チーズ入りミニパステル。"
       },
-      "jan": "4582663637558",
-      "image": "/products/755.webp"
+      "category": "pasteis",
+      "image": "/products/755.webp",
+      "price": 0,
+      "originalPrice": 0,
+      "quantity": "24 un",
+      "freeShipping": false,
+      "isNew": false,
+      "isBestseller": true,
+      "weight": "14g x24",
+      "storageType": "frozen",
+      "jan": "4582663637558"
     }
-
   ]
 }

@@ -3,7 +3,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { Snowflake, Building2, User } from 'lucide-react';
 import Link from 'next/link';
 import { ProductCard } from '@/components/catalog/ProductCard';
 import { loadAllProducts, loadCategories } from '@/lib/catalog-loader';
@@ -16,7 +15,7 @@ export default function ProductsClient() {
 
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState('breads'); // PÃES PRIMEIRO
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -49,8 +48,8 @@ export default function ProductsClient() {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <div className="text-center">
-          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-primary-200 border-t-primary-700" />
-          <p className="mt-4 text-sm text-neutral-500">
+          <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-orange-200 border-t-orange-500" />
+          <p className="mt-4 text-sm text-gray-500">
             {locale === 'pt' ? 'Carregando produtos...' : '商品を読み込み中...'}
           </p>
         </div>
@@ -59,76 +58,69 @@ export default function ProductsClient() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen pb-safe lg:pb-0">
+    <div className="flex flex-col min-h-screen bg-warmGray-50">
 
       {/* ═══════ HERO ═══════ */}
-      <section className="bg-primary-800 py-10 lg:py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(244,196,48,0.10)_0%,_transparent_60%)]" />
-        <div className="container-custom relative z-10">
-
-          <div className="max-w-2xl">
-            <p className="text-accent-400 text-xs font-semibold tracking-widest uppercase mb-2 lg:mb-3">
-              Products / 商品一覧
-            </p>
-            <h1 className="text-2xl lg:text-5xl font-bold text-white mb-2 lg:mb-4 tracking-tight">
-              {t('title')}
-            </h1>
-            <p className="text-white/65 text-sm lg:text-lg leading-relaxed hidden sm:block">
-              {t('subtitle')}
-            </p>
-          </div>
-
-          {/* Quick stats — desktop only */}
-          <div className="mt-8 hidden lg:flex flex-wrap gap-6 text-sm">
-            {[
-              { Icon: Snowflake,  label: locale === 'pt' ? 'Congelamento rápido'      : '急速冷凍技術' },
-              { Icon: Building2, label: locale === 'pt' ? 'Pedidos corporativos (PJ)' : '法人対応' },
-              { Icon: User,      label: locale === 'pt' ? 'Disponível no varejo'      : '個人販売あり' },
-            ].map(({ Icon, label }) => (
-              <div key={label} className="flex items-center gap-2 text-white/60">
-                <Icon className="h-4 w-4 text-accent-400" />
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
-
+      <section className="bg-beige-50 py-12 lg:py-20">
+        <div className="container-custom text-center">
+          <h1 className="font-abril text-3xl lg:text-5xl text-gray-900 mb-4">
+            {locale === 'pt' ? 'Nossos Produtos' : '商品一覧'}
+          </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            {locale === 'pt' 
+              ? 'Pães premium brasileiros feitos com ingredientes selecionados. Congelamento rápido para preservar o sabor.'
+              : 'ブラジル伝統の高品質パン。厳選された材料で作られ、急速冷凍で美味しさを保ちます。'}
+          </p>
         </div>
       </section>
 
-      {/* ═══════ FILTROS sticky ═══════ */}
-      <div className="sticky top-14 lg:top-[148px] z-30 bg-white/96 backdrop-blur border-b border-neutral-200 shadow-sm">
+      {/* ═══════ FILTROS STICKY ═══════ */}
+      <div className="sticky top-16 lg:top-[148px] z-30 bg-white border-b border-gray-200 shadow-sm">
         <div className="container-custom">
-          <div className="flex items-center gap-1 overflow-x-auto py-2.5 lg:py-3 scrollbar-hide">
+          <div className="flex items-center gap-2 overflow-x-auto py-3 scrollbar-hide">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`flex-shrink-0 rounded-full px-4 py-1.5 lg:px-5 lg:py-2 text-xs lg:text-sm font-medium transition-all ${
+                className={`flex-shrink-0 rounded-full px-5 py-2 text-sm font-medium transition-all ${
                   activeCategory === cat.id
-                    ? 'bg-primary-700 text-white shadow-sm'
-                    : 'text-neutral-600 hover:bg-neutral-100'
+                    ? 'bg-orange-500 text-white shadow-md'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 {cat.name[locale]}
               </button>
             ))}
-            <span className="ml-auto flex-shrink-0 pl-4 text-xs text-neutral-400">
-              {filtered.length}{locale === 'pt' ? ' produtos' : ' 商品'}
+            <span className="ml-auto flex-shrink-0 pl-4 text-sm text-gray-500 font-medium">
+              {filtered.length}
+              {locale === 'pt' ? ' produtos' : ' 商品'}
             </span>
           </div>
         </div>
       </div>
 
-      {/* ═══════ GRID ═══════ */}
-      <section className="flex-1 py-6 lg:py-14 bg-neutral-50">
+      {/* ═══════ GRID DE PRODUTOS ═══════ */}
+      <section className="flex-1 py-8 lg:py-16">
         <div className="container-custom">
+          
+          {/* Título da categoria ativa */}
+          {activeCategory !== 'all' && (
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">
+                {categories.find(c => c.id === activeCategory)?.name[locale]}
+              </h2>
+            </div>
+          )}
+
           {filtered.length === 0 ? (
-            <div className="py-20 text-center text-neutral-400">
-              <p className="text-5xl mb-4">🍞</p>
-              <p>{locale === 'pt' ? 'Nenhum produto encontrado.' : '商品がありません。'}</p>
+            <div className="py-20 text-center">
+              <div className="text-6xl mb-4">🍞</div>
+              <p className="text-gray-500">
+                {locale === 'pt' ? 'Nenhum produto encontrado.' : '商品がありません。'}
+              </p>
             </div>
           ) : (
-            <div className="grid gap-3 grid-cols-2 md:grid-cols-3 lg:gap-6 xl:grid-cols-4">
+            <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:gap-6 xl:grid-cols-4">
               {filtered.map((product) => (
                 <ProductCard
                   key={product.id}
@@ -141,60 +133,74 @@ export default function ProductsClient() {
         </div>
       </section>
 
-      {/* ═══════ BANNER B2B ═══════ */}
-      <section className="bg-primary-800 py-10 lg:py-16">
-        <div className="container-custom grid gap-6 lg:gap-8 lg:grid-cols-2 items-center">
-          <div>
-            <p className="text-accent-400 text-xs font-semibold tracking-widest uppercase mb-2 lg:mb-3">
-              {locale === 'pt' ? 'Para empresas' : '法人のお客様へ'}
-            </p>
-            <h2 className="text-xl lg:text-3xl font-bold text-white mb-3 lg:mb-4">
-              {locale === 'pt'
-                ? 'Pedidos em volume com logística especializada'
-                : '大量注文・専門物流対応'}
-            </h2>
-            <p className="text-white/65 text-sm leading-relaxed">
-              {locale === 'pt'
-                ? 'Atendemos hotéis, restaurantes, redes de supermercados e distribuidores com condições especiais para volumes maiores.'
-                : 'ホテル・レストラン・スーパーなど法人様向けに、大量注文・専用物流に対応しています。'}
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3 lg:gap-4 lg:justify-end">
-            <Link href={`/${locale}/order/business`} className="btn-accent text-sm">
-              {locale === 'pt' ? 'Pedido corporativo (PJ)' : '法人注文フォーム'}
-            </Link>
-            <Link
-              href={`/${locale}/contact`}
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10 active:scale-95"
-            >
-              {locale === 'pt' ? 'Fale conosco' : 'お問い合わせ'}
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* ═══════ BANNER RAKUTEN ═══════ */}
-      <section className="bg-cream-50 py-10 lg:py-14">
-        <div className="container-custom text-center max-w-2xl">
-          <p className="text-accent-500 text-xs font-semibold tracking-widest uppercase mb-2 lg:mb-3">
-            {locale === 'pt' ? 'Pessoa física' : 'ご家庭の方'}
-          </p>
-          <h2 className="text-xl lg:text-3xl font-bold text-primary-800 mb-3 lg:mb-4">
-            {locale === 'pt' ? 'Compre online pela Rakuten' : '楽天ショップでご購入'}
+      <section className="bg-cream-50 py-12 lg:py-16 border-t border-orange-100">
+        <div className="container-custom text-center max-w-3xl">
+          <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full mb-4">
+            {locale === 'pt' ? '🛒 COMPRA ONLINE' : '🛒 オンライン購入'}
+          </div>
+          
+          <h2 className="font-abril text-2xl lg:text-4xl text-gray-900 mb-4">
+            {locale === 'pt' ? 'Compre na Rakuten' : '楽天ショップでご購入'}
           </h2>
-          <p className="text-neutral-600 text-sm mb-5 lg:mb-6">
+          
+          <p className="text-gray-600 mb-6 lg:mb-8">
             {locale === 'pt'
-              ? 'Produtos selecionados para consumidor final. Entrega refrigerada em todo o Japão.'
-              : '個人のお客様向けの商品を楽天ショップで販売中。冷凍配送でご自宅にお届けします。'}
+              ? 'Entrega refrigerada em todo o Japão. Produtos selecionados para consumidor final.'
+              : '日本全国に冷凍配送。個人のお客様向けの商品を販売中。'}
           </p>
+          
           <a
-            href="https://www.rakuten.co.jp"
+            href="https://www.rakuten.co.jp/realsabor/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-accent"
+            className="btn-orange text-base lg:text-lg"
           >
             {locale === 'pt' ? '🛒 Ir para a Rakuten' : '🛒 楽天ショップへ'}
           </a>
+        </div>
+      </section>
+
+      {/* ═══════ BANNER B2B ═══════ */}
+      <section className="bg-gray-900 py-12 lg:py-16">
+        <div className="container-custom">
+          <div className="grid gap-8 lg:grid-cols-2 items-center">
+            
+            <div>
+              <div className="inline-flex items-center gap-2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+                {locale === 'pt' ? '🏢 EMPRESAS' : '🏢 法人様'}
+              </div>
+              
+              <h2 className="text-2xl lg:text-4xl font-bold text-white mb-4">
+                {locale === 'pt'
+                  ? 'Pedidos Corporativos'
+                  : '法人様向け大量注文'}
+              </h2>
+              
+              <p className="text-gray-300 leading-relaxed">
+                {locale === 'pt'
+                  ? 'Atendemos restaurantes, hotéis, supermercados e distribuidores com condições especiais para grandes volumes.'
+                  : 'レストラン・ホテル・スーパーなど法人様向けに、大量注文・専用物流に対応しています。'}
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
+              <Link 
+                href={`/${locale}/order/business`}
+                className="btn-orange"
+              >
+                {locale === 'pt' ? 'Pedido Corporativo' : '法人注文フォーム'}
+              </Link>
+              
+              <Link
+                href={`/${locale}/contact`}
+                className="btn-orange-outline bg-transparent border-white text-white hover:bg-white hover:text-gray-900"
+              >
+                {locale === 'pt' ? 'Fale Conosco' : 'お問い合わせ'}
+              </Link>
+            </div>
+
+          </div>
         </div>
       </section>
 

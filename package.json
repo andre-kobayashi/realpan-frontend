@@ -10,10 +10,13 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@types/nodemailer": "^7.0.10",
+    "axios": "^1.13.5",
     "clsx": "^2.1.1",
     "lucide-react": "^0.563.0",
     "next": "^14.2.18",
     "next-intl": "^4.8.2",
+    "nodemailer": "^8.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sharp": "^0.34.5"
