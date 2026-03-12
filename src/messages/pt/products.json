@@ -1,5 +1,71 @@
 {
   "title": "Nossos Produtos",
   "subtitle": "Linha completa de pães brasileiros, salgados, doces e sobremesas",
-  "cta": "Ver todos"
+  "hero_description": "Pães premium brasileiros feitos com ingredientes selecionados. Congelamento rápido para preservar o sabor.",
+  "search_placeholder": "Buscar produtos...",
+  "filter_all": "Todos",
+  "products_count": "{count} produtos",
+  "no_products": "Nenhum produto encontrado.",
+  "loading": "Carregando produtos...",
+  "out_of_stock": "Esgotado",
+  "in_stock": "Em estoque",
+  "low_stock": "Restam apenas {count}",
+  "add_to_cart": "Adicionar ao carrinho",
+  "added_to_cart": "Adicionado ao carrinho",
+  "view_details": "Ver detalhes",
+  "buy_now": "Comprar agora",
+  "tax_included": "com imposto",
+  "tax_excluded": "sem imposto",
+  "unit_price": "Preço unitário",
+  "box_price": "Preço da caixa ({count} un.)",
+  "wholesale_price": "Preço atacado",
+  "retail_price": "Preço varejo",
+  "promo_badge": "OFERTA",
+  "new_badge": "NOVO",
+  "bestseller_badge": "MAIS VENDIDO",
+  "featured_badge": "DESTAQUE",
+  "storage": {
+    "AMBIENT": "Seco / Ambiente",
+    "FROZEN_READY": "Congelado (pronto)",
+    "FROZEN_RAW": "Congelado (cru)",
+    "REFRIGERATED": "Refrigerado"
+  },
+  "detail": {
+    "back": "Voltar aos produtos",
+    "description": "Descrição",
+    "specs": "Especificações",
+    "weight": "Peso",
+    "shelf_life": "Validade",
+    "storage_method": "Armazenamento",
+    "allergens": "Alérgenos",
+    "jan_code": "Código JAN",
+    "quantity": "Quantidade",
+    "related": "Produtos relacionados"
+  },
+  "cart": {
+    "title": "Carrinho de Compras",
+    "empty": "Seu carrinho está vazio",
+    "empty_description": "Adicione produtos para começar suas compras",
+    "continue_shopping": "Continuar comprando",
+    "subtotal": "Subtotal",
+    "tax": "Imposto (8%)",
+    "shipping": "Frete",
+    "total": "Total",
+    "checkout": "Finalizar pedido",
+    "remove": "Remover",
+    "items_count": "{count} item(ns)"
+  },
+  "rakuten": {
+    "title": "Compre na Rakuten",
+    "description": "Entrega refrigerada em todo o Japão. Produtos selecionados para consumidor final.",
+    "cta": "Ir para a Rakuten",
+    "badge": "COMPRA ONLINE"
+  },
+  "b2b": {
+    "badge": "EMPRESAS",
+    "title": "Pedidos Corporativos",
+    "description": "Atendemos restaurantes, hotéis, supermercados e distribuidores com condições especiais para grandes volumes.",
+    "cta_order": "Pedido Corporativo",
+    "cta_contact": "Fale Conosco"
+  }
 }

@@ -1,87 +1,123 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useLocale, useTranslations } from 'next-intl';
+import { ShoppingCart, Check, Eye } from 'lucide-react';
+import { useCart } from '@/hooks/useCart';
+import { useAuth } from '@/contexts/AuthContext';
 import type { Product } from '@/types/product';
 
 type Props = {
   product: Product;
-  onContact?: (name: string) => void;
 };
 
-export function ProductCard({ product, onContact }: Props) {
+const STORAGE_ICONS: Record<string, string> = {
+  AMBIENT: '🏠',
+  FROZEN_READY: '❄️',
+  FROZEN_RAW: '❄️',
+  REFRIGERATED: '🧊',
+};
+
+export function ProductCard({ product }: Props) {
   const locale = useLocale() as 'pt' | 'ja';
+  const t = useTranslations('products');
+  const { addItem } = useCart();
+  const { customer } = useAuth();
+  const isPJ = (customer as any)?.customerType === 'BUSINESS';
+  const [added, setAdded] = useState(false);
 
   const name = product.name[locale];
-  const description = product.description?.[locale] || '';
-  const price = product.price || 0;
-  const originalPrice = product.originalPrice;
-  const hasDiscount = originalPrice && originalPrice > price;
+  const outOfStock = product.stock <= 0;
 
-  const handleBuyClick = () => {
-    // Por enquanto, vai para Rakuten
-    window.open('https://www.rakuten.co.jp/realsabor/', '_blank');
-  };
+  // PF: preço varejo com imposto | PJ: preço atacado (税抜き)
+  const displayPrice = isPJ ? product.wholesalePrice : product.retailPriceWithTax;
+  const originalRetailWithTax = Math.ceil(product.retailPrice * 1.08);
+  const hasDiscount = product.hasPromo && product.promoPrice;
+  const priceLabel = isPJ ? t('tax_excluded') : t('tax_included');
 
-  const handleContactClick = () => {
-    if (onContact) {
-      onContact(name);
-    }
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (outOfStock) return;
+    addItem(product, 1);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
   };
 
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-      
-      {/* IMAGEM - Fundo branco puro */}
+    <Link
+      href={`/${locale}/products/${product.slug}`}
+      className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+    >
+      {/* IMAGEM */}
       <div className="relative aspect-square bg-white overflow-hidden">
-        <Image
-          src={product.image}
-          alt={name}
-          fill
-          className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-        />
-        
+        {product.image ? (
+          <Image
+            src={product.image}
+            alt={name}
+            fill
+            className="object-contain p-3 group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-6xl text-gray-200">
+            🍞
+          </div>
+        )}
+
         {/* Badges */}
         <div className="absolute top-2 left-2 flex flex-col gap-1">
           {product.isNew && (
             <span className="bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
-              NEW
+              {t('new_badge')}
             </span>
           )}
           {product.isBestseller && (
             <span className="bg-yellow-500 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
-              {locale === 'pt' ? 'MAIS VENDIDO' : '人気'}
+              {t('bestseller_badge')}
             </span>
           )}
           {hasDiscount && (
             <span className="bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
-              {locale === 'pt' ? 'OFERTA' : 'セール'}
+              {t('promo_badge')}
             </span>
           )}
         </div>
+
+        {/* Storage badge */}
+        <div className="absolute top-2 right-2">
+          <span className="bg-white/90 backdrop-blur-sm text-[10px] px-1.5 py-0.5 rounded-full border border-gray-200">
+            {STORAGE_ICONS[product.storageType] || '📦'} {t(`storage.${product.storageType}`)}
+          </span>
+        </div>
+
+        {/* Out of stock overlay */}
+        {outOfStock && (
+          <div className="absolute inset-0 bg-white/70 flex items-center justify-center">
+            <span className="bg-gray-900 text-white text-sm font-bold px-4 py-2 rounded-full">
+              {t('out_of_stock')}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* CONTEÚDO */}
-      <div className="p-4 flex flex-col flex-1">
-        
+      <div className="p-3 lg:p-4 flex flex-col flex-1">
+        {/* Categoria */}
+        <p className="text-[10px] text-orange-600 font-semibold uppercase tracking-wider mb-1">
+          {product.categoryName[locale]}
+        </p>
+
         {/* Nome */}
         <h3 className="text-sm font-medium text-gray-900 line-clamp-2 mb-1 min-h-[2.5rem]">
           {name}
         </h3>
 
-        {/* Quantidade */}
-        {product.quantity && (
-          <p className="text-xs text-gray-500 mb-2">
-            {product.quantity}
-          </p>
-        )}
-
-        {/* Descrição (opcional, só no hover) */}
-        {description && (
-          <p className="text-xs text-gray-600 line-clamp-2 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            {description}
-          </p>
+        {/* Quantidade info */}
+        {product.quantityInfo && (
+          <p className="text-xs text-gray-500 mb-2">{product.quantityInfo}</p>
         )}
 
         {/* Espaçador */}
@@ -89,50 +125,50 @@ export function ProductCard({ product, onContact }: Props) {
 
         {/* PREÇO */}
         <div className="mb-3">
-          {price > 0 ? (
-            <div className="flex items-baseline gap-2">
-              {hasDiscount && originalPrice && (
-                <span className="text-sm text-gray-400 line-through">
-                  ¥{originalPrice.toLocaleString()}
-                </span>
-              )}
-              <span className="text-2xl font-bold text-gray-900">
-                ¥{price.toLocaleString()}
+          <div className="flex items-baseline gap-2 flex-wrap">
+            {hasDiscount && (
+              <span className="text-xs text-gray-400 line-through">
+                ¥{originalRetailWithTax.toLocaleString()}
+              </span>
+            )}
+            <span className="text-xl lg:text-2xl font-bold text-gray-900">
+              ¥{displayPrice.toLocaleString()}
+            </span>
+          </div>
+          <span className="text-[10px] text-gray-400">{priceLabel}</span>
+
+          {/* PJ: mostrar preço da caixa se aplicável */}
+          {isPJ && product.wholesaleUnit === 'BOX' && product.boxPrice && (
+            <div className="mt-1 bg-orange-50 rounded px-2 py-1">
+              <span className="text-xs text-orange-700 font-medium">
+                📦 {t('box_price', { count: product.unitsPerBox || 0 })}: ¥{product.boxPrice.toLocaleString()}
               </span>
             </div>
-          ) : (
-            <span className="text-sm text-gray-500">
-              {locale === 'pt' ? 'Consultar preço' : '価格はお問い合わせ'}
-            </span>
-          )}
-          
-          {product.freeShipping && (
-            <span className="inline-block mt-1 text-[10px] font-bold text-orange-600 border border-orange-600 px-2 py-0.5 rounded">
-              {locale === 'pt' ? 'FRETE GRÁTIS' : '送料無料'}
-            </span>
           )}
         </div>
 
-        {/* CTAs */}
+        {/* BOTÕES */}
         <div className="flex gap-2">
-          {price > 0 ? (
-            <button
-              onClick={handleBuyClick}
-              className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-semibold py-2.5 rounded-full hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-200"
-            >
-              {locale === 'pt' ? '🛒 Rakuten' : '🛒 楽天で購入'}
-            </button>
-          ) : (
-            <button
-              onClick={handleContactClick}
-              className="flex-1 border-2 border-orange-500 text-orange-600 text-sm font-semibold py-2.5 rounded-full hover:bg-orange-50 active:scale-95 transition-all duration-200"
-            >
-              {locale === 'pt' ? 'Consultar' : 'お問い合わせ'}
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={handleAddToCart}
+            disabled={outOfStock || added}
+            className={`flex-1 flex items-center justify-center gap-1.5 text-sm font-semibold py-2.5 rounded-full transition-all duration-200 active:scale-95 ${
+              added
+                ? 'bg-green-500 text-white'
+                : outOfStock
+                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                : 'bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:shadow-lg hover:scale-[1.02]'
+            }`}
+          >
+            {added ? (
+              <><Check className="h-4 w-4" /> {t('added_to_cart')}</>
+            ) : (
+              <><ShoppingCart className="h-4 w-4" /> {t('add_to_cart')}</>
+            )}
+          </button>
         </div>
-
       </div>
-    </div>
+    </Link>
   );
 }

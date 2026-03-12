@@ -3,12 +3,10 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useAuth } from '@/contexts/AuthContext';
+import { useCart } from '@/hooks/useCart';
 import { usePathname, useRouter } from 'next/navigation';
 import { Search, Globe, ShoppingCart, User } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
-
-const CART_COUNT = 0;
 
 export function Header() {
   const t = useTranslations('navigation');
@@ -16,9 +14,9 @@ export function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const { customer } = useAuth();
+  const { itemCount } = useCart();
 
   const [scrolled, setScrolled] = useState(false);
-  const [searchFocused, setSearchFocused] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -32,6 +30,18 @@ export function Header() {
     router.replace(`/${nextLocale}${clean}`);
   }
 
+  // Cart badge component
+  const CartBadge = () => (
+    <Link href={`/${locale}/cart`} className="relative flex items-center hover:text-orange-600 transition">
+      <ShoppingCart className="h-5 w-5" />
+      {itemCount > 0 && (
+        <span className="absolute -top-2 -right-2 min-w-[18px] h-[18px] rounded-full bg-orange-500 text-white text-[10px] font-bold flex items-center justify-center px-1 animate-[scale-in_0.2s_ease]">
+          {itemCount > 99 ? '99+' : itemCount}
+        </span>
+      )}
+    </Link>
+  );
+
   // ────────────────────────────────────────────────
   // MOBILE HEADER
   // ────────────────────────────────────────────────
@@ -42,24 +52,25 @@ export function Header() {
       }`}
     >
       <div className="flex h-16 items-center justify-between px-4">
-
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-3 flex-shrink-0">
-  <img
-    src="/logo-light.svg"
-    alt="Realpan Logo"
-    className="h-10 w-auto object-contain"
-  />
+          <img
+            src="/logo-light.svg"
+            alt="Realpan Logo"
+            className="h-10 w-auto object-contain"
+          />
+        </Link>
 
-</Link>
-
-        {/* Language */}
-        <button
-          onClick={toggleLanguage}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-600 hover:bg-orange-50 hover:border-orange-500 hover:text-orange-600 transition"
-        >
-          <Globe className="h-4 w-4" />
-        </button>
+        {/* Right actions */}
+        <div className="flex items-center gap-3">
+          <CartBadge />
+          <button
+            onClick={toggleLanguage}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-600 hover:bg-orange-50 hover:border-orange-500 hover:text-orange-600 transition"
+          >
+            <Globe className="h-4 w-4" />
+          </button>
+        </div>
       </div>
     </header>
   );
@@ -69,7 +80,6 @@ export function Header() {
   // ────────────────────────────────────────────────
   const desktopHeader = (
     <header className="hidden lg:block fixed top-0 left-0 right-0 z-40">
-
       {/* TOP BAR */}
       <div className="border-b border-gray-200 bg-[#FAF7F2] text-xs">
         <div className="container mx-auto px-4 flex items-center justify-between h-9 text-gray-600">
@@ -80,7 +90,6 @@ export function Header() {
               {locale === 'pt' ? 'Para Empresas' : '法人のお客様'}
             </Link>
           </div>
-
           <div className="flex items-center gap-5">
             <button
               onClick={toggleLanguage}
@@ -89,7 +98,6 @@ export function Header() {
               <Globe className="h-3.5 w-3.5" />
               {locale === 'pt' ? '日本語' : 'Português'}
             </button>
-
             <Link href={`/${locale}/contact`} className="hover:text-orange-600 transition">
               {t('contact')}
             </Link>
@@ -104,16 +112,14 @@ export function Header() {
         }`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between h-full">
-          
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center gap-3 flex-shrink-0">
-  <img
-    src="/logo-light.svg"
-    alt="Realpan Logo"
-    className="h-10 w-auto object-contain"
-  />
-
-</Link>
+            <img
+              src="/logo-light.svg"
+              alt="Realpan Logo"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
 
           {/* Search */}
           <div className="flex-1 max-w-xl mx-8">
@@ -133,15 +139,7 @@ export function Header() {
               <User className="h-4 w-4" />
               <span className="hidden xl:inline">{locale === 'pt' ? 'Conta' : 'アカウント'}</span>
             </Link>
-
-            <Link href={`/${locale}/cart`} className="relative flex items-center hover:text-orange-600 transition">
-              <ShoppingCart className="h-5 w-5" />
-              {CART_COUNT > 0 && (
-                <span className="absolute -top-2 -right-2 min-w-[18px] h-[18px] rounded-full bg-orange-500 text-white text-[10px] font-bold flex items-center justify-center px-1">
-                  {CART_COUNT}
-                </span>
-              )}
-            </Link>
+            <CartBadge />
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ export default function HomePage() {
         const allProducts = await loadAllProducts();
         
         // Filtrar apenas pães
-        const breads = allProducts.filter(p => p.category === 'breads');
+        const breads = allProducts.filter(p => p.categoryId === 'breads' || p.categoryName.pt.toLowerCase().includes('pã') || p.categoryName.ja.includes('パン'));
         
         // Pegar os 8 primeiros ou produtos marcados como bestseller
         const featured = breads
@@ -189,7 +189,6 @@ export default function HomePage() {
                   <ProductCard
                     key={product.id}
                     product={product}
-                    onContact={handleContact}
                   />
                 ))}
               </div>

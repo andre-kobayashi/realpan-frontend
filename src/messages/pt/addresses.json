@@ -25,7 +25,8 @@
       "streetAddress": "1-2-3",
       "building": "Apartamento 101"
     },
-    "zipHelper": "Digite o CEP (7 dígitos) para buscar automaticamente"
+    "zipHelper": "Digite o CEP (7 dígitos) para buscar automaticamente",
+    "phone": "Telefone"
   },
   "success": "Endereço atualizado com sucesso!",
   "error": "Erro ao salvar endereço"

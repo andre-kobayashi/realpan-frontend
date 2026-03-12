@@ -1,143 +1,171 @@
-import type { Product, Category, RawProduct } from '@/types/product';
+import api from '@/lib/api';
+import type { ApiProduct, ApiCategory, Product, Category } from '@/types/product';
+
+const TAX_RATE = 0.08; // 消費税 8%
 
 // ═══════════════════════════════════════════════════
-// ORDEM DAS CATEGORIAS - PÃES PRIMEIRO, TODOS NO FINAL
+// Normalizar produto da API para formato do frontend
 // ═══════════════════════════════════════════════════
-const CATEGORY_ORDER = [
-  'breads',        // Pães - CARRO CHEFE
-  'pasteis',       // Pastéis
-  'salgados',      // Salgados
-  'salgadinhos',   // Salgadinhos
-  'frozen',        // Congelados
-  'sweets',        // Doces
-  'cakes',         // Bolos
-  'temperos',      // Temperos
-  'all',           // Todos - NO FINAL
-];
+function normalizeProduct(raw: ApiProduct): Product {
+  const markup = raw.retailMarkup || 0.6;
+  const retailPrice = Math.ceil(raw.originalPrice / markup);
 
-function normalizeProduct(raw: RawProduct, categoryId: string): Product {
+  // Verificar se promo está ativa
+  const now = new Date();
+  const promoStart = raw.promoStartDate ? new Date(raw.promoStartDate) : null;
+  const promoEnd = raw.promoEndDate ? new Date(raw.promoEndDate) : null;
+  const promoActive = raw.promoPrice
+    && (!promoStart || now >= promoStart)
+    && (!promoEnd || now <= promoEnd);
+
+  const effectiveRetailPrice = promoActive && raw.promoPrice ? raw.promoPrice : retailPrice;
+
   return {
-    id: raw.hinban,
-    slug: raw.slug || raw.hinban,
-    name: raw.name,
-    description: raw.description || { pt: '', ja: '' },
-    image: raw.image || `/products/${raw.hinban}.webp`,
-    category: categoryId,
-    
-    // Preço - André vai preencher
-    price: (raw as any).price || 0,
-    originalPrice: (raw as any).originalPrice,
-    
-    // Info adicional
-    weight: raw.weight,
-    quantity: (raw as any).quantity,
-    jan: raw.jan,
-    storageType: raw.storageType,
-    
-    // Badges
-    isNew: (raw as any).isNew || false,
-    isBestseller: (raw as any).isBestseller || false,
-    freeShipping: (raw as any).freeShipping || false,
+    id: raw.id,
+    slug: raw.slug,
+    hinban: raw.hinban,
+    janCode: raw.janCode,
+    name: { pt: raw.namePt, ja: raw.nameJa },
+    description: {
+      pt: raw.descriptionPt || '',
+      ja: raw.descriptionJa || '',
+    },
+    shortDesc: {
+      pt: raw.shortDescPt || '',
+      ja: raw.shortDescJa || '',
+    },
+    image: raw.primaryImage || (raw.images?.[0]) || `/products/${raw.hinban}.webp`,
+    images: raw.images || [],
+    categoryId: raw.categoryId,
+    categoryName: {
+      pt: raw.category?.namePt || '',
+      ja: raw.category?.nameJa || '',
+    },
+
+    // Preços (YEN inteiro, arredondamento japonês para cima)
+    retailPrice,
+    retailPriceWithTax: Math.ceil(effectiveRetailPrice * (1 + TAX_RATE)),
+    wholesalePrice: raw.originalPrice,
+    promoPrice: promoActive ? raw.promoPrice : null,
+    hasPromo: !!promoActive,
+
+    // Atacado
+    wholesaleUnit: raw.wholesaleUnit || 'UNIT',
+    unitsPerBox: raw.unitsPerBox,
+    boxPrice: raw.boxPrice,
+
+    // Specs
+    weight: raw.weight || (raw.weightGrams ? `${raw.weightGrams}g` : null),
+    quantityInfo: raw.quantityInfo,
+    storageType: raw.storageType || 'AMBIENT',
+    shelfLife: raw.shelfLife || (raw.shelfLifeDays ? `${raw.shelfLifeDays}日` : null),
+    allergens: raw.allergens || [],
+    stock: raw.stock ?? 0,
+
+    // Flags
+    isNew: raw.isNew || false,
+    isBestseller: raw.isBestseller || false,
+    isFeatured: raw.isFeatured || false,
+    isOnSale: raw.isOnSale || false,
   };
 }
 
+function normalizeCategory(raw: ApiCategory): Category {
+  return {
+    id: raw.id,
+    name: { pt: raw.namePt, ja: raw.nameJa },
+    slug: raw.slug,
+    description: {
+      pt: raw.descriptionPt || '',
+      ja: raw.descriptionJa || '',
+    },
+    image: raw.image,
+    sortOrder: raw.sortOrder ?? 99,
+  };
+}
+
+// ═══════════════════════════════════════════════════
+// API calls
+// ═══════════════════════════════════════════════════
+let productsCache: Product[] | null = null;
+let categoriesCache: Category[] | null = null;
+let lastFetchTime = 0;
+const CACHE_TTL = 60_000; // 1 minuto
+
 export async function loadAllProducts(): Promise<Product[]> {
-  const files = [
-    'breads',
-    'pasteis',
-    'salgados',
-    'salgadinhos',
-    'frozen',
-    'sweets',
-    'cakes',
-    'temperos',
-  ];
-
-  const products: Product[] = [];
-
-  for (const file of files) {
-    try {
-      const mod = await import(`@/data/catalog/${file}.json`);
-      const raw = mod.default || mod;
-      
-      if (raw.products && Array.isArray(raw.products)) {
-        raw.products.forEach((p: RawProduct) => {
-          products.push(normalizeProduct(p, file));
-        });
-      }
-    } catch (err) {
-      console.warn(`Failed to load ${file}.json:`, err);
-    }
+  const now = Date.now();
+  if (productsCache && now - lastFetchTime < CACHE_TTL) {
+    return productsCache;
   }
 
-  return products;
+  try {
+    const { data } = await api.get<{ success: boolean; data: ApiProduct[] }>('/api/products');
+    if (data.success && Array.isArray(data.data)) {
+      productsCache = data.data
+        .filter(p => p.isActive && p.stock > 0)
+        .map(normalizeProduct);
+      lastFetchTime = now;
+      return productsCache;
+    }
+  } catch (err) {
+    console.error('[catalog-loader] Failed to load products from API:', err);
+  }
+
+  // Retornar cache antigo se disponível
+  return productsCache || [];
+}
+
+export async function loadProduct(idOrSlug: string): Promise<Product | null> {
+  try {
+    const { data } = await api.get<{ success: boolean; data: ApiProduct }>(
+      `/api/products/${idOrSlug}`
+    );
+    if (data.success && data.data) {
+      return normalizeProduct(data.data);
+    }
+  } catch (err) {
+    console.error('[catalog-loader] Failed to load product:', err);
+  }
+  return null;
 }
 
 export async function loadCategories(): Promise<Category[]> {
-  try {
-    const mod = await import('@/data/catalog/categories.json');
-    const raw = mod.default || mod;
-    
-    if (!raw.categories || !Array.isArray(raw.categories)) {
-      return getDefaultCategories();
-    }
-
-    // Criar mapa de categorias (aceita com ou sem slug)
-    const categoriesMap = new Map<string, Category>();
-    
-    raw.categories.forEach((cat: any) => {
-      categoriesMap.set(cat.id, {
-        id: cat.id,
-        name: cat.name,
-        slug: cat.slug || cat.id,
-        description: cat.description,
-        icon: cat.icon,
-      });
-    });
-
-    // Reordenar conforme CATEGORY_ORDER
-    const orderedCategories: Category[] = [];
-    
-    for (const catId of CATEGORY_ORDER) {
-      const cat = categoriesMap.get(catId);
-      if (cat) {
-        orderedCategories.push(cat);
-      }
-    }
-
-    return orderedCategories;
-  } catch (err) {
-    console.warn('Failed to load categories.json:', err);
-    return getDefaultCategories();
+  const now = Date.now();
+  if (categoriesCache && now - lastFetchTime < CACHE_TTL) {
+    return categoriesCache;
   }
+
+  try {
+    const { data } = await api.get<{ success: boolean; data: ApiCategory[] }>('/api/categories');
+    if (data.success && Array.isArray(data.data)) {
+      const cats = data.data
+        .filter(c => c.isActive)
+        .map(normalizeCategory)
+        .sort((a, b) => a.sortOrder - b.sortOrder);
+
+      // Adicionar "Todos" no final
+      cats.push({
+        id: 'all',
+        name: { pt: 'Todos', ja: 'すべて' },
+        slug: 'all',
+        description: { pt: '', ja: '' },
+        image: null,
+        sortOrder: 999,
+      });
+
+      categoriesCache = cats;
+      return cats;
+    }
+  } catch (err) {
+    console.error('[catalog-loader] Failed to load categories from API:', err);
+  }
+
+  return categoriesCache || [];
 }
 
-function getDefaultCategories(): Category[] {
-  return [
-    {
-      id: 'breads',
-      name: { pt: 'Pães', ja: 'パン' },
-      slug: 'breads',
-    },
-    {
-      id: 'pasteis',
-      name: { pt: 'Pastéis', ja: 'パステル' },
-      slug: 'pasteis',
-    },
-    {
-      id: 'salgados',
-      name: { pt: 'Salgados', ja: '塩味' },
-      slug: 'salgados',
-    },
-    {
-      id: 'frozen',
-      name: { pt: 'Congelados', ja: '冷凍食品' },
-      slug: 'frozen',
-    },
-    {
-      id: 'all',
-      name: { pt: 'Todos', ja: 'すべて' },
-      slug: 'all',
-    },
-  ];
+/** Limpar cache (chamar depois de login/logout para recalcular preços) */
+export function clearCatalogCache() {
+  productsCache = null;
+  categoriesCache = null;
+  lastFetchTime = 0;
 }

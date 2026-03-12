@@ -1,5 +1,71 @@
 {
   "title": "商品一覧",
-  "subtitle": "パン・お総菜・お菓子・デザートの豊富なラインナップ",
-  "cta": "すべて見る"
+  "subtitle": "ブラジル伝統の高品質パン・お総菜・お菓子・デザートの豊富なラインナップ",
+  "hero_description": "厳選された材料で作られ、急速冷凍で美味しさを保ちます。",
+  "search_placeholder": "商品名で検索...",
+  "filter_all": "すべて",
+  "products_count": "{count} 商品",
+  "no_products": "商品がありません。",
+  "loading": "商品を読み込み中...",
+  "out_of_stock": "在庫切れ",
+  "in_stock": "在庫あり",
+  "low_stock": "残りわずか（{count}点）",
+  "add_to_cart": "カートに追加",
+  "added_to_cart": "カートに追加しました",
+  "view_details": "詳細を見る",
+  "buy_now": "今すぐ購入",
+  "tax_included": "税込",
+  "tax_excluded": "税抜",
+  "unit_price": "単価",
+  "box_price": "箱価格（{count}個入り）",
+  "wholesale_price": "法人価格",
+  "retail_price": "小売価格",
+  "promo_badge": "セール",
+  "new_badge": "新商品",
+  "bestseller_badge": "人気",
+  "featured_badge": "おすすめ",
+  "storage": {
+    "AMBIENT": "常温",
+    "FROZEN_READY": "冷凍（調理済）",
+    "FROZEN_RAW": "冷凍（生）",
+    "REFRIGERATED": "冷蔵"
+  },
+  "detail": {
+    "back": "商品一覧に戻る",
+    "description": "商品説明",
+    "specs": "仕様",
+    "weight": "重量",
+    "shelf_life": "賞味期限",
+    "storage_method": "保存方法",
+    "allergens": "アレルギー",
+    "jan_code": "JANコード",
+    "quantity": "数量",
+    "related": "関連商品"
+  },
+  "cart": {
+    "title": "ショッピングカート",
+    "empty": "カートは空です",
+    "empty_description": "商品を追加して買い物を始めましょう",
+    "continue_shopping": "買い物を続ける",
+    "subtotal": "小計",
+    "tax": "消費税（8%）",
+    "shipping": "送料",
+    "total": "合計",
+    "checkout": "注文手続きへ",
+    "remove": "削除",
+    "items_count": "{count}点の商品"
+  },
+  "rakuten": {
+    "title": "楽天ショップでご購入",
+    "description": "日本全国に冷凍配送。個人のお客様向けの商品を販売中。",
+    "cta": "楽天ショップへ",
+    "badge": "オンライン購入"
+  },
+  "b2b": {
+    "badge": "法人様",
+    "title": "法人様向け大量注文",
+    "description": "レストラン・ホテル・スーパーなど法人様向けに、大量注文・専用物流に対応しています。",
+    "cta_order": "法人注文フォーム",
+    "cta_contact": "お問い合わせ"
+  }
 }

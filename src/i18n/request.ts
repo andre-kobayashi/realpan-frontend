@@ -18,6 +18,7 @@ const namespaces = [
   'terms',
   'auth',
   'addresses',
+  'legal',
 ] as const;
 
 export default getRequestConfig(async ({ requestLocale }) => {

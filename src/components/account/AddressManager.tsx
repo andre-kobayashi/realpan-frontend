@@ -14,6 +14,7 @@ interface Address {
   ward?: string;
   streetAddress: string;
   building?: string;
+  phone?: string;
   isDefault: boolean;
 }
 
@@ -29,6 +30,7 @@ export default function AddressManager() {
     ward: '',
     streetAddress: '',
     building: '',
+    phone: '',
   });
   const [saving, setSaving] = useState(false);
   const [searchingZip, setSearchingZip] = useState(false);
@@ -110,6 +112,7 @@ export default function AddressManager() {
         ward: '',
         streetAddress: '',
         building: '',
+        phone: '',
       });
       alert(`✅ ${t('success')}`);
     } catch (error) {
@@ -187,6 +190,7 @@ export default function AddressManager() {
                 {address.ward && <p>{address.ward}</p>}
                 <p>{address.streetAddress}</p>
                 {address.building && <p>{address.building}</p>}
+                {address.phone && <p>TEL: {address.phone}</p>}
               </div>
             </div>
           ))}
@@ -314,6 +318,21 @@ export default function AddressManager() {
                 />
               </div>
 
+              
+              {/* Telefone */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('form.phone')} *
+                </label>
+                <input
+                  type="tel"
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  placeholder="090-1234-5678"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+              </div>
               {/* Botões */}
               <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center gap-3 pt-4">
                 <button
