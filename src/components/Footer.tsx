@@ -2,6 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Instagram, Facebook } from 'lucide-react';
 
 export function Footer() {
@@ -9,34 +10,32 @@ export function Footer() {
 
   return (
     <footer className="bg-[#f8f9fb] text-[#1d417b]">
-      
-      {/* ═══════ MAIN FOOTER ═══════ */}
       <div className="container-custom py-14 lg:py-16">
         <div className="grid gap-14 lg:grid-cols-4 lg:gap-12">
-          
-          {/* ─── LOGO + SOCIAL ─── */}
           <div className="space-y-8">
             <Link href={`/${locale}`} className="flex items-center">
-              <img
+              <Image
                 src="/logo-light.svg"
                 alt="Realpan Logo"
+                width={196}
+                height={56}
                 className="h-14 w-auto object-contain"
               />
             </Link>
 
             <div className="flex gap-4">
-              <a 
-                href="https://www.instagram.com/realpan_realsabor/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.instagram.com/realpan_realsabor/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-11 h-11 rounded-full border border-[#1d417b]/20 flex items-center justify-center hover:border-[#f7931e] hover:bg-[#f7931e]/10 transition-all"
               >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a 
-                href="https://www.facebook.com/michiko.servi" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.facebook.com/michiko.servi"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-11 h-11 rounded-full border border-[#1d417b]/20 flex items-center justify-center hover:border-[#f7931e] hover:bg-[#f7931e]/10 transition-all"
               >
                 <Facebook className="w-5 h-5" />
@@ -44,7 +43,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* ─── PRODUTOS & SERVIÇOS ─── */}
           <div className="space-y-3">
             <p className="text-sm font-semibold uppercase tracking-wider text-[#1d417b]/50">
               {locale === 'ja' ? 'ショップ' : 'Loja'}
@@ -65,7 +63,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* ─── LEGAL / ご利用について ─── */}
           <div className="space-y-3">
             <p className="text-sm font-semibold uppercase tracking-wider text-[#1d417b]/50">
               {locale === 'ja' ? 'ご利用について' : 'Políticas'}
@@ -92,28 +89,20 @@ export function Footer() {
             </div>
           </div>
 
-          {/* ─── ENDEREÇO + CONTATO ─── */}
           <div className="space-y-6 text-sm leading-relaxed text-[#1d417b]/80">
             <div>
-              <p className="font-semibold text-[#1d417b]">
-                株式会社 リアルパン
-              </p>
+              <p className="font-semibold text-[#1d417b]">リアルパン株式会社</p>
               <p>静岡県浜松市中央区高塚町1620</p>
             </div>
             <div>
-              <p className="font-semibold text-[#1d417b]">
-                お問い合わせ
-              </p>
-              <p className="text-base font-medium text-[#1d417b]">
-                053-570-2555
-              </p>
+              <p className="font-semibold text-[#1d417b]">お問い合わせ</p>
+              <p className="text-base font-medium text-[#1d417b]">053-570-2555</p>
               <p>受付 ：平日10:00~17:00</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ═══════ BOTTOM BAR ═══════ */}
       <div className="border-t border-[#1d417b]/10 bg-[#eef1f6]">
         <div className="container-custom py-5">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm">
@@ -135,7 +124,7 @@ export function Footer() {
               </Link>
             </div>
             <div className="text-[#1d417b]/50">
-              Copyright © Real Pan. All rights reserved
+              Copyright © Realpan. All rights reserved
             </div>
           </div>
         </div>

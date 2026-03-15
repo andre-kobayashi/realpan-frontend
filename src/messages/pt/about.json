@@ -1,5 +1,5 @@
 {
-  "title": "Sobre a Real Pan",
+  "title": "Sobre a Realpan",
   "subtitle": "Tradição e inovação na panificação",
   "greeting": {
     "title": "Mensagem dos Fundadores",
@@ -9,7 +9,7 @@
   "overview": {
     "title": "Informações da Empresa",
     "items": {
-      "name": { "label": "Razão Social", "value": "株式会社 リアルパン (Real Pan Co., Ltd.)" },
+      "name": { "label": "Razão Social", "value": "リアルパン株式会社 (Realpan Co., Ltd.)" },
       "ceo": { "label": "Diretor Executivo", "value": "Masuko Toshimitsu (増子 利光)" },
       "established": { "label": "Fundação", "value": "6 de março de 2019" },
       "capital": { "label": "Capital Social", "value": "¥8.000.000" },

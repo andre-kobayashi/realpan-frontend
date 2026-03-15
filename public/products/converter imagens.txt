@@ -1,5 +1,0 @@
-node convert.js
-
-apagar 
-rm *.jpg *.jpeg *.png
-

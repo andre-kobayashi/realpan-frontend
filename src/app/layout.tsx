@@ -11,8 +11,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://realpan.co.jp'),
   title: {
-    default: 'Real Pan',
-    template: '%s | Real Pan',
+    default: 'Realpan',
+    template: '%s | Realpan',
   },
   description: 'Distribuição de pães premium no Japão.',
   robots: {

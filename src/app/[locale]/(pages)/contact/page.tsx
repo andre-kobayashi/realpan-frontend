@@ -23,7 +23,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       label: t('info.address'),
-      value: '〒435-0016 静岡県浜松市中央区高塚町1620',
+      value: '〒432-8065 静岡県浜松市中央区高塚町1620',
       color: 'from-orange-400 to-orange-600'
     },
     {
@@ -48,7 +48,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col">
-      {/* Hero - Orange Gradient */}
+      {/* Hero */}
       <section className="relative bg-gradient-to-br from-orange-500 to-orange-600 text-white py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -69,7 +69,6 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Curva */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" className="w-full">
             <path d="M0 0C480 80 960 80 1440 0V120H0V0Z" fill="#FAF7F2"/>
@@ -77,7 +76,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Section - Beige Background */}
+      {/* Contact Section */}
       <section className="py-20 bg-[#FAF7F2]">
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 max-w-6xl mx-auto">
@@ -180,20 +179,27 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section - Optional */}
+      {/* Map Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
               {locale === 'pt' ? 'Nossa Localização' : '工場所在地'}
             </h2>
-            <div className="bg-[#E8F5F0] rounded-2xl p-8 text-center">
-              <p className="text-gray-600 mb-4">
-                {locale === 'pt' ? 'Mapa em breve' : '地図は近日公開'}
-              </p>
-              <p className="text-sm text-gray-500">
-                静岡県浜松市中央区高塚町1620
-              </p>
+            <p className="text-center text-gray-500 mb-10">
+              〒432-8065 静岡県浜松市中央区高塚町1620
+            </p>
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1130.4757320077479!2d137.67539747091175!3d34.69337906139855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ad94821d7229b%3A0x5c92947d56327c3a!2sREAL%20SABOR!5e0!3m2!1spt-BR!2sjp!4v1773376764605!5m2!1spt-BR!2sjp"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              />
             </div>
           </div>
         </div>

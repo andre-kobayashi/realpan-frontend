@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { Plus, Edit2, MapPin, X, Save, Search } from 'lucide-react';
+import { Plus, Edit2, MapPin, X, Save } from 'lucide-react';
 import api from '@/lib/api';
 
 interface Address {
@@ -50,47 +50,40 @@ export default function AddressManager() {
     }
   };
 
-  // Buscar endereço pelo CEP
   const searchByPostalCode = async (postalCode: string) => {
-    // Remover hífen e espaços
     const cleanZip = postalCode.replace(/[-\s]/g, '');
-    
-    // Validar formato (7 dígitos)
+
     if (cleanZip.length !== 7) return;
 
     setSearchingZip(true);
 
     try {
-      // API gratuita do Japão: https://zipcloud.ibsnet.co.jp/
       const response = await fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${cleanZip}`);
       const data = await response.json();
 
       if (data.status === 200 && data.results && data.results.length > 0) {
         const result = data.results[0];
-        
-        // Preencher automaticamente
-        setFormData(prev => ({
+
+        setFormData((prev) => ({
           ...prev,
-          prefecture: result.address1, // 都道府県
-          city: result.address2,       // 市区町村
-          ward: result.address3,       // 町域
+          prefecture: result.address1,
+          city: result.address2,
+          ward: result.address3,
         }));
       } else {
-        alert('❌ CEP não encontrado\n郵便番号が見つかりません');
+        alert('❌ Código Postal não encontrado\n郵便番号が見つかりません');
       }
     } catch (error) {
-      console.error('Erro ao buscar CEP:', error);
-      alert('❌ Erro ao buscar CEP\n郵便番号の検索に失敗しました');
+      console.error('Erro ao buscar Código Postal:', error);
+      alert('❌ Erro ao buscar Código Postal\n郵便番号の検索に失敗しました');
     } finally {
       setSearchingZip(false);
     }
   };
 
-  // Detectar quando o usuário terminou de digitar o CEP
   const handlePostalCodeChange = (value: string) => {
     setFormData({ ...formData, postalCode: value });
-    
-    // Auto-buscar quando tiver 7 ou 8 caracteres (com ou sem hífen)
+
     const cleanZip = value.replace(/[-\s]/g, '');
     if (cleanZip.length === 7) {
       searchByPostalCode(value);
@@ -133,7 +126,6 @@ export default function AddressManager() {
 
   return (
     <div>
-      {/* Header - Responsivo */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
           {t('title')}
@@ -147,7 +139,6 @@ export default function AddressManager() {
         </button>
       </div>
 
-      {/* Empty State */}
       {addresses.length === 0 ? (
         <div className="text-center py-12 bg-gray-50 rounded-lg">
           <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
@@ -160,7 +151,6 @@ export default function AddressManager() {
           </button>
         </div>
       ) : (
-        /* Address List */
         <div className="grid gap-4">
           {addresses.map((address) => (
             <div
@@ -177,7 +167,7 @@ export default function AddressManager() {
                     </span>
                   )}
                 </div>
-                <button 
+                <button
                   onClick={() => setShowForm(true)}
                   className="p-1 text-gray-600 hover:text-orange-600 flex-shrink-0"
                 >
@@ -197,11 +187,9 @@ export default function AddressManager() {
         </div>
       )}
 
-      {/* Modal */}
       {showForm && (
         <div className="fixed inset-0 bg-black/50 flex items-end sm:items-center justify-center z-50 p-0 sm:p-4">
           <div className="bg-white rounded-t-2xl sm:rounded-2xl w-full sm:max-w-2xl max-h-[90vh] overflow-y-auto">
-            {/* Header */}
             <div className="sticky top-0 bg-white border-b border-gray-200 px-4 sm:px-6 py-4 flex items-center justify-between">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900">
                 {addresses.length === 0 ? t('form.titleAdd') : t('form.titleEdit')}
@@ -214,9 +202,7 @@ export default function AddressManager() {
               </button>
             </div>
 
-            {/* Form */}
             <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4">
-              {/* CEP com busca automática */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {t('form.postalCode')} *
@@ -242,7 +228,6 @@ export default function AddressManager() {
                 </p>
               </div>
 
-              {/* Prefeitura e Cidade */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -274,7 +259,6 @@ export default function AddressManager() {
                 </div>
               </div>
 
-              {/* Bairro */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {t('form.ward')}
@@ -289,7 +273,6 @@ export default function AddressManager() {
                 />
               </div>
 
-              {/* Endereço */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {t('form.streetAddress')} *
@@ -304,7 +287,6 @@ export default function AddressManager() {
                 />
               </div>
 
-              {/* Complemento */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {t('form.building')}
@@ -318,8 +300,6 @@ export default function AddressManager() {
                 />
               </div>
 
-              
-              {/* Telefone */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {t('form.phone')} *
@@ -333,7 +313,7 @@ export default function AddressManager() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
-              {/* Botões */}
+
               <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center gap-3 pt-4">
                 <button
                   type="button"

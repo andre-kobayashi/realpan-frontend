@@ -9,7 +9,7 @@
   "overview": {
     "title": "会社概要",
     "items": {
-      "name": { "label": "会社名", "value": "株式会社 リアルパン" },
+      "name": { "label": "会社名", "value": "リアルパン株式会社" },
       "ceo": { "label": "代表取締役", "value": "増子 利光" },
       "established": { "label": "設立", "value": "2019年3月6日" },
       "capital": { "label": "資本金", "value": "800万円" },

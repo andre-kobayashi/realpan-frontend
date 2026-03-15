@@ -31,12 +31,10 @@ type OrderPayload = {
 // CONFIGURAÇÃO DO TRANSPORTE SMTP
 // ─────────────────────────────────────────────────────────────────────────────
 function createTransport() {
-  // Opção 1: SMTP externo (Gmail, SendGrid, Mailgun, etc.)
-  // Configurar via .env.local
   if (process.env.SMTP_HOST) {
     return nodemailer.createTransport({
-      host:   process.env.SMTP_HOST,
-      port:   Number(process.env.SMTP_PORT || 587),
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT || 587),
       secure: process.env.SMTP_SECURE === 'true',
       auth: {
         user: process.env.SMTP_USER,
@@ -45,7 +43,6 @@ function createTransport() {
     });
   }
 
-  // Opção 2: Postfix local no VPS (padrão quando SMTP_HOST não configurado)
   return nodemailer.createTransport({
     host: '127.0.0.1',
     port: 25,
@@ -62,20 +59,23 @@ function buildEmailHTML(data: OrderPayload): string {
   const isJa = data.locale === 'ja';
   const now = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
 
-  // Agrupar produtos por categoria
   const byCategory: Record<string, OrderProduct[]> = {};
-  products.forEach(p => {
+  products.forEach((p) => {
     if (!byCategory[p.cat]) byCategory[p.cat] = [];
     byCategory[p.cat].push(p);
   });
 
-  const productRows = Object.entries(byCategory).map(([cat, items]) => `
+  const productRows = Object.entries(byCategory)
+    .map(
+      ([cat, items]) => `
     <tr>
       <td colspan="3" style="background:#FAF7F2;padding:8px 16px;font-size:11px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #e5e7eb;">
         ${cat}
       </td>
     </tr>
-    ${items.map(p => `
+    ${items
+      .map(
+        (p) => `
     <tr>
       <td style="padding:10px 16px;font-size:13px;color:#374151;border-bottom:1px solid #f3f4f6;">
         ${isJa ? p.ja : p.pt}
@@ -86,8 +86,12 @@ function buildEmailHTML(data: OrderPayload): string {
       <td style="padding:10px 16px;font-size:14px;font-weight:700;color:#ea580c;text-align:right;border-bottom:1px solid #f3f4f6;">
         ×${p.qty}
       </td>
-    </tr>`).join('')}
-  `).join('');
+    </tr>`
+      )
+      .join('')}
+  `
+    )
+    .join('');
 
   return `<!DOCTYPE html>
 <html lang="${isJa ? 'ja' : 'pt'}">
@@ -98,12 +102,10 @@ function buildEmailHTML(data: OrderPayload): string {
 </head>
 <body style="margin:0;padding:0;background:#f9fafb;font-family:'Helvetica Neue',Arial,sans-serif;">
 
-  <!-- WRAPPER -->
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#f9fafb;padding:32px 16px;">
     <tr><td align="center">
       <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);">
 
-        <!-- HEADER -->
         <tr>
           <td style="background:linear-gradient(135deg,#ea580c,#f97316);padding:32px 40px;text-align:center;">
             <p style="margin:0 0 4px;color:rgba(255,255,255,.8);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">
@@ -118,7 +120,6 @@ function buildEmailHTML(data: OrderPayload): string {
           </td>
         </tr>
 
-        <!-- DADOS DO CLIENTE -->
         <tr>
           <td style="padding:32px 40px 16px;">
             <p style="margin:0 0 16px;font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;">
@@ -132,21 +133,28 @@ function buildEmailHTML(data: OrderPayload): string {
                 [isJa ? 'メールアドレス' : 'E-mail', `<a href="mailto:${form.email}" style="color:#ea580c">${form.email}</a>`],
                 [isJa ? '電話番号' : 'Telefone', `<a href="tel:${form.phone}" style="color:#ea580c">${form.phone}</a>`],
                 [isJa ? 'お届け希望日' : 'Entrega Desejada', `<strong style="color:#ea580c">${form.deliveryDate}</strong>`],
-              ].map(([label, value], i) => `
+              ]
+                .map(
+                  ([label, value], i) => `
               <tr style="background:${i % 2 === 0 ? '#fff' : '#fafafa'}">
                 <td style="padding:12px 16px;font-size:12px;color:#6b7280;white-space:nowrap;width:140px;">${label}</td>
                 <td style="padding:12px 16px;font-size:13px;color:#111827;font-weight:500;">${value}</td>
-              </tr>`).join('')}
-              ${form.notes ? `
+              </tr>`
+                )
+                .join('')}
+              ${
+                form.notes
+                  ? `
               <tr style="background:#fffbeb;">
                 <td style="padding:12px 16px;font-size:12px;color:#6b7280;vertical-align:top;white-space:nowrap;">${isJa ? '備考' : 'Observações'}</td>
                 <td style="padding:12px 16px;font-size:13px;color:#111827;font-style:italic;">${form.notes}</td>
-              </tr>` : ''}
+              </tr>`
+                  : ''
+              }
             </table>
           </td>
         </tr>
 
-        <!-- PRODUTOS -->
         <tr>
           <td style="padding:16px 40px 32px;">
             <p style="margin:0 0 16px;font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;">
@@ -161,7 +169,6 @@ function buildEmailHTML(data: OrderPayload): string {
               ${productRows}
             </table>
 
-            <!-- TOTAL -->
             <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:12px;background:linear-gradient(135deg,#1f2937,#374151);border-radius:12px;overflow:hidden;">
               <tr>
                 <td style="padding:16px 20px;color:#d1d5db;font-size:13px;">${isJa ? '合計数量' : 'Total de itens'}</td>
@@ -175,13 +182,14 @@ function buildEmailHTML(data: OrderPayload): string {
           </td>
         </tr>
 
-        <!-- FOOTER AÇÕES -->
         <tr>
           <td style="background:#FAF7F2;padding:24px 40px;text-align:center;border-top:1px solid #e5e7eb;">
             <p style="margin:0 0 16px;font-size:13px;color:#6b7280;">
               ${isJa ? 'お客様にご連絡ください：' : 'Entre em contato com o cliente:'}
             </p>
-            <a href="mailto:${form.email}?subject=${encodeURIComponent(isJa ? `ご注文確認 - お客様番号 ${form.customerNo}` : `Confirmação de Pedido - Cliente ${form.customerNo}`)}"
+            <a href="mailto:${form.email}?subject=${encodeURIComponent(
+              isJa ? `ご注文確認 - お客様番号 ${form.customerNo}` : `Confirmação de Pedido - Cliente ${form.customerNo}`
+            )}"
                style="display:inline-block;background:linear-gradient(135deg,#ea580c,#f97316);color:#fff;font-size:14px;font-weight:700;padding:12px 28px;border-radius:50px;text-decoration:none;margin-bottom:8px;">
               📧 ${isJa ? 'お客様に返信する' : 'Responder ao Cliente'}
             </a>
@@ -191,7 +199,6 @@ function buildEmailHTML(data: OrderPayload): string {
           </td>
         </tr>
 
-        <!-- BOTTOM -->
         <tr>
           <td style="background:#1f2937;padding:20px 40px;text-align:center;">
             <p style="margin:0;font-size:11px;color:#6b7280;">
@@ -216,6 +223,7 @@ function buildEmailHTML(data: OrderPayload): string {
 function buildEmailText(data: OrderPayload): string {
   const { form, products, total } = data;
   const isJa = data.locale === 'ja';
+
   const lines = [
     `${'='.repeat(50)}`,
     `REAL PAN — ${isJa ? '法人注文' : 'PEDIDO CORPORATIVO'}`,
@@ -231,12 +239,13 @@ function buildEmailText(data: OrderPayload): string {
     form.notes ? `${isJa ? '備考' : 'Observações'}: ${form.notes}` : '',
     '',
     `[${isJa ? 'ご注文商品' : 'PRODUTOS'}]`,
-    ...products.map(p => `  ${isJa ? p.ja : p.pt} (${p.code}) × ${p.qty}`),
+    ...products.map((p) => `  ${isJa ? p.ja : p.pt} (${p.code}) × ${p.qty}`),
     '',
     `${isJa ? '合計' : 'TOTAL'}: ${total} ${isJa ? '個' : 'unidades'} / ${products.length} ${isJa ? '種類' : 'tipos'}`,
     `${'='.repeat(50)}`,
   ];
-  return lines.filter(l => l !== '').join('\n');
+
+  return lines.filter((l) => l !== '').join('\n');
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -247,46 +256,47 @@ export async function POST(req: NextRequest) {
     const data: OrderPayload = await req.json();
     const { form, products, total } = data;
 
-    // Validação básica
     if (!form.company || !form.email || !form.customerNo || products.length === 0) {
       return NextResponse.json({ error: 'Dados incompletos' }, { status: 400 });
     }
 
     const transporter = createTransport();
     const isJa = data.locale === 'ja';
+
     const subject = isJa
       ? `📦 [法人注文] ${form.company}（${form.customerNo}）— ${total}個`
       : `📦 [Pedido B2B] ${form.company} (${form.customerNo}) — ${total} itens`;
 
-    // 1. Email para o pedido interno (order@realpan.jp)
     await transporter.sendMail({
-      from:    `"Real Pan Sistema" <noreply@realpan.jp>`,
-      to:      process.env.ORDER_EMAIL || 'order@realpan.jp',
+      from: `"Real Pan Sistema" <noreply@realpan.jp>`,
+      to: process.env.ORDER_EMAIL || 'order@realpan.jp',
       replyTo: form.email,
       subject,
-      text:    buildEmailText(data),
-      html:    buildEmailHTML(data),
+      text: buildEmailText(data),
+      html: buildEmailHTML(data),
     });
 
-    // 2. Email de confirmação para o cliente
     const confirmSubject = isJa
       ? `【Real Pan】ご注文を承りました — ${form.customerNo}`
       : `【Real Pan】Pedido Recebido — ${form.customerNo}`;
 
-    // Agrupar produtos por categoria para o email de confirmação
     const byCatConfirm: Record<string, OrderProduct[]> = {};
-    products.forEach(p => {
+    products.forEach((p) => {
       if (!byCatConfirm[p.cat]) byCatConfirm[p.cat] = [];
       byCatConfirm[p.cat].push(p);
     });
 
-    const confirmProductRows = Object.entries(byCatConfirm).map(([cat, items]) => `
+    const confirmProductRows = Object.entries(byCatConfirm)
+      .map(
+        ([cat, items]) => `
       <tr>
         <td colspan="3" style="background:#FAF7F2;padding:6px 16px;font-size:10px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #e5e7eb;">
           ${cat}
         </td>
       </tr>
-      ${items.map(p => `
+      ${items
+        .map(
+          (p) => `
       <tr>
         <td style="padding:9px 16px;font-size:12px;color:#374151;border-bottom:1px solid #f3f4f6;">
           ${isJa ? p.ja : p.pt}
@@ -297,8 +307,12 @@ export async function POST(req: NextRequest) {
         <td style="padding:9px 16px;font-size:13px;font-weight:700;color:#ea580c;text-align:right;border-bottom:1px solid #f3f4f6;white-space:nowrap;">
           ×${p.qty}
         </td>
-      </tr>`).join('')}
-    `).join('');
+      </tr>`
+        )
+        .join('')}
+    `
+      )
+      .join('');
 
     const confirmHtml = `<!DOCTYPE html>
 <html>
@@ -308,7 +322,6 @@ export async function POST(req: NextRequest) {
     <tr><td align="center">
       <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);">
 
-        <!-- HEADER -->
         <tr>
           <td style="background:linear-gradient(135deg,#ea580c,#f97316);padding:28px 40px;text-align:center;">
             <h1 style="margin:0;color:#fff;font-size:24px;font-weight:800;">
@@ -317,19 +330,19 @@ export async function POST(req: NextRequest) {
           </td>
         </tr>
 
-        <!-- SAUDAÇÃO -->
         <tr>
           <td style="padding:28px 40px 16px;">
             <p style="margin:0 0 12px;font-size:15px;color:#374151;">
               ${isJa ? `${form.contact} 様` : `Olá, ${form.contact}!`}
             </p>
             <p style="margin:0 0 20px;font-size:14px;color:#6b7280;line-height:1.6;">
-              ${isJa
-                ? `${form.company} 様のご注文を承りました。担当者より確認のご連絡をいたします。しばらくお待ちください。`
-                : `Recebemos o pedido de ${form.company}. Nossa equipe entrará em contato em breve para confirmar.`}
+              ${
+                isJa
+                  ? `${form.company} 様のご注文を承りました。担当者より確認のご連絡をいたします。しばらくお待ちください。`
+                  : `Recebemos o pedido de ${form.company}. Nossa equipe entrará em contato em breve para confirmar.`
+              }
             </p>
 
-            <!-- RESUMO -->
             <table width="100%" cellpadding="0" cellspacing="0" style="background:#FAF7F2;border-radius:12px;margin-bottom:20px;">
               <tr>
                 <td style="padding:16px 20px 8px;">
@@ -345,7 +358,6 @@ export async function POST(req: NextRequest) {
               </tr>
             </table>
 
-            <!-- LISTA DE PRODUTOS -->
             <p style="margin:0 0 10px;font-size:10px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;">
               🛒 ${isJa ? 'ご注文商品一覧' : 'Lista de Produtos Pedidos'}
             </p>
@@ -360,7 +372,6 @@ export async function POST(req: NextRequest) {
           </td>
         </tr>
 
-        <!-- FOOTER -->
         <tr>
           <td style="background:#1f2937;padding:20px 40px;text-align:center;">
             <p style="margin:0;font-size:12px;color:#6b7280;">
@@ -379,10 +390,10 @@ export async function POST(req: NextRequest) {
 </html>`;
 
     await transporter.sendMail({
-      from:    `"Real Pan" <noreply@realpan.jp>`,
-      to:      form.email,
+      from: `"Real Pan" <noreply@realpan.jp>`,
+      to: form.email,
       subject: confirmSubject,
-      text:    isJa
+      text: isJa
         ? `ご注文ありがとうございます。担当者より確認のご連絡をいたします。\n\nお客様番号: ${form.customerNo}\nお届け希望日: ${form.deliveryDate}\n合計: ${total}個`
         : `Pedido recebido! Entraremos em contato em breve.\n\nNº Cliente: ${form.customerNo}\nEntrega: ${form.deliveryDate}\nTotal: ${total} itens`,
       html: confirmHtml,
@@ -392,11 +403,16 @@ export async function POST(req: NextRequest) {
       success: true,
       message: isJa ? 'ご注文を承りました' : 'Pedido enviado com sucesso',
     });
-
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('[ORDER API ERROR]', err);
+
+    const detail =
+      err instanceof Error
+        ? err.message
+        : 'Erro desconhecido ao enviar email';
+
     return NextResponse.json(
-      { error: 'Erro ao enviar email', detail: err?.message },
+      { error: 'Erro ao enviar email', detail },
       { status: 500 }
     );
   }

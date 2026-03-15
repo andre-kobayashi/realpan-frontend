@@ -8,7 +8,7 @@
   "form": {
     "titleAdd": "Adicionar Endereço",
     "titleEdit": "Editar Endereço",
-    "postalCode": "CEP",
+    "postalCode": "Código Postal",
     "prefecture": "Prefeitura",
     "city": "Cidade",
     "ward": "Bairro",

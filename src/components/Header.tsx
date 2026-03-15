@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { useAuth } from '@/contexts/AuthContext';
 import { useCart } from '@/hooks/useCart';
 import { usePathname, useRouter } from 'next/navigation';
-import { Search, Globe, ShoppingCart, User } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Search, Globe, ShoppingCart, User, X } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export function Header() {
   const t = useTranslations('navigation');
@@ -17,6 +18,10 @@ export function Header() {
   const { itemCount } = useCart();
 
   const [scrolled, setScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const mobileSearchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -28,6 +33,22 @@ export function Header() {
     const nextLocale = locale === 'pt' ? 'ja' : 'pt';
     const clean = pathname.replace(/^\/(pt|ja)/, '');
     router.replace(`/${nextLocale}${clean}`);
+  }
+
+  function handleSearch(e: React.FormEvent) {
+    e.preventDefault();
+    const q = searchQuery.trim();
+    if (q) {
+      router.push(`/${locale}/products?q=${encodeURIComponent(q)}`);
+      setMobileSearchOpen(false);
+    }
+  }
+
+  function handleSearchKeyDown(e: React.KeyboardEvent) {
+    if (e.key === 'Escape') {
+      setSearchQuery('');
+      setMobileSearchOpen(false);
+    }
   }
 
   // Cart badge component
@@ -54,17 +75,28 @@ export function Header() {
       <div className="flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-3 flex-shrink-0">
-          <img
+          <Image
             src="/logo-light.svg"
             alt="Realpan Logo"
+            width={140}
+            height={40}
             className="h-10 w-auto object-contain"
-          />
+            priority
+        />
         </Link>
 
         {/* Right actions */}
         <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => { setMobileSearchOpen(o => !o); setTimeout(() => mobileSearchRef.current?.focus(), 100); }}
+            className="flex h-9 w-9 items-center justify-center rounded-full text-gray-600 hover:bg-orange-50 hover:text-orange-600 transition"
+          >
+            <Search className="h-5 w-5" />
+          </button>
           <CartBadge />
           <button
+            type="button"
             onClick={toggleLanguage}
             className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-600 hover:bg-orange-50 hover:border-orange-500 hover:text-orange-600 transition"
           >
@@ -72,6 +104,31 @@ export function Header() {
           </button>
         </div>
       </div>
+
+      {/* Mobile search bar (expandable) */}
+      {mobileSearchOpen && (
+        <div className="px-4 pb-3 bg-white border-b border-gray-100">
+          <form onSubmit={handleSearch} className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <input
+              ref={mobileSearchRef}
+              type="text"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              onKeyDown={handleSearchKeyDown}
+              placeholder={locale === 'pt' ? 'Buscar produtos...' : '商品を検索...'}
+              className="w-full pl-9 pr-9 py-2.5 border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
+              autoFocus
+            />
+            {searchQuery && (
+              <button type="button" onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </form>
+        </div>
+      )}
     </header>
   );
 
@@ -92,6 +149,7 @@ export function Header() {
           </div>
           <div className="flex items-center gap-5">
             <button
+              type="button"
               onClick={toggleLanguage}
               className="flex items-center gap-1.5 hover:text-orange-600 transition"
             >
@@ -106,31 +164,42 @@ export function Header() {
       </div>
 
       {/* MAIN BAR */}
-      <div
-        className={`transition-all duration-300 bg-white ${
-          scrolled ? 'shadow-md h-16' : 'shadow-sm h-20'
-        }`}
-      >
+      <div className={`transition-all duration-300 bg-white ${scrolled ? 'shadow-md h-16' : 'shadow-sm h-20'}`}>
         <div className="container mx-auto px-4 flex items-center justify-between h-full">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center gap-3 flex-shrink-0">
-            <img
+            <Image
               src="/logo-light.svg"
               alt="Realpan Logo"
+              width={140}
+              height={40}
               className="h-10 w-auto object-contain"
-            />
+              priority
+          />
           </Link>
 
           {/* Search */}
           <div className="flex-1 max-w-xl mx-8">
-            <div className="relative">
+            <form onSubmit={handleSearch} className="relative">
               <input
+                ref={searchInputRef}
                 type="text"
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                onKeyDown={handleSearchKeyDown}
                 placeholder={locale === 'pt' ? 'Buscar produtos...' : '商品を検索...'}
-                className="w-full rounded-full border border-gray-300 bg-[#FAF7F2] px-5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500 focus:bg-white transition"
+                className="w-full rounded-full border border-gray-300 bg-[#FAF7F2] px-5 py-2.5 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500 focus:bg-white transition"
               />
-              <Search className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-            </div>
+              {searchQuery ? (
+                <button type="button" onClick={() => setSearchQuery('')}
+                  className="absolute right-10 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                  <X className="h-4 w-4" />
+                </button>
+              ) : null}
+              <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-orange-600 transition">
+                <Search className="h-4 w-4" />
+              </button>
+            </form>
           </div>
 
           {/* Actions */}

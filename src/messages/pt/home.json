@@ -122,7 +122,7 @@
   },
   "reviews": {
     "title": "Depoimentos",
-    "description": "O que nossos clientes dizem sobre Real Pan",
+    "description": "O que nossos clientes dizem sobre Realpan",
     "items": {
       "1": {
         "text": "O melhor pão de queijo que já comi fora do Brasil! A textura é perfeita e o sabor é autêntico.",
@@ -142,7 +142,7 @@
     }
   },
   "instagram": {
-    "title": "Real Pan no Dia a Dia",
+    "title": "Realpan no Dia a Dia",
     "description": "Veja como nossos clientes aproveitam nossos produtos",
     "follow": "Siga @realpan_jp"
   },

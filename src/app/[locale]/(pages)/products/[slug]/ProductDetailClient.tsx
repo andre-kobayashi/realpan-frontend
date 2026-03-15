@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
@@ -39,6 +39,7 @@ export default function ProductDetailClient() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
+  const [buyByBox, setBuyByBox] = useState(false);
 
   useEffect(() => {
     async function load() {
@@ -57,6 +58,12 @@ export default function ProductDetailClient() {
       setLoading(false);
     }
     load();
+  }, [slug]);
+
+  // Reset buyByBox when product changes
+  useEffect(() => {
+    setBuyByBox(false);
+    setQuantity(1);
   }, [slug]);
 
   if (loading) {
@@ -84,16 +91,34 @@ export default function ProductDetailClient() {
   const outOfStock = product.stock <= 0;
   const lowStock = product.stock > 0 && product.stock <= 10;
 
-  const displayPrice = isPJ ? product.wholesalePrice : product.retailPriceWithTax;
+  // Can buy by box: PJ + product has BOX unit + has boxPrice + has unitsPerBox
+  const canBuyByBox = isPJ && product.wholesaleUnit === 'BOX' && product.boxPrice && (product.unitsPerBox || 0) > 0;
+
+  // Prices
+  const unitPrice = isPJ ? product.wholesalePrice : product.retailPriceWithTax;
+  const boxPrice = product.boxPrice || 0;
+  const boxPriceWithTax = isPJ ? boxPrice : Math.ceil(boxPrice * 1.08);
+
+  // Current display price based on selection
+  const currentPrice = (canBuyByBox && buyByBox) ? boxPriceWithTax : unitPrice;
+  const currentUnitLabel = (canBuyByBox && buyByBox)
+    ? (locale === 'ja' ? `箱（${product.unitsPerBox}個入り）` : `Caixa (${product.unitsPerBox} un.)`)
+    : (locale === 'ja' ? '個' : 'un.');
+
   const priceLabel = isPJ ? t('tax_excluded') : t('tax_included');
   const originalRetailWithTax = Math.ceil(product.retailPrice * 1.08);
 
   const images = product.images.length > 0 ? product.images : [product.image];
   const storageInfo = STORAGE_INFO[product.storageType] || STORAGE_INFO.AMBIENT;
 
+  // Total for display
+  const lineTotal = currentPrice * quantity;
+
   const handleAdd = () => {
     if (outOfStock) return;
-    addItem(product, quantity);
+    // When buying by box, multiply quantity by unitsPerBox for the cart
+    const cartQuantity = (canBuyByBox && buyByBox) ? quantity * (product.unitsPerBox || 1) : quantity;
+    addItem(product, cartQuantity);
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };
@@ -118,7 +143,6 @@ export default function ProductDetailClient() {
 
           {/* ── GALERIA ── */}
           <div>
-            {/* Imagem principal */}
             <div className="relative aspect-square bg-gray-50 rounded-2xl overflow-hidden mb-3">
               <Image
                 src={images[selectedImage] || product.image}
@@ -128,8 +152,6 @@ export default function ProductDetailClient() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
-
-              {/* Badges */}
               <div className="absolute top-3 left-3 flex flex-col gap-1">
                 {product.isNew && (
                   <span className="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -148,8 +170,6 @@ export default function ProductDetailClient() {
                 )}
               </div>
             </div>
-
-            {/* Thumbnails */}
             {images.length > 1 && (
               <div className="flex gap-2 overflow-x-auto pb-2">
                 {images.map((img, idx) => (
@@ -161,13 +181,8 @@ export default function ProductDetailClient() {
                       selectedImage === idx ? 'border-orange-500' : 'border-gray-200'
                     }`}
                   >
-                    <Image
-                      src={img}
-                      alt={`${name} ${idx + 1}`}
-                      width={80}
-                      height={80}
-                      className="w-full h-full object-contain p-1"
-                    />
+                    <Image src={img} alt={`${name} ${idx + 1}`} width={80} height={80}
+                      className="w-full h-full object-contain p-1" />
                   </button>
                 ))}
               </div>
@@ -176,22 +191,13 @@ export default function ProductDetailClient() {
 
           {/* ── INFO ── */}
           <div className="flex flex-col">
-            {/* Categoria */}
             <p className="text-xs text-orange-600 font-semibold uppercase tracking-wider mb-2">
               {product.categoryName[locale]}
             </p>
-
-            {/* Nome */}
-            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
-              {name}
-            </h1>
-
-            {/* Subtítulo bilíngue (mostra o outro idioma) */}
+            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">{name}</h1>
             <p className="text-sm text-gray-400 mb-4">
               {locale === 'pt' ? product.name.ja : product.name.pt}
             </p>
-
-            {/* Quantidade info */}
             {product.quantityInfo && (
               <p className="text-sm text-gray-600 mb-4">{product.quantityInfo}</p>
             )}
@@ -199,24 +205,66 @@ export default function ProductDetailClient() {
             {/* ── PREÇO ── */}
             <div className="bg-gray-50 rounded-xl p-4 lg:p-5 mb-6">
               <div className="flex items-baseline gap-3 flex-wrap">
-                {product.hasPromo && (
+                {product.hasPromo && !isPJ && (
                   <span className="text-lg text-gray-400 line-through">
                     ¥{originalRetailWithTax.toLocaleString()}
                   </span>
                 )}
                 <span className="text-3xl lg:text-4xl font-bold text-gray-900">
-                  ¥{displayPrice.toLocaleString()}
+                  ¥{currentPrice.toLocaleString()}
                 </span>
-                <span className="text-sm text-gray-500">({priceLabel})</span>
+                <span className="text-sm text-gray-500">
+                  / {currentUnitLabel} ({priceLabel})
+                </span>
               </div>
 
-              {/* PJ: box price */}
-              {isPJ && product.wholesaleUnit === 'BOX' && product.boxPrice && (
-                <div className="mt-3 bg-orange-50 rounded-lg p-3 border border-orange-200">
-                  <p className="text-sm text-orange-800 font-medium">
-                    📦 {t('box_price', { count: product.unitsPerBox || 0 })}:
-                    <span className="text-lg font-bold ml-2">¥{product.boxPrice.toLocaleString()}</span>
-                  </p>
+              {/* ── SELETOR UNIDADE / CAIXA (PJ only) ── */}
+              {canBuyByBox && (
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => { setBuyByBox(false); setQuantity(1); }}
+                    className={`flex flex-col items-center gap-1 p-3 rounded-xl border-2 transition-all ${
+                      !buyByBox
+                        ? 'border-orange-500 bg-orange-50'
+                        : 'border-gray-200 hover:border-gray-300'
+                    }`}
+                  >
+                    <span className="text-lg">🔸</span>
+                    <span className="text-sm font-semibold text-gray-900">
+                      {locale === 'ja' ? '個単位' : 'Unidade'}
+                    </span>
+                    <span className="text-lg font-bold text-gray-900">
+                      ¥{unitPrice.toLocaleString()}
+                    </span>
+                    <span className="text-[10px] text-gray-500">
+                      {locale === 'ja' ? '1個あたり' : 'por unidade'}
+                    </span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => { setBuyByBox(true); setQuantity(1); }}
+                    className={`flex flex-col items-center gap-1 p-3 rounded-xl border-2 transition-all ${
+                      buyByBox
+                        ? 'border-orange-500 bg-orange-50'
+                        : 'border-gray-200 hover:border-gray-300'
+                    }`}
+                  >
+                    <span className="text-lg">📦</span>
+                    <span className="text-sm font-semibold text-gray-900">
+                      {locale === 'ja' ? `箱（${product.unitsPerBox}個入）` : `Caixa (${product.unitsPerBox} un.)`}
+                    </span>
+                    <span className="text-lg font-bold text-orange-600">
+                      ¥{boxPriceWithTax.toLocaleString()}
+                    </span>
+                    <span className="text-[10px] text-gray-500">
+                      {locale === 'ja'
+                        ? `1個あたり ¥${Math.ceil(boxPriceWithTax / (product.unitsPerBox || 1)).toLocaleString()}`
+                        : `¥${Math.ceil(boxPriceWithTax / (product.unitsPerBox || 1)).toLocaleString()} por un.`
+                      }
+                    </span>
+                  </button>
                 </div>
               )}
 
@@ -239,7 +287,7 @@ export default function ProductDetailClient() {
             </div>
 
             {/* ── QUANTIDADE + CARRINHO ── */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-2">
               <div className="flex items-center border border-gray-300 rounded-full overflow-hidden">
                 <button
                   type="button"
@@ -282,6 +330,18 @@ export default function ProductDetailClient() {
               </button>
             </div>
 
+            {/* Line total when quantity > 1 or buying by box */}
+            {(quantity > 1 || (canBuyByBox && buyByBox)) && (
+              <div className="text-right text-sm text-gray-500 mb-6">
+                {quantity} × ¥{currentPrice.toLocaleString()} = <span className="font-bold text-gray-900">¥{lineTotal.toLocaleString()}</span>
+                {canBuyByBox && buyByBox && (
+                  <span className="text-xs text-gray-400 ml-1">
+                    ({quantity * (product.unitsPerBox || 1)} {locale === 'ja' ? '個' : 'un.'})
+                  </span>
+                )}
+              </div>
+            )}
+
             {/* ── DESCRIÇÃO ── */}
             {desc && (
               <div className="mb-6">
@@ -309,6 +369,14 @@ export default function ProductDetailClient() {
                     <dt className="text-gray-500">{t('detail.shelf_life')}</dt>
                     <dd className="text-gray-900 font-medium flex items-center gap-1.5">
                       <Clock className="h-4 w-4 text-gray-400" /> {product.shelfLife}
+                    </dd>
+                  </>
+                )}
+                {canBuyByBox && (
+                  <>
+                    <dt className="text-gray-500">{locale === 'ja' ? '販売単位' : 'Unidade de venda'}</dt>
+                    <dd className="text-gray-900 font-medium">
+                      📦 {locale === 'ja' ? `箱（${product.unitsPerBox}個入り）` : `Caixa (${product.unitsPerBox} un.)`}
                     </dd>
                   </>
                 )}

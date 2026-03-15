@@ -8,14 +8,23 @@ import { Minus, Plus, Trash2, ShoppingCart, ArrowLeft } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { useAuth } from '@/contexts/AuthContext';
 
+type CartCustomer = {
+  type?: 'INDIVIDUAL' | 'BUSINESS';
+  customerType?: 'INDIVIDUAL' | 'BUSINESS';
+};
+
 export default function CartClient() {
   const locale = useLocale() as 'pt' | 'ja';
   const t = useTranslations('products');
   const router = useRouter();
-  const { items, itemCount, subtotal, tax, total, updateQuantity, removeItem, clearCart } = useCart();
+  const { items, itemCount, subtotal, tax, total, updateQuantity, removeItem } = useCart();
   const { customer } = useAuth();
-  const isLoggedIn = !!customer;
-  const isPJ = (customer as any)?.customerType === 'BUSINESS';
+
+  const typedCustomer = customer as CartCustomer | null;
+  const isLoggedIn = !!typedCustomer;
+  const isPJ =
+    typedCustomer?.type === 'BUSINESS' ||
+    typedCustomer?.customerType === 'BUSINESS';
 
   if (items.length === 0) {
     return (
@@ -33,7 +42,6 @@ export default function CartClient() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container-custom py-6 lg:py-10">
-        {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           <button
             type="button"
@@ -49,11 +57,9 @@ export default function CartClient() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* ── ITEMS ── */}
           <div className="lg:col-span-2 space-y-3">
-            {items.map(item => (
+            {items.map((item) => (
               <div key={item.productId} className="bg-white rounded-xl p-4 flex gap-4 shadow-sm">
-                {/* Imagem */}
                 <Link href={`/${locale}/products/${item.slug}`} className="flex-shrink-0">
                   <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden bg-gray-50">
                     {item.image ? (
@@ -69,7 +75,6 @@ export default function CartClient() {
                   </div>
                 </Link>
 
-                {/* Info */}
                 <div className="flex-1 min-w-0">
                   <Link href={`/${locale}/products/${item.slug}`}>
                     <h3 className="text-sm font-medium text-gray-900 line-clamp-2 hover:text-orange-600 transition-colors">
@@ -83,7 +88,6 @@ export default function CartClient() {
                     </span>
                   </p>
 
-                  {/* Quantidade */}
                   <div className="flex items-center gap-3 mt-2">
                     <div className="flex items-center border border-gray-200 rounded-full overflow-hidden">
                       <button
@@ -122,7 +126,6 @@ export default function CartClient() {
             ))}
           </div>
 
-          {/* ── RESUMO ── */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl p-5 shadow-sm sticky top-24">
               <h3 className="text-lg font-bold text-gray-900 mb-4">

@@ -5,7 +5,17 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useAuth } from '@/contexts/AuthContext';
-import { UserPlus, User, Building2, Mail, Lock, Phone, MapPin, AlertCircle, CheckCircle } from 'lucide-react';
+import { UserPlus, User, Building2, AlertCircle, CheckCircle } from 'lucide-react';
+
+type RegisterErrorResponse = {
+  response?: {
+    data?: {
+      message?: {
+        pt?: string;
+      };
+    };
+  };
+};
 
 export default function RegisterPage() {
   const t = useTranslations('auth.register');
@@ -26,7 +36,6 @@ export default function RegisterPage() {
     city: '',
     streetAddress: '',
     building: '',
-    // PJ only
     companyName: '',
     taxId: '',
     invoiceNumber: '',
@@ -40,7 +49,6 @@ export default function RegisterPage() {
     setLoading(true);
     setError('');
 
-    // Validações
     if (formData.password !== formData.confirmPassword) {
       setError(t('error.passwordMismatch'));
       setLoading(false);
@@ -57,13 +65,12 @@ export default function RegisterPage() {
       await register({ ...formData, type: accountType });
       setSuccess(true);
       
-      // Se for PF, redireciona para account (já fez login)
-      // Se for PJ, mostra mensagem de aguardar aprovação
       if (accountType === 'INDIVIDUAL') {
         setTimeout(() => router.push('/account'), 2000);
       }
-    } catch (err: any) {
-      const errorMsg = err.response?.data?.message?.pt || t('error.generic');
+    } catch (err: unknown) {
+      const error = err as RegisterErrorResponse;
+      const errorMsg = error.response?.data?.message?.pt || t('error.generic');
       setError(errorMsg);
     } finally {
       setLoading(false);
@@ -101,9 +108,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 py-12 px-4">
       <div className="max-w-2xl mx-auto">
-        {/* Card */}
         <div className="bg-white rounded-2xl shadow-xl p-8">
-          {/* Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full mb-4">
               <UserPlus className="h-8 w-8 text-white" />
@@ -116,7 +121,6 @@ export default function RegisterPage() {
             </p>
           </div>
 
-          {/* Error Alert */}
           {error && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
               <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
@@ -125,7 +129,6 @@ export default function RegisterPage() {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Account Type */}
             <div>
               <label className="block text-sm font-medium text-gray-900 mb-3">
                 {t('accountType')}
@@ -161,7 +164,6 @@ export default function RegisterPage() {
               </div>
             </div>
 
-            {/* Personal Info */}
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('personalInfo')}</h3>
               <div className="grid grid-cols-2 gap-4">
@@ -248,7 +250,6 @@ export default function RegisterPage() {
               </div>
             </div>
 
-            {/* Business Info (só se PJ) */}
             {accountType === 'BUSINESS' && (
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Dados da Empresa</h3>
@@ -294,7 +295,6 @@ export default function RegisterPage() {
               </div>
             )}
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
@@ -303,7 +303,6 @@ export default function RegisterPage() {
               {loading ? t('loading') : t('registerButton')}
             </button>
 
-            {/* Terms */}
             <p className="text-xs text-gray-600 text-center">
               {t('terms')}{' '}
               <Link href="/terms" className="text-orange-600 hover:underline">
@@ -316,7 +315,6 @@ export default function RegisterPage() {
             </p>
           </form>
 
-          {/* Login Link */}
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               {t('haveAccount')}{' '}
@@ -327,7 +325,6 @@ export default function RegisterPage() {
           </div>
         </div>
 
-        {/* Back to Home */}
         <div className="text-center mt-6">
           <Link href="/" className="text-gray-600 hover:text-gray-800 text-sm">
             ← Voltar para o início

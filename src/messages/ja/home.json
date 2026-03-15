@@ -50,7 +50,7 @@
       }
     },
     "realPan": {
-      "title": "Real Pan 冷凍",
+      "title": "Realpan 冷凍",
       "description": "急速冷凍が元の新鮮さ、風味、食感を保ちます。",
       "features": {
         "1": "100%の水分を保つ",
@@ -61,7 +61,7 @@
   },
   "freezingTech": {
     "title": "作りたて、\n-45°Cで冷凍。\n新鮮さ保証。",
-    "description": "Real Panは準備直後に-45°Cで冷凍し、\n本物の食感と風味を保ちます。",
+    "description": "Realpanは準備直後に-45°Cで冷凍し、\n本物の食感と風味を保ちます。",
     "steps": {
       "preparation": {
         "title": "準備",
@@ -79,7 +79,7 @@
   },
   "trustBadges": {
     "title": "信頼と品質",
-    "description": "Real Panは日本全国の企業や家族に選ばれています",
+    "description": "Realpanは日本全国の企業や家族に選ばれています",
     "b2b": {
       "title": "B2B",
       "subtitle": "企業パートナー",
@@ -102,7 +102,7 @@
     }
   },
   "howToUse": {
-    "title": "Real Panの\n楽しみ方",
+    "title": "Realpanの\n楽しみ方",
     "description": "注文からテーブルまで、3つの簡単なステップで",
     "steps": {
       "order": {
@@ -122,7 +122,7 @@
   },
   "reviews": {
     "title": "お客様の声",
-    "description": "Real Panについてお客様が語ること",
+    "description": "Realpanについてお客様が語ること",
     "items": {
       "1": {
         "text": "ブラジル以外で食べた最高のチーズパン！食感は完璧で味は本物です。",
@@ -142,7 +142,7 @@
     }
   },
   "instagram": {
-    "title": "日常のReal Pan",
+    "title": "日常のRealpan",
     "description": "お客様が製品を楽しむ様子をご覧ください",
     "follow": "@realpan_jp をフォロー"
   },
