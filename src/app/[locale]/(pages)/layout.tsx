@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { BottomNav } from '@/components/BottomNav';
 import { CartProvider } from '@/hooks/useCart';
 
 type Props = {
@@ -24,8 +23,6 @@ export default function PageLayout({ children }: Props) {
 
         <Footer />
 
-        {/* Bottom nav: visível só em mobile, empurra conteúdo com pb-16 */}
-        <BottomNav />
       </div>
     </CartProvider>
   );

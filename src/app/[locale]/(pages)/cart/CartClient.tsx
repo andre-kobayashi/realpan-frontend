@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Minus, Plus, Trash2, ShoppingCart, ArrowLeft } from 'lucide-react';
+import { Minus, Plus, Trash2, ShoppingCart, ArrowLeft, ArrowRight } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { useAuth } from '@/contexts/AuthContext';
 
@@ -22,17 +22,16 @@ export default function CartClient() {
 
   const typedCustomer = customer as CartCustomer | null;
   const isLoggedIn = !!typedCustomer;
-  const isPJ =
-    typedCustomer?.type === 'BUSINESS' ||
-    typedCustomer?.customerType === 'BUSINESS';
+  const isPJ = typedCustomer?.type === 'BUSINESS' || typedCustomer?.customerType === 'BUSINESS';
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center py-20">
-        <ShoppingCart className="h-20 w-20 text-gray-200 mb-4" />
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">{t('cart.empty')}</h1>
-        <p className="text-gray-500 mb-6">{t('cart.empty_description')}</p>
-        <Link href={`/${locale}/products`} className="btn-orange">
+      <div className="min-h-screen flex flex-col items-center justify-center py-20 bg-[#FAF7F2]">
+        <ShoppingCart className="h-16 w-16 text-[#DFD0B3] mb-4" />
+        <h1 className="text-xl font-semibold text-[#1A2740] mb-2">{t('cart.empty')}</h1>
+        <p className="text-[#8099B8] text-sm mb-6">{t('cart.empty_description')}</p>
+        <Link href={`/${locale}/products`}
+          className="inline-flex items-center gap-2 bg-[#D4972A] hover:bg-[#B87A20] text-white px-6 py-3 rounded-full font-semibold text-sm transition-all">
           {t('cart.continue_shopping')}
         </Link>
       </div>
@@ -40,84 +39,65 @@ export default function CartClient() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container-custom py-6 lg:py-10">
-        <div className="flex items-center gap-4 mb-6">
-          <button
-            type="button"
-            onClick={() => router.back()}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-          >
+    <div className="min-h-screen bg-[#FAF7F2]">
+      <div className="container-custom py-5 lg:py-10">
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-5">
+          <button type="button" onClick={() => router.back()}
+            className="p-2 hover:bg-white rounded-lg transition-colors text-[#57749A]">
             <ArrowLeft className="h-5 w-5" />
           </button>
           <div>
-            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">{t('cart.title')}</h1>
-            <p className="text-sm text-gray-500">{t('cart.items_count', { count: itemCount })}</p>
+            <h1 className="text-xl lg:text-2xl font-semibold text-[#1A2740]">{t('cart.title')}</h1>
+            <p className="text-xs text-[#8099B8]">{t('cart.items_count', { count: itemCount })}</p>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-3 gap-5">
+          {/* Items */}
           <div className="lg:col-span-2 space-y-3">
             {items.map((item) => (
-              <div key={item.productId} className="bg-white rounded-xl p-4 flex gap-4 shadow-sm">
+              <div key={item.productId} className="bg-white rounded-xl p-4 flex gap-4 border border-[#F5EDE0]">
                 <Link href={`/${locale}/products/${item.slug}`} className="flex-shrink-0">
-                  <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden bg-gray-50">
+                  <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden bg-[#FAF7F2]">
                     {item.image ? (
-                      <Image
-                        src={item.image}
-                        alt={item.name[locale]}
-                        fill
-                        className="object-contain p-1"
-                      />
+                      <Image src={item.image} alt={item.name[locale]} fill className="object-contain p-1" />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-3xl">🍞</div>
                     )}
                   </div>
                 </Link>
-
                 <div className="flex-1 min-w-0">
                   <Link href={`/${locale}/products/${item.slug}`}>
-                    <h3 className="text-sm font-medium text-gray-900 line-clamp-2 hover:text-orange-600 transition-colors">
+                    <h3 className="text-sm font-medium text-[#1A2740] line-clamp-2 hover:text-[#D4972A] transition-colors">
                       {item.name[locale]}
                     </h3>
                   </Link>
-                  <p className="text-lg font-bold text-gray-900 mt-1">
+                  <p className="text-base font-bold text-[#1A2740] mt-1">
                     ¥{item.unitPriceWithTax.toLocaleString()}
-                    <span className="text-xs text-gray-400 font-normal ml-1">
+                    <span className="text-[10px] text-[#8099B8] font-normal ml-1">
                       ({isPJ ? t('tax_excluded') : t('tax_included')})
                     </span>
                   </p>
-
                   <div className="flex items-center gap-3 mt-2">
-                    <div className="flex items-center border border-gray-200 rounded-full overflow-hidden">
-                      <button
-                        type="button"
-                        onClick={() => updateQuantity(item.productId, item.quantity - 1)}
-                        className="px-2.5 py-1.5 hover:bg-gray-100 transition-colors"
-                      >
+                    <div className="flex items-center border-2 border-[#ECC76E] rounded-xl overflow-hidden bg-white">
+                      <button type="button" onClick={() => updateQuantity(item.productId, item.quantity - 1)}
+                        className="px-2.5 py-1.5 text-[#B87A20] hover:bg-[#FDF8ED] transition-colors">
                         <Minus className="h-3.5 w-3.5" />
                       </button>
-                      <span className="px-3 py-1.5 text-sm font-semibold min-w-[2.5rem] text-center">
+                      <span className="px-3 py-1.5 text-sm font-bold text-[#1A2740] min-w-[2.5rem] text-center tabular-nums">
                         {item.quantity}
                       </span>
-                      <button
-                        type="button"
-                        onClick={() => updateQuantity(item.productId, item.quantity + 1)}
-                        className="px-2.5 py-1.5 hover:bg-gray-100 transition-colors"
-                      >
+                      <button type="button" onClick={() => updateQuantity(item.productId, item.quantity + 1)}
+                        className="px-2.5 py-1.5 text-[#B87A20] hover:bg-[#FDF8ED] transition-colors">
                         <Plus className="h-3.5 w-3.5" />
                       </button>
                     </div>
-
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-[#8099B8] tabular-nums">
                       = ¥{(item.unitPriceWithTax * item.quantity).toLocaleString()}
                     </span>
-
-                    <button
-                      type="button"
-                      onClick={() => removeItem(item.productId)}
-                      className="ml-auto p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-                    >
+                    <button type="button" onClick={() => removeItem(item.productId)}
+                      className="ml-auto p-1.5 text-[#C9B896] hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors">
                       <Trash2 className="h-4 w-4" />
                     </button>
                   </div>
@@ -126,49 +106,43 @@ export default function CartClient() {
             ))}
           </div>
 
+          {/* Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-xl p-5 shadow-sm sticky top-24">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">
-                {locale === 'pt' ? 'Resumo do Pedido' : '注文概要'}
+            <div className="bg-white rounded-xl p-5 border border-[#F5EDE0] sticky top-20">
+              <h3 className="text-base font-semibold text-[#1A2740] mb-4">
+                {locale === 'pt' ? '注文概要' : '注文概要'}
               </h3>
-
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-gray-500">{t('cart.subtotal')}</span>
-                  <span className="font-medium">¥{subtotal.toLocaleString()}</span>
+                  <span className="text-[#8099B8]">{t('cart.subtotal')}</span>
+                  <span className="font-medium text-[#1A2740] tabular-nums">¥{subtotal.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-500">{t('cart.tax')}</span>
-                  <span className="font-medium">¥{tax.toLocaleString()}</span>
+                  <span className="text-[#8099B8]">{t('cart.tax')}</span>
+                  <span className="font-medium text-[#1A2740] tabular-nums">¥{tax.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-gray-400">
+                <div className="flex justify-between text-[#C9B896]">
                   <span>{t('cart.shipping')}</span>
-                  <span>{locale === 'pt' ? 'Calcular no checkout' : 'チェックアウト時に計算'}</span>
+                  <span className="text-xs">{locale === 'pt' ? 'Calcular no checkout' : 'チェックアウト時に計算'}</span>
                 </div>
-                <div className="border-t border-gray-100 pt-3 flex justify-between">
-                  <span className="text-base font-bold text-gray-900">{t('cart.total')}</span>
-                  <span className="text-xl font-bold text-gray-900">¥{total.toLocaleString()}</span>
+                <div className="border-t border-[#F5EDE0] pt-3 flex justify-between">
+                  <span className="text-base font-bold text-[#1A2740]">{t('cart.total')}</span>
+                  <span className="text-xl font-bold text-[#1A2740] tabular-nums">¥{total.toLocaleString()}</span>
                 </div>
               </div>
 
-              <button
-                type="button"
+              <button type="button"
                 onClick={() => {
-                  if (!isLoggedIn) {
-                    router.push(`/${locale}/login?redirect=checkout`);
-                  } else {
-                    router.push(`/${locale}/checkout`);
-                  }
+                  if (!isLoggedIn) router.push(`/${locale}/login?redirect=checkout`);
+                  else router.push(`/${locale}/checkout`);
                 }}
-                className="w-full mt-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3.5 rounded-full font-semibold text-sm hover:shadow-lg active:scale-95 transition-all"
-              >
+                className="w-full mt-5 flex items-center justify-center gap-2 bg-[#D4972A] hover:bg-[#B87A20] text-white py-3.5 rounded-full font-semibold text-sm transition-all shadow-sm active:scale-[0.98]">
                 {t('cart.checkout')}
+                <ArrowRight className="h-4 w-4" />
               </button>
 
-              <Link
-                href={`/${locale}/products`}
-                className="block text-center mt-3 text-sm text-gray-500 hover:text-orange-600 transition-colors"
-              >
+              <Link href={`/${locale}/products`}
+                className="block text-center mt-3 text-sm text-[#8099B8] hover:text-[#D4972A] transition-colors">
                 {t('cart.continue_shopping')}
               </Link>
             </div>

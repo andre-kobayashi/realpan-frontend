@@ -55,7 +55,7 @@ export function FAQ() {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-block bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm mb-4">
+          <div className="inline-block bg-[#FDF8ED] text-[#B87A20] px-4 py-1 rounded-full text-sm mb-4">
             FAQ
           </div>
           <h2 className="text-2xl md:text-3xl font-light text-gray-900">
@@ -75,14 +75,14 @@ export function FAQ() {
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                    <span className="text-orange-600 font-bold text-sm">Q</span>
+                  <div className="flex-shrink-0 w-10 h-10 bg-[#FDF8ED] rounded-full flex items-center justify-center">
+                    <span className="text-[#D4972A] font-bold text-sm">Q</span>
                   </div>
                   <span className="text-gray-900 font-medium pt-2">{faq.question}</span>
                 </div>
                 <div className="flex-shrink-0 ml-4">
                   {openIndex === index ? (
-                    <Minus className="w-5 h-5 text-orange-600" />
+                    <Minus className="w-5 h-5 text-[#D4972A]" />
                   ) : (
                     <Plus className="w-5 h-5 text-gray-400" />
                   )}
@@ -112,7 +112,7 @@ export function FAQ() {
           </p>
           <a
             href={`/${locale}/contact`}
-            className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium"
+            className="inline-flex items-center gap-2 text-[#D4972A] hover:text-[#B87A20] font-medium"
           >
             {locale === 'ja' ? 'お問い合わせ' : 'Entre em contato'}
           </a>

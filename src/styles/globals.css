@@ -187,11 +187,4 @@
   .gradient-cream-b {
     background: linear-gradient(to bottom, var(--color-cream), transparent);
   }
-
-  }
-
-
-@keyframes slideInLeft {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
 }

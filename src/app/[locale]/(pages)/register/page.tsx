@@ -79,7 +79,7 @@ export default function RegisterPage() {
 
   if (success) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center py-12 px-4">
+      <div className="min-h-screen bg-[#FAF7F2] flex items-center justify-center py-12 px-4">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
             <CheckCircle className="h-8 w-8 text-green-600" />
@@ -95,7 +95,7 @@ export default function RegisterPage() {
               <p className="text-gray-600 mb-4">
                 Seu pedido de cadastro está em análise. Você receberá um email quando for aprovado.
               </p>
-              <Link href="/" className="inline-block px-6 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700">
+              <Link href="/" className="inline-block px-6 py-2 bg-[#B87A20] text-white rounded-lg hover:bg-[#965C1C]">
                 Voltar ao Início
               </Link>
             </div>
@@ -106,11 +106,11 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 py-12 px-4">
+    <div className="min-h-screen bg-[#FAF7F2] py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#D4972A] to-[#B87A20] rounded-full mb-4">
               <UserPlus className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -139,11 +139,11 @@ export default function RegisterPage() {
                   onClick={() => setAccountType('INDIVIDUAL')}
                   className={`p-4 border-2 rounded-lg transition-all ${
                     accountType === 'INDIVIDUAL'
-                      ? 'border-orange-500 bg-orange-50'
+                      ? 'border-[#D4972A] bg-[#FDF8ED]'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
-                  <User className={`h-6 w-6 mx-auto mb-2 ${accountType === 'INDIVIDUAL' ? 'text-orange-600' : 'text-gray-400'}`} />
+                  <User className={`h-6 w-6 mx-auto mb-2 ${accountType === 'INDIVIDUAL' ? 'text-[#D4972A]' : 'text-gray-400'}`} />
                   <div className="text-sm font-medium text-gray-900">{t('individual')}</div>
                   <div className="text-xs text-gray-600 mt-1">{t('individualDesc')}</div>
                 </button>
@@ -153,11 +153,11 @@ export default function RegisterPage() {
                   onClick={() => setAccountType('BUSINESS')}
                   className={`p-4 border-2 rounded-lg transition-all ${
                     accountType === 'BUSINESS'
-                      ? 'border-orange-500 bg-orange-50'
+                      ? 'border-[#D4972A] bg-[#FDF8ED]'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
-                  <Building2 className={`h-6 w-6 mx-auto mb-2 ${accountType === 'BUSINESS' ? 'text-orange-600' : 'text-gray-400'}`} />
+                  <Building2 className={`h-6 w-6 mx-auto mb-2 ${accountType === 'BUSINESS' ? 'text-[#D4972A]' : 'text-gray-400'}`} />
                   <div className="text-sm font-medium text-gray-900">{t('business')}</div>
                   <div className="text-xs text-gray-600 mt-1">{t('businessDesc')}</div>
                 </button>
@@ -176,7 +176,7 @@ export default function RegisterPage() {
                     required
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                   />
                 </div>
                 <div>
@@ -188,7 +188,7 @@ export default function RegisterPage() {
                     required
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                   />
                 </div>
               </div>
@@ -203,7 +203,7 @@ export default function RegisterPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                   />
                 </div>
                 <div>
@@ -215,7 +215,7 @@ export default function RegisterPage() {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                   />
                 </div>
               </div>
@@ -231,7 +231,7 @@ export default function RegisterPage() {
                     minLength={6}
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                   />
                 </div>
                 <div>
@@ -244,7 +244,7 @@ export default function RegisterPage() {
                     minLength={6}
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                   />
                 </div>
               </div>
@@ -263,7 +263,7 @@ export default function RegisterPage() {
                       required
                       value={formData.companyName}
                       onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
@@ -275,7 +275,7 @@ export default function RegisterPage() {
                         type="text"
                         value={formData.taxId}
                         onChange={(e) => setFormData({ ...formData, taxId: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                       />
                     </div>
                     <div>
@@ -286,7 +286,7 @@ export default function RegisterPage() {
                         type="text"
                         value={formData.invoiceNumber}
                         onChange={(e) => setFormData({ ...formData, invoiceNumber: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                         placeholder="T1234567890123"
                       />
                     </div>
@@ -298,18 +298,18 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-medium hover:from-orange-600 hover:to-orange-700 transition-all disabled:opacity-50"
+              className="w-full py-3 bg-gradient-to-r from-[#D4972A] to-[#B87A20] text-white rounded-lg font-medium hover:from-[#B87A20] hover:to-[#965C1C] transition-all disabled:opacity-50"
             >
               {loading ? t('loading') : t('registerButton')}
             </button>
 
             <p className="text-xs text-gray-600 text-center">
               {t('terms')}{' '}
-              <Link href="/terms" className="text-orange-600 hover:underline">
+              <Link href="/terms" className="text-[#D4972A] hover:underline">
                 {t('termsLink')}
               </Link>
               {' '}{t('and')}{' '}
-              <Link href="/privacy" className="text-orange-600 hover:underline">
+              <Link href="/privacy" className="text-[#D4972A] hover:underline">
                 {t('privacyLink')}
               </Link>
             </p>
@@ -318,7 +318,7 @@ export default function RegisterPage() {
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               {t('haveAccount')}{' '}
-              <Link href="/login" className="text-orange-600 hover:text-orange-700 font-medium">
+              <Link href="/login" className="text-[#D4972A] hover:text-[#B87A20] font-medium">
                 {t('loginLink')}
               </Link>
             </p>

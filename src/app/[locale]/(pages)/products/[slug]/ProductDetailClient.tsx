@@ -69,7 +69,7 @@ export default function ProductDetailClient() {
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-orange-200 border-t-orange-500" />
+        <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-[#ECC76E]/30 border-t-[#D4972A]" />
       </div>
     );
   }
@@ -130,7 +130,7 @@ export default function ProductDetailClient() {
         <button
           type="button"
           onClick={() => router.back()}
-          className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-orange-600 transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#D4972A] transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
           {t('detail.back')}
@@ -154,12 +154,12 @@ export default function ProductDetailClient() {
               />
               <div className="absolute top-3 left-3 flex flex-col gap-1">
                 {product.isNew && (
-                  <span className="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-[#D4972A] text-white text-xs font-bold px-3 py-1 rounded-full">
                     {t('new_badge')}
                   </span>
                 )}
                 {product.isBestseller && (
-                  <span className="bg-yellow-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-[#ECC76E] text-gray-900 text-xs font-bold px-3 py-1 rounded-full">
                     {t('bestseller_badge')}
                   </span>
                 )}
@@ -178,7 +178,7 @@ export default function ProductDetailClient() {
                     type="button"
                     onClick={() => setSelectedImage(idx)}
                     className={`flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-lg overflow-hidden border-2 transition-colors ${
-                      selectedImage === idx ? 'border-orange-500' : 'border-gray-200'
+                      selectedImage === idx ? 'border-[#D4972A]' : 'border-gray-200'
                     }`}
                   >
                     <Image src={img} alt={`${name} ${idx + 1}`} width={80} height={80}
@@ -191,7 +191,7 @@ export default function ProductDetailClient() {
 
           {/* ── INFO ── */}
           <div className="flex flex-col">
-            <p className="text-xs text-orange-600 font-semibold uppercase tracking-wider mb-2">
+            <p className="text-xs text-[#D4972A] font-semibold uppercase tracking-wider mb-2">
               {product.categoryName[locale]}
             </p>
             <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">{name}</h1>
@@ -226,7 +226,7 @@ export default function ProductDetailClient() {
                     onClick={() => { setBuyByBox(false); setQuantity(1); }}
                     className={`flex flex-col items-center gap-1 p-3 rounded-xl border-2 transition-all ${
                       !buyByBox
-                        ? 'border-orange-500 bg-orange-50'
+                        ? 'border-[#D4972A] bg-[#FDF8ED]'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
@@ -247,7 +247,7 @@ export default function ProductDetailClient() {
                     onClick={() => { setBuyByBox(true); setQuantity(1); }}
                     className={`flex flex-col items-center gap-1 p-3 rounded-xl border-2 transition-all ${
                       buyByBox
-                        ? 'border-orange-500 bg-orange-50'
+                        ? 'border-[#D4972A] bg-[#FDF8ED]'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
@@ -255,7 +255,7 @@ export default function ProductDetailClient() {
                     <span className="text-sm font-semibold text-gray-900">
                       {locale === 'ja' ? `箱（${product.unitsPerBox}個入）` : `Caixa (${product.unitsPerBox} un.)`}
                     </span>
-                    <span className="text-lg font-bold text-orange-600">
+                    <span className="text-lg font-bold text-[#D4972A]">
                       ¥{boxPriceWithTax.toLocaleString()}
                     </span>
                     <span className="text-[10px] text-gray-500">
@@ -319,7 +319,7 @@ export default function ProductDetailClient() {
                     ? 'bg-green-500 text-white'
                     : outOfStock
                     ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:shadow-lg active:scale-95'
+                    : 'bg-gradient-to-r from-[#D4972A] to-[#B87A20] text-white hover:shadow-lg active:scale-95'
                 }`}
               >
                 {added ? (

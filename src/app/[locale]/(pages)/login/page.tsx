@@ -37,13 +37,13 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center py-12 px-4">
+    <div className="min-h-screen bg-[#FAF7F2] flex items-center justify-center py-12 px-4">
       <div className="max-w-md w-full">
         {/* Card */}
         <div className="bg-white rounded-2xl shadow-xl p-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#D4972A] to-[#B87A20] rounded-full mb-4">
               <LogIn className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -76,7 +76,7 @@ export default function LoginPage() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A] focus:border-transparent"
                   placeholder={t('emailPlaceholder')}
                 />
               </div>
@@ -94,7 +94,7 @@ export default function LoginPage() {
                   required
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A] focus:border-transparent"
                   placeholder={t('passwordPlaceholder')}
                 />
               </div>
@@ -107,11 +107,11 @@ export default function LoginPage() {
                   type="checkbox"
                   checked={formData.rememberMe}
                   onChange={(e) => setFormData({ ...formData, rememberMe: e.target.checked })}
-                  className="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                  className="w-4 h-4 text-[#D4972A] border-gray-300 rounded focus:ring-[#D4972A]"
                 />
                 <span className="text-sm text-gray-700">{t('rememberMe')}</span>
               </label>
-              <Link href="/forgot-password" className="text-sm text-orange-600 hover:text-orange-700">
+              <Link href="/forgot-password" className="text-sm text-[#D4972A] hover:text-[#B87A20]">
                 {t('forgotPassword')}
               </Link>
             </div>
@@ -120,7 +120,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-medium hover:from-orange-600 hover:to-orange-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3 bg-gradient-to-r from-[#D4972A] to-[#B87A20] text-white rounded-lg font-medium hover:from-[#B87A20] hover:to-[#965C1C] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? t('loading') : t('loginButton')}
             </button>
@@ -130,7 +130,7 @@ export default function LoginPage() {
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               {t('noAccount')}{' '}
-              <Link href="/register" className="text-orange-600 hover:text-orange-700 font-medium">
+              <Link href="/register" className="text-[#D4972A] hover:text-[#B87A20] font-medium">
                 {t('registerLink')}
               </Link>
             </p>

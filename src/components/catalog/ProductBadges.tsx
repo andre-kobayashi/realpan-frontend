@@ -16,8 +16,8 @@ export function ProductBadges({ isNew, discount }: Props) {
         </div>
       )}
       {discount && (
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-dashed border-orange-400 px-3 py-1 rounded-full">
-          <span className="text-orange-700 text-xs font-bold">
+        <div className="bg-[#FAF7F2] border-2 border-dashed border-orange-400 px-3 py-1 rounded-full">
+          <span className="text-[#B87A20] text-xs font-bold">
             {discount}% OFF
           </span>
         </div>

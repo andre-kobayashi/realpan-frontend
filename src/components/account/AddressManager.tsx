@@ -132,7 +132,7 @@ export default function AddressManager() {
         </h2>
         <button
           onClick={() => setShowForm(true)}
-          className="flex items-center justify-center gap-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-sm sm:text-base"
+          className="flex items-center justify-center gap-2 px-4 py-2 bg-[#B87A20] text-white rounded-lg hover:bg-[#965C1C] transition-colors text-sm sm:text-base"
         >
           <Plus className="h-5 w-5" />
           {addresses.length === 0 ? t('addButton') : t('editButton')}
@@ -145,7 +145,7 @@ export default function AddressManager() {
           <p className="text-gray-600 mb-4">{t('empty')}</p>
           <button
             onClick={() => setShowForm(true)}
-            className="text-orange-600 hover:text-orange-700 font-medium"
+            className="text-[#D4972A] hover:text-[#B87A20] font-medium"
           >
             {t('addFirst')}
           </button>
@@ -155,21 +155,21 @@ export default function AddressManager() {
           {addresses.map((address) => (
             <div
               key={address.id}
-              className="bg-white border-2 border-orange-200 rounded-lg p-4"
+              className="bg-white border-2 border-[#ECC76E]/30 rounded-lg p-4"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-orange-600 flex-shrink-0" />
+                  <MapPin className="h-5 w-5 text-[#D4972A] flex-shrink-0" />
                   <h3 className="font-medium text-gray-900">{address.label}</h3>
                   {address.isDefault && (
-                    <span className="px-2 py-0.5 bg-orange-100 text-orange-700 text-xs rounded-full whitespace-nowrap">
+                    <span className="px-2 py-0.5 bg-[#FDF8ED] text-[#B87A20] text-xs rounded-full whitespace-nowrap">
                       {t('default')}
                     </span>
                   )}
                 </div>
                 <button
                   onClick={() => setShowForm(true)}
-                  className="p-1 text-gray-600 hover:text-orange-600 flex-shrink-0"
+                  className="p-1 text-gray-600 hover:text-[#D4972A] flex-shrink-0"
                 >
                   <Edit2 className="h-4 w-4" />
                 </button>
@@ -215,7 +215,7 @@ export default function AddressManager() {
                     onChange={(e) => handlePostalCodeChange(e.target.value)}
                     placeholder={t('form.placeholders.postalCode')}
                     maxLength={8}
-                    className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                   />
                   {searchingZip && (
                     <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -239,7 +239,7 @@ export default function AddressManager() {
                     value={formData.prefecture}
                     onChange={(e) => setFormData({ ...formData, prefecture: e.target.value })}
                     placeholder={t('form.placeholders.prefecture')}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A] bg-gray-50"
                     readOnly={searchingZip}
                   />
                 </div>
@@ -253,7 +253,7 @@ export default function AddressManager() {
                     value={formData.city}
                     onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                     placeholder={t('form.placeholders.city')}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A] bg-gray-50"
                     readOnly={searchingZip}
                   />
                 </div>
@@ -268,7 +268,7 @@ export default function AddressManager() {
                   value={formData.ward}
                   onChange={(e) => setFormData({ ...formData, ward: e.target.value })}
                   placeholder={t('form.placeholders.ward')}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A] bg-gray-50"
                   readOnly={searchingZip}
                 />
               </div>
@@ -283,7 +283,7 @@ export default function AddressManager() {
                   value={formData.streetAddress}
                   onChange={(e) => setFormData({ ...formData, streetAddress: e.target.value })}
                   placeholder={t('form.placeholders.streetAddress')}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                 />
               </div>
 
@@ -296,7 +296,7 @@ export default function AddressManager() {
                   value={formData.building}
                   onChange={(e) => setFormData({ ...formData, building: e.target.value })}
                   placeholder={t('form.placeholders.building')}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                 />
               </div>
 
@@ -310,7 +310,7 @@ export default function AddressManager() {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="090-1234-5678"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                 />
               </div>
 
@@ -325,7 +325,7 @@ export default function AddressManager() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="w-full sm:flex-1 flex items-center justify-center gap-2 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors disabled:opacity-50"
+                  className="w-full sm:flex-1 flex items-center justify-center gap-2 py-3 bg-[#B87A20] text-white rounded-lg hover:bg-[#965C1C] transition-colors disabled:opacity-50"
                 >
                   <Save className="h-5 w-5" />
                   {saving ? t('form.saving') : t('form.save')}

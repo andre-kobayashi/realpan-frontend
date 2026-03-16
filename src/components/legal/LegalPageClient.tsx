@@ -126,7 +126,7 @@ function ShippingPage({ t, locale }: { t: (key: string) => string; locale: strin
                 <td className="px-4 py-3 font-medium text-gray-900">
                   {locale === 'ja' ? '送料無料条件' : 'Frete grátis'}
                 </td>
-                <td className="px-4 py-3 text-orange-600 text-right font-semibold">
+                <td className="px-4 py-3 text-[#D4972A] text-right font-semibold">
                   ¥10,000+
                 </td>
               </tr>
@@ -225,7 +225,7 @@ function ReturnsPage({ t, locale }: { t: (key: string) => string; locale: string
         <ol className="space-y-3">
           {steps.map((step, i) => (
             <li key={i} className="flex items-start gap-3 text-gray-700">
-              <span className="flex-shrink-0 w-7 h-7 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-sm font-bold">
+              <span className="flex-shrink-0 w-7 h-7 bg-[#FDF8ED] text-[#D4972A] rounded-full flex items-center justify-center text-sm font-bold">
                 {i + 1}
               </span>
               {step}
@@ -362,7 +362,7 @@ export default function LegalPageClient({ page }: Props) {
           {/* Back */}
           <Link
             href={`/${locale}`}
-            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-orange-600 mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#D4972A] mb-6 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             {locale === 'ja' ? 'トップページへ' : 'Voltar ao início'}
@@ -370,7 +370,7 @@ export default function LegalPageClient({ page }: Props) {
 
           {/* Header */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 lg:p-8 mb-6">
-            <div className="flex items-center gap-3 text-orange-600 mb-2">
+            <div className="flex items-center gap-3 text-[#D4972A] mb-2">
               {PAGE_ICONS[page]}
               <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">
                 {t(`${page}.title`)}
@@ -406,7 +406,7 @@ export default function LegalPageClient({ page }: Props) {
                   <Link
                     key={p.id}
                     href={`/${locale}/${p.path}`}
-                    className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                    className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-700 hover:bg-[#FDF8ED] hover:text-[#D4972A] transition-colors"
                   >
                     {PAGE_ICONS[p.id]}
                     {t(`${p.id}.title`)}

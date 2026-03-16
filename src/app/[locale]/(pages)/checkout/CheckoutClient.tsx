@@ -241,9 +241,9 @@ function DeliveryDatePicker({
               className={`
                 h-9 rounded-lg text-sm font-medium transition-all relative
                 ${isSelected
-                  ? 'bg-orange-500 text-white shadow-sm'
+                  ? 'bg-[#D4972A] text-white shadow-sm'
                   : selectable
-                    ? `hover:bg-orange-50 hover:text-orange-600 ${
+                    ? `hover:bg-[#FDF8ED] hover:text-[#D4972A] ${
                         isMinDate
                           ? 'bg-green-50 text-green-700 ring-1 ring-green-300'
                           : isSunday
@@ -254,7 +254,7 @@ function DeliveryDatePicker({
                       }`
                     : 'text-gray-300 cursor-not-allowed'
                 }
-                ${isToday && !isSelected ? 'ring-1 ring-orange-300' : ''}
+                ${isToday && !isSelected ? 'ring-1 ring-[#ECC76E]' : ''}
               `}
             >
               {date.getDate()}
@@ -272,7 +272,7 @@ function DeliveryDatePicker({
           {locale === 'ja' ? '最短日' : 'Data mais cedo'}
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-orange-500 inline-block" />
+          <span className="w-3 h-3 rounded bg-[#D4972A] inline-block" />
           {locale === 'ja' ? '選択中' : 'Selecionado'}
         </span>
       </div>
@@ -339,7 +339,7 @@ function StripePaymentForm({
           type="button"
           onClick={handleSubmit}
           disabled={processing || !stripe}
-          className="w-full flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full font-bold hover:shadow-lg active:scale-95 disabled:opacity-60 transition-all"
+          className="w-full flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-[#D4972A] to-[#B87A20] text-white rounded-full font-bold hover:shadow-lg active:scale-95 disabled:opacity-60 transition-all"
         >
           {processing ? (
             <>
@@ -691,7 +691,7 @@ export default function CheckoutClient() {
           <div className="flex flex-col gap-3">
             <Link
               href={`/${locale}/account`}
-              className="w-full py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition-colors text-center"
+              className="w-full py-3 bg-[#D4972A] text-white rounded-full font-semibold hover:bg-[#B87A20] transition-colors text-center"
             >
               {locale === 'ja' ? '注文状況を確認' : 'Ver meus pedidos'}
             </Link>
@@ -783,7 +783,7 @@ export default function CheckoutClient() {
         <button
           type="button"
           onClick={() => router.back()}
-          className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-orange-600 mb-6"
+          className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#D4972A] mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           {locale === 'ja' ? '戻る' : 'Voltar'}
@@ -800,7 +800,7 @@ export default function CheckoutClient() {
                 disabled={i > visibleStepIndex}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   i === visibleStepIndex
-                    ? 'bg-orange-500 text-white'
+                    ? 'bg-[#D4972A] text-white'
                     : i < visibleStepIndex
                     ? 'bg-green-100 text-green-700 cursor-pointer'
                     : 'bg-gray-100 text-gray-400'
@@ -821,7 +821,7 @@ export default function CheckoutClient() {
             {step === 'address' && (
               <div className="bg-white rounded-xl p-6 shadow-sm space-y-4">
                 <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-orange-500" />
+                  <MapPin className="h-5 w-5 text-[#D4972A]" />
                   {locale === 'ja' ? 'お届け先情報' : 'Endereço de entrega'}
                 </h2>
 
@@ -834,7 +834,7 @@ export default function CheckoutClient() {
                       type="text"
                       value={address.name}
                       onChange={(e) => setAddress((a) => ({ ...a, name: e.target.value }))}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                       placeholder={locale === 'ja' ? '山田 太郎' : 'Nome Completo'}
                     />
                   </div>
@@ -847,7 +847,7 @@ export default function CheckoutClient() {
                       type="text"
                       value={address.postalCode}
                       onChange={(e) => handlePostalCodeChange(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                       placeholder="437-1101"
                       maxLength={8}
                     />
@@ -861,7 +861,7 @@ export default function CheckoutClient() {
                       type="text"
                       value={address.prefecture}
                       onChange={(e) => setAddress((a) => ({ ...a, prefecture: e.target.value }))}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                       placeholder={locale === 'ja' ? '静岡県' : 'São Paulo'}
                     />
                   </div>
@@ -874,7 +874,7 @@ export default function CheckoutClient() {
                       type="text"
                       value={address.city}
                       onChange={(e) => setAddress((a) => ({ ...a, city: e.target.value }))}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                       placeholder={locale === 'ja' ? '袋井市' : 'Cidade'}
                     />
                   </div>
@@ -887,7 +887,7 @@ export default function CheckoutClient() {
                       type="text"
                       value={address.ward}
                       onChange={(e) => setAddress((a) => ({ ...a, ward: e.target.value }))}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-50"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A] bg-gray-50"
                       placeholder={locale === 'ja' ? '浅羽' : 'Bairro'}
                     />
                   </div>
@@ -900,7 +900,7 @@ export default function CheckoutClient() {
                       type="text"
                       value={address.address}
                       onChange={(e) => setAddress((a) => ({ ...a, address: e.target.value }))}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                       placeholder={locale === 'ja' ? '1-2-3' : 'Rua, número'}
                     />
                   </div>
@@ -913,7 +913,7 @@ export default function CheckoutClient() {
                       type="text"
                       value={address.building || ''}
                       onChange={(e) => setAddress((a) => ({ ...a, building: e.target.value }))}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                       placeholder={locale === 'ja' ? 'マンション名 101号室' : 'Apto, bloco'}
                     />
                   </div>
@@ -926,7 +926,7 @@ export default function CheckoutClient() {
                       type="tel"
                       value={address.phone}
                       onChange={(e) => setAddress((a) => ({ ...a, phone: e.target.value }))}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A]"
                       placeholder="090-1234-5678"
                     />
                   </div>
@@ -939,7 +939,7 @@ export default function CheckoutClient() {
                     fetchShippingOptions();
                   }}
                   disabled={!canProceed()}
-                  className="w-full mt-4 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                  className="w-full mt-4 py-3 bg-[#D4972A] text-white rounded-full font-semibold hover:bg-[#B87A20] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
                 >
                   {locale === 'ja' ? '配送方法の選択へ' : 'Escolher entrega'} →
                 </button>
@@ -949,7 +949,7 @@ export default function CheckoutClient() {
             {step === 'shipping' && (
               <div className="bg-white rounded-xl p-6 shadow-sm space-y-4">
                 <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                  <Truck className="h-5 w-5 text-orange-500" />
+                  <Truck className="h-5 w-5 text-[#D4972A]" />
                   {locale === 'ja' ? '配送方法' : 'Método de entrega'}
                 </h2>
 
@@ -987,7 +987,7 @@ export default function CheckoutClient() {
                         key={option.carrierId}
                         className={`block p-4 rounded-xl border-2 cursor-pointer transition-all ${
                           selectedCarrierId === option.carrierId
-                            ? 'border-orange-500 bg-orange-50'
+                            ? 'border-[#D4972A] bg-[#FDF8ED]'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
                       >
@@ -1004,11 +1004,11 @@ export default function CheckoutClient() {
                           />
                           <div
                             className={`mt-1 w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
-                              selectedCarrierId === option.carrierId ? 'border-orange-500' : 'border-gray-300'
+                              selectedCarrierId === option.carrierId ? 'border-[#D4972A]' : 'border-gray-300'
                             }`}
                           >
                             {selectedCarrierId === option.carrierId && (
-                              <div className="w-3 h-3 rounded-full bg-orange-500" />
+                              <div className="w-3 h-3 rounded-full bg-[#D4972A]" />
                             )}
                           </div>
 
@@ -1050,7 +1050,7 @@ export default function CheckoutClient() {
                         </div>
 
                         {selectedCarrierId === option.carrierId && option.timeSlots?.length > 0 && (
-                          <div className="mt-4 ml-8 pt-3 border-t border-orange-200">
+                          <div className="mt-4 ml-8 pt-3 border-t border-[#ECC76E]/30">
                             <p className="text-xs font-medium text-gray-700 mb-2">
                               {locale === 'ja' ? '配達時間帯' : 'Horário'}:
                             </p>
@@ -1060,7 +1060,7 @@ export default function CheckoutClient() {
                                 onClick={() => setSelectedTimeSlot('')}
                                 className={`px-3 py-1.5 rounded-lg text-xs font-medium border ${
                                   !selectedTimeSlot
-                                    ? 'border-orange-500 bg-orange-100 text-orange-700'
+                                    ? 'border-[#D4972A] bg-[#FDF8ED] text-[#B87A20]'
                                     : 'border-gray-200 text-gray-600'
                                 }`}
                               >
@@ -1074,7 +1074,7 @@ export default function CheckoutClient() {
                                   onClick={() => setSelectedTimeSlot(slot.label)}
                                   className={`px-3 py-1.5 rounded-lg text-xs font-medium border ${
                                     selectedTimeSlot === slot.label
-                                      ? 'border-orange-500 bg-orange-100 text-orange-700'
+                                      ? 'border-[#D4972A] bg-[#FDF8ED] text-[#B87A20]'
                                       : 'border-gray-200 text-gray-600'
                                   }`}
                                 >
@@ -1092,7 +1092,7 @@ export default function CheckoutClient() {
                 {selectedCarrierId && deliveryDateRange && (
                   <div className="space-y-3">
                     <h3 className="text-sm font-bold text-gray-900 flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-orange-500" />
+                      <Calendar className="h-4 w-4 text-[#D4972A]" />
                       {locale === 'ja' ? '配達希望日' : 'Data de entrega desejada'}
                     </h3>
 
@@ -1105,9 +1105,9 @@ export default function CheckoutClient() {
                     />
 
                     {selectedDeliveryDate && (
-                      <div className="bg-orange-50 border border-orange-200 rounded-lg px-4 py-3 flex items-center gap-2">
-                        <Calendar className="h-4 w-4 text-orange-600 flex-shrink-0" />
-                        <span className="text-sm font-medium text-orange-800">
+                      <div className="bg-[#FDF8ED] border border-[#ECC76E]/30 rounded-lg px-4 py-3 flex items-center gap-2">
+                        <Calendar className="h-4 w-4 text-[#D4972A] flex-shrink-0" />
+                        <span className="text-sm font-medium text-[#965C1C]">
                           {locale === 'ja' ? '配達日' : 'Data'}: {formattedDeliveryDate}
                           {selectedTimeSlot && ` • ${selectedTimeSlot}`}
                         </span>
@@ -1120,7 +1120,7 @@ export default function CheckoutClient() {
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   rows={2}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4972A] text-sm"
                   placeholder={locale === 'ja' ? '配送に関するご要望' : 'Observações de entrega'}
                 />
 
@@ -1136,7 +1136,7 @@ export default function CheckoutClient() {
                     type="button"
                     onClick={() => setStep('confirm')}
                     disabled={!canProceed()}
-                    className="flex-1 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                    className="flex-1 py-3 bg-[#D4972A] text-white rounded-full font-semibold hover:bg-[#B87A20] disabled:bg-gray-300 disabled:cursor-not-allowed"
                   >
                     {locale === 'ja' ? '確認・お支払いへ' : 'Confirmar e pagar'} →
                   </button>
@@ -1149,13 +1149,13 @@ export default function CheckoutClient() {
                 <div className="bg-white rounded-xl p-5 shadow-sm">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="font-semibold text-gray-900 flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-orange-500" />
+                      <MapPin className="h-4 w-4 text-[#D4972A]" />
                       {locale === 'ja' ? 'お届け先' : 'Endereço'}
                     </h3>
                     <button
                       type="button"
                       onClick={() => setStep('address')}
-                      className="text-sm text-orange-600 hover:underline"
+                      className="text-sm text-[#D4972A] hover:underline"
                     >
                       {locale === 'ja' ? '変更' : 'Alterar'}
                     </button>
@@ -1174,13 +1174,13 @@ export default function CheckoutClient() {
                 <div className="bg-white rounded-xl p-5 shadow-sm">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="font-semibold text-gray-900 flex items-center gap-2">
-                      <Truck className="h-4 w-4 text-orange-500" />
+                      <Truck className="h-4 w-4 text-[#D4972A]" />
                       {locale === 'ja' ? '配送' : 'Entrega'}
                     </h3>
                     <button
                       type="button"
                       onClick={() => setStep('shipping')}
-                      className="text-sm text-orange-600 hover:underline"
+                      className="text-sm text-[#D4972A] hover:underline"
                     >
                       {locale === 'ja' ? '変更' : 'Alterar'}
                     </button>
@@ -1203,7 +1203,7 @@ export default function CheckoutClient() {
 
                 <div className="bg-white rounded-xl p-5 shadow-sm">
                   <h3 className="font-semibold text-gray-900 flex items-center gap-2 mb-3">
-                    <ShoppingCart className="h-4 w-4 text-orange-500" />
+                    <ShoppingCart className="h-4 w-4 text-[#D4972A]" />
                     {locale === 'ja' ? '注文商品' : 'Itens'} ({itemCount})
                   </h3>
                   <div className="divide-y divide-gray-100">
@@ -1236,7 +1236,7 @@ export default function CheckoutClient() {
 
                 <div className="bg-white rounded-xl p-5 shadow-sm">
                   <h3 className="font-semibold text-gray-900 flex items-center gap-2 mb-4">
-                    <CreditCard className="h-4 w-4 text-orange-500" />
+                    <CreditCard className="h-4 w-4 text-[#D4972A]" />
                     {locale === 'ja' ? 'お支払い方法' : 'Forma de pagamento'}
                   </h3>
                   <div className="space-y-2">
@@ -1245,7 +1245,7 @@ export default function CheckoutClient() {
                         key={pm.value}
                         className={`flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-colors ${
                           paymentMethod === pm.value
-                            ? 'border-orange-500 bg-orange-50'
+                            ? 'border-[#D4972A] bg-[#FDF8ED]'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
                       >
@@ -1259,14 +1259,14 @@ export default function CheckoutClient() {
                         />
                         <div
                           className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
-                            paymentMethod === pm.value ? 'border-orange-500' : 'border-gray-300'
+                            paymentMethod === pm.value ? 'border-[#D4972A]' : 'border-gray-300'
                           }`}
                         >
-                          {paymentMethod === pm.value && <div className="w-3 h-3 rounded-full bg-orange-500" />}
+                          {paymentMethod === pm.value && <div className="w-3 h-3 rounded-full bg-[#D4972A]" />}
                         </div>
                         <div
                           className={`p-2 rounded-lg ${
-                            paymentMethod === pm.value ? 'bg-orange-100 text-orange-600' : 'bg-gray-100 text-gray-500'
+                            paymentMethod === pm.value ? 'bg-[#FDF8ED] text-[#D4972A]' : 'bg-gray-100 text-gray-500'
                           }`}
                         >
                           {pm.icon}
@@ -1304,7 +1304,7 @@ export default function CheckoutClient() {
                     type="button"
                     onClick={createPayment}
                     disabled={loading}
-                    className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full font-bold hover:shadow-lg active:scale-95 disabled:opacity-60 transition-all"
+                    className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-[#D4972A] to-[#B87A20] text-white rounded-full font-bold hover:shadow-lg active:scale-95 disabled:opacity-60 transition-all"
                   >
                     {loading ? (
                       <>
@@ -1331,7 +1331,7 @@ export default function CheckoutClient() {
             {step === 'payment' && clientSecret && stripePromise && (
               <div className="bg-white rounded-xl p-6 shadow-sm space-y-4">
                 <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                  <CreditCard className="h-5 w-5 text-orange-500" />
+                  <CreditCard className="h-5 w-5 text-[#D4972A]" />
                   {locale === 'ja' ? 'お支払い情報を入力' : 'Dados de pagamento'}
                 </h2>
 
