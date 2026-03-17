@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useAuth } from '@/contexts/AuthContext';
 import {
   User, Package, MapPin, LogOut, Loader2, Clock, Truck,
-  CreditCard, ExternalLink, Building2,
+  CreditCard, ExternalLink, Building2, FileText, Receipt,
 } from 'lucide-react';
 import Image from 'next/image';
 import AddressManager from '@/components/account/AddressManager';
@@ -21,6 +21,7 @@ interface Order {
   createdAt: string; deliveryDate?: string; deliveryTime?: string;
   shippingCost: number; total: number; trackingCode?: string;
   carrier?: Carrier; carrierName?: string; items?: OrderItem[];
+  paymentStatus?: string;
 }
 interface OrdersResponse { success: boolean; data?: Order[]; }
 interface TranslationFn { (key: string, values?: Record<string, string | number>): string; }
@@ -39,6 +40,7 @@ function getTrackingUrl(carrierName: string | undefined, trackingCode: string): 
 
 function OrdersTab({ t }: { t: TranslationFn }) {
   const locale = useLocale();
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.realpan.jp';
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -133,6 +135,60 @@ function OrdersTab({ t }: { t: TranslationFn }) {
                   {order.shippingCost > 0 && <span className="flex items-center gap-1"><Truck className="h-3.5 w-3.5" />{loc === 'ja' ? '送料' : 'Frete'} ¥{order.shippingCost.toLocaleString()}</span>}
                 </div>
                 <span className="text-lg font-bold text-[#1A2740] tabular-nums">¥{(order.total || 0).toLocaleString()}</span>
+              </div>
+
+              {/* ═══ Documentos Fiscais / 帳票 ═══ */}
+              <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-[#F5EDE0] mt-2">
+                {/* 納品書 — always available */}
+                <a href={`${API_URL}/api/documents/nouhinsho/${order.id}/html`}
+                   target="_blank" rel="noopener noreferrer"
+                   className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-lg text-xs font-medium hover:bg-blue-100 transition-colors">
+                  <FileText className="h-3 w-3" />
+                  {loc === 'ja' ? '納品書' : 'Nota de Entrega'}
+                </a>
+
+                {/* 請求書 — for INVOICE (PJ) */}
+                {order.paymentMethod === 'INVOICE' && (
+                  <a href={`${API_URL}/api/documents/seikyusho/${order.id}/html`}
+                     target="_blank" rel="noopener noreferrer"
+                     className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-50 text-orange-700 border border-orange-200 rounded-lg text-xs font-medium hover:bg-orange-100 transition-colors">
+                    <Receipt className="h-3 w-3" />
+                    {loc === 'ja' ? '請求書' : 'Fatura'}
+                  </a>
+                )}
+
+                {/* 領収書 — for PF (STRIPE, DAIBIKI, BANK_TRANSFER) */}
+                {order.paymentMethod !== 'INVOICE' && (order.status === 'PAID' || order.status === 'SHIPPED' || order.status === 'DELIVERED' || order.paymentStatus === 'PAID') && (
+                  <a href={`${API_URL}/api/documents/ryoushusho/${order.id}/html`}
+                     target="_blank" rel="noopener noreferrer"
+                     className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-teal-50 text-teal-700 border border-teal-200 rounded-lg text-xs font-medium hover:bg-teal-100 transition-colors">
+                    <Receipt className="h-3 w-3" />
+                    {loc === 'ja' ? '領収書' : 'Recibo'}
+                  </a>
+                )}
+
+                {/* Payment proof note */}
+                {order.paymentMethod === 'DAIBIKI' && (
+                  <span className="text-[10px] text-[#8099B8] italic">
+                    {loc === 'ja'
+                      ? '※代金引換の領収書は配達時に運送会社より発行されます'
+                      : '※O recibo de pagamento é emitido pela transportadora na entrega'}
+                  </span>
+                )}
+                {order.paymentMethod === 'BANK_TRANSFER' && (
+                  <span className="text-[10px] text-[#8099B8] italic">
+                    {loc === 'ja'
+                      ? '※振込明細書が正式な支払証明となります（税法上）'
+                      : '※O comprovante de transferência bancária é o documento oficial de pagamento'}
+                  </span>
+                )}
+                {order.paymentMethod === 'STRIPE' && (order.status === 'PAID' || order.paymentStatus === 'PAID') && (
+                  <span className="text-[10px] text-[#8099B8] italic">
+                    {loc === 'ja'
+                      ? '※クレジットカード利用明細が支払証明となります'
+                      : '※A fatura do cartão de crédito serve como comprovante de pagamento'}
+                  </span>
+                )}
               </div>
             </div>
           );

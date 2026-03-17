@@ -64,15 +64,18 @@ export default function KitsPage() {
   const handleAddKit = (kit: Kit) => {
     // Adiciona o kit como item único no carrinho
     addItem({
-      productId: `kit-${kit.id}`,
+      id: `kit-${kit.id}`,
       slug: `kits/${kit.slug}`,
-      namePt: kit.namePt,
-      nameJa: kit.nameJa,
+      name: { pt: kit.namePt, ja: kit.nameJa },
       image: kit.primaryImage || kit.items?.[0]?.product?.images?.[0] || '',
-      price: kit.effectivePrice,
-      quantity: 1,
+      retailPrice: kit.effectivePrice,
+      wholesalePrice: kit.effectivePrice,
+      retailPriceWithTax: Math.ceil(kit.effectivePrice * 1.08),
+      hasPromo: false,
+      promoPrice: 0,
+      stock: 999,
       storageType: 'FROZEN_READY',
-      weightGrams: kit.items.reduce((sum, item) => sum + (item.product as any)?.weightGrams * item.quantity || 0, 0),
+      weightGrams: kit.items.reduce((sum: number, item: any) => sum + ((item.product as any)?.weightGrams || 0) * item.quantity, 0),
     } as any);
     setAddedKit(kit.id);
     setTimeout(() => setAddedKit(null), 2000);
