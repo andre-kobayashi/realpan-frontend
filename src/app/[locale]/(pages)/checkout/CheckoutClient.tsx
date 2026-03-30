@@ -374,6 +374,7 @@ export default function CheckoutClient() {
   const [step, setStep] = useState<Step>('address');
   const [loading, setLoading] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
+  const [savedTotals, setSavedTotals] = useState<{ grandTotal: number; daibikiFee: number } | null>(null);
   const [orderId, setOrderId] = useState('');
   const [orderNumber, setOrderNumber] = useState('');
 
@@ -631,6 +632,7 @@ export default function CheckoutClient() {
           setClientSecret(data.data.clientSecret);
           setStep('payment');
         } else {
+          setSavedTotals({ grandTotal, daibikiFee });
           setOrderComplete(true);
           clearCart();
         }
@@ -647,6 +649,7 @@ export default function CheckoutClient() {
   };
 
   const handlePaymentSuccess = (oid: string, onum: string) => {
+    setSavedTotals({ grandTotal, daibikiFee });
     setOrderId(oid);
     setOrderNumber(onum);
     setOrderComplete(true);
@@ -669,11 +672,11 @@ export default function CheckoutClient() {
               <span className="font-mono font-bold">{orderNumber}</span>
             </p>
           )}
-          {paymentMethod === 'DAIBIKI' && (
+          {paymentMethod === 'DAIBIKI' && savedTotals && (
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4 text-sm text-amber-800">
               {locale === 'ja'
-                ? `代金引換でのお届けです。配達時に¥${grandTotal.toLocaleString()}をお支払いください（代引手数料¥${daibikiFee.toLocaleString()}含む）。`
-                : `Pagamento na entrega. Pague ¥${grandTotal.toLocaleString()} ao receber (inclui taxa de ¥${daibikiFee.toLocaleString()}).`}
+                ? `代金引換でのお届けです。配達時に¥${savedTotals.grandTotal.toLocaleString()}をお支払いください（商品・送料・代引手数料¥${savedTotals.daibikiFee.toLocaleString()}込み）。`
+                : `Pagamento na entrega. Total a pagar ao receber: ¥${savedTotals.grandTotal.toLocaleString()} (produtos + frete + taxa daibiki ¥${savedTotals.daibikiFee.toLocaleString()}).`}
             </div>
           )}
           {paymentMethod === 'INVOICE' && (

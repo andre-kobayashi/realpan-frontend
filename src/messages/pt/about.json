@@ -9,18 +9,54 @@
   "overview": {
     "title": "Informações da Empresa",
     "items": {
-      "name": { "label": "Razão Social", "value": "リアルパン株式会社 (Realpan Co., Ltd.)" },
-      "ceo": { "label": "Diretor Executivo", "value": "Masuko Toshimitsu (増子 利光)" },
-      "established": { "label": "Fundação", "value": "6 de março de 2019" },
-      "capital": { "label": "Capital Social", "value": "¥8.000.000" },
-      "address": { "label": "Endereço", "value": "〒435-0016 静岡県浜松市中央区高塚町1620" },
-      "contact": { "label": "Contato", "value": "TEL: 053-570-2555 / FAX: 053-570-2560" },
-      "hours": { "label": "Horário de Funcionamento", "value": "10:00 – 17:00" },
-      "closed": { "label": "Fechado", "value": "Sábados, domingos, feriados e recesso de fim de ano" },
-      "employees": { "label": "Colaboradores", "value": "32 pessoas" },
-      "business": { "label": "Atividades", "value": "Fabricação e venda de pães, salgados e confeitaria" },
-      "bank": { "label": "Bancos", "value": "Shizuoka Bank / Hamamatsu Iwata Shinkin Bank" },
-      "invoice": { "label": "Registro Fiscal (Nota Fiscal)", "value": "T5080401023513" }
+      "name": {
+        "label": "Razão Social",
+        "value": "リアルパン株式会社 (Realpan Co., Ltd.)"
+      },
+      "ceo": {
+        "label": "Diretores Executivos",
+        "value": "Masuko Toshimitsu (増子 利光)\nMasuko Sachie (増子 幸恵)"
+      },
+      "established": {
+        "label": "Fundação",
+        "value": "6 de março de 2019"
+      },
+      "capital": {
+        "label": "Capital Social",
+        "value": "¥8.000.000"
+      },
+      "address": {
+        "label": "Endereço",
+        "value": "〒435-0016 静岡県浜松市中央区高塚町1620"
+      },
+      "contact": {
+        "label": "Contato",
+        "value": "TEL: 053-570-2555 / FAX: 053-570-2560"
+      },
+      "hours": {
+        "label": "Horário de Funcionamento",
+        "value": "10:00 – 17:00"
+      },
+      "closed": {
+        "label": "Fechado",
+        "value": "Sábados, domingos, feriados e recesso de fim de ano"
+      },
+      "employees": {
+        "label": "Colaboradores",
+        "value": "32 pessoas"
+      },
+      "business": {
+        "label": "Atividades",
+        "value": "Fabricação e venda de pães, salgados e confeitaria"
+      },
+      "bank": {
+        "label": "Bancos",
+        "value": "Shizuoka Bank / Hamamatsu Iwata Shinkin Bank"
+      },
+      "invoice": {
+        "label": "Registro Fiscal (Nota Fiscal)",
+        "value": "T5080401023513"
+      }
     }
   },
   "factory": {

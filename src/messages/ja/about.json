@@ -9,18 +9,54 @@
   "overview": {
     "title": "会社概要",
     "items": {
-      "name": { "label": "会社名", "value": "リアルパン株式会社" },
-      "ceo": { "label": "代表取締役", "value": "増子 利光" },
-      "established": { "label": "設立", "value": "2019年3月6日" },
-      "capital": { "label": "資本金", "value": "800万円" },
-      "address": { "label": "所在地", "value": "〒435-0016 静岡県浜松市中央区高塚町1620" },
-      "contact": { "label": "連絡先", "value": "TEL：053-570-2555 / FAX：053-570-2560" },
-      "hours": { "label": "営業時間", "value": "10：00 ～ 17：00" },
-      "closed": { "label": "定休日", "value": "土・日・祝日　年末年始" },
-      "employees": { "label": "従業員数", "value": "32人" },
-      "business": { "label": "事業内容", "value": "パン、お総菜、お菓子の製造・販売" },
-      "bank": { "label": "取引先銀行", "value": "静岡銀行 / 浜松いわた信用金庫" },
-      "invoice": { "label": "適格請求書発行事業者登録番号", "value": "T5080401023513" }
+      "name": {
+        "label": "会社名",
+        "value": "リアルパン株式会社"
+      },
+      "ceo": {
+        "label": "代表取締役",
+        "value": "増子 利光\n増子 幸恵"
+      },
+      "established": {
+        "label": "設立",
+        "value": "2019年3月6日"
+      },
+      "capital": {
+        "label": "資本金",
+        "value": "800万円"
+      },
+      "address": {
+        "label": "所在地",
+        "value": "〒435-0016 静岡県浜松市中央区高塚町1620"
+      },
+      "contact": {
+        "label": "連絡先",
+        "value": "TEL：053-570-2555 / FAX：053-570-2560"
+      },
+      "hours": {
+        "label": "営業時間",
+        "value": "10：00 ～ 17：00"
+      },
+      "closed": {
+        "label": "定休日",
+        "value": "土・日・祝日　年末年始"
+      },
+      "employees": {
+        "label": "従業員数",
+        "value": "32人"
+      },
+      "business": {
+        "label": "事業内容",
+        "value": "パン、お総菜、お菓子の製造・販売"
+      },
+      "bank": {
+        "label": "取引先銀行",
+        "value": "静岡銀行 / 浜松いわた信用金庫"
+      },
+      "invoice": {
+        "label": "適格請求書発行事業者登録番号",
+        "value": "T5080401023513"
+      }
     }
   },
   "factory": {

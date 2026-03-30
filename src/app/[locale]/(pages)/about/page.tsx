@@ -106,7 +106,7 @@ export default async function AboutPage() {
                 <div className="font-medium text-[#1A2740] text-sm mb-1 sm:mb-0">
                   {item.label}
                 </div>
-                <div className="sm:col-span-2 text-[#57749A] text-sm">
+                <div className="sm:col-span-2 text-[#57749A] text-sm whitespace-pre-line">
                   {item.value}
                 </div>
               </div>
