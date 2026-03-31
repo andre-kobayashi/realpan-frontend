@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
-import { ArrowRight, ChevronLeft, ChevronRight, Snowflake, Truck, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Snowflake, Truck, ShieldCheck } from 'lucide-react';
+import { HeroSection } from '@/components/home/HeroSection';
 import { ProductCard } from '@/components/catalog/ProductCard';
 import { loadAllProducts, loadCategories } from '@/lib/catalog-loader';
 import type { Product, Category } from '@/types/product';
@@ -77,43 +78,13 @@ function shuffleArray<T>(arr: T[]): T[] {
 export default function HomePage() {
   const t = useTranslations('home');
   const locale = useLocale();
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [randomProducts, setRandomProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // ── Hero slides ──
-  const heroSlides = [
-    {
-      image: '/images/hero-pao-de-queijo.webp',
-      title: t('hero.slide1.title'),
-      subtitle: t('hero.slide1.subtitle'),
-      cta: t('hero.slide1.cta'),
-      href: `/${locale}/products`,
-    },
-    {
-      image: '/images/hero-presentes.webp',
-      title: t('hero.slide2.title'),
-      subtitle: t('hero.slide2.subtitle'),
-      cta: t('hero.slide2.cta'),
-      href: `/${locale}/kits`,
-    },
-    {
-      image: '/images/hero-qualidade.webp',
-      title: t('hero.slide3.title'),
-      subtitle: t('hero.slide3.subtitle'),
-      cta: t('hero.slide3.cta'),
-      href: `/${locale}/feature`,
-    },
-  ];
 
-  // ── Auto-rotate hero ──
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [heroSlides.length]);
+
+
 
   // ── Load data ──
   useEffect(() => {
@@ -140,13 +111,7 @@ export default function HomePage() {
     load();
   }, []);
 
-  const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  }, [heroSlides.length]);
 
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  }, [heroSlides.length]);
 
   // ── Value props ──
   const valueProps = [
@@ -176,70 +141,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
 
-      {/* ═══════════════════ HERO SLIDER ═══════════════════ */}
-      <section className="relative bg-white overflow-hidden">
-        <div className="relative h-[320px] sm:h-[420px] md:h-[520px] lg:h-[600px]">
-          {heroSlides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-              }`}
-            >
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                className="object-cover"
-                priority={index === 0}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
-
-              <div className="absolute inset-0 flex items-end pb-12 sm:items-center sm:pb-0">
-                <div className="container-custom w-full">
-                  <div className="max-w-lg">
-                    <h1 className="text-2xl sm:text-4xl lg:text-5xl font-light text-white mb-3 leading-tight tracking-wide">
-                      {slide.title}
-                    </h1>
-                    <p className="text-sm sm:text-lg text-white/85 font-light mb-5 leading-relaxed">
-                      {slide.subtitle}
-                    </p>
-                    <Link
-                      href={slide.href}
-                      className="inline-flex items-center gap-2 bg-[#D4972A] hover:bg-[#B87A20] text-white
-                                 px-6 py-3 rounded-full text-sm font-semibold transition-all
-                                 active:scale-[0.97] shadow-lg"
-                    >
-                      {slide.cta}
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-
-          {/* Desktop arrows */}
-          <button type="button" onClick={prevSlide}
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition hidden sm:flex">
-            <ChevronLeft className="w-5 h-5 text-[#1A2740]" />
-          </button>
-          <button type="button" onClick={nextSlide}
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition hidden sm:flex">
-            <ChevronRight className="w-5 h-5 text-[#1A2740]" />
-          </button>
-
-          {/* Dots */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-            {heroSlides.map((_, index) => (
-              <button key={index} type="button" onClick={() => setCurrentSlide(index)}
-                className={`h-1.5 rounded-full transition-all ${
-                  index === currentSlide ? 'w-8 bg-[#D4972A]' : 'w-2 bg-white/50'
-                }`} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* ═══════════════════ VALUE PROPS ═══════════════════ */}
       <section className="bg-white border-b border-[#F5EDE0]">

@@ -14,7 +14,7 @@ export function Footer() {
     { href: '/feature',   labelPt: 'Diferencial', labelJa: 'こだわり' },
     { href: '/about',     labelPt: 'Sobre Nós',  labelJa: '会社案内' },
     { href: '/services',  labelPt: 'Serviços',   labelJa: 'サービス' },
-    { href: '/news',      labelPt: 'Novidades',  labelJa: '新着情報' },
+    { href: '/blog',      labelPt: 'Novidades',  labelJa: '新着情報' },
     { href: '/contact',   labelPt: 'Contato',    labelJa: 'お問い合わせ' },
   ];
 

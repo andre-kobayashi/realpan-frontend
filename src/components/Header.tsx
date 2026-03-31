@@ -352,7 +352,7 @@ export function Header() {
             { href: `/${locale}/products`, label: t('products') },
             { href: `/${locale}/kits`, label: locale === 'pt' ? 'Kits Premium' : 'キット' },
             { href: `/${locale}/services`, label: locale === 'pt' ? 'Serviços B2B' : 'サービス' },
-            { href: `/${locale}/news`, label: t('news') },
+            { href: `/${locale}/blog`, label: t('news') },
             { href: `/${locale}/about`, label: t('company') },
             { href: `/${locale}/contact`, label: t('contact') },
           ].map((item) => {

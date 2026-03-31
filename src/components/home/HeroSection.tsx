@@ -110,11 +110,9 @@ export function HeroSection() {
         <div className="container-custom pb-10 lg:pb-0 text-white">
           <div key={index} className="max-w-2xl animate-fade-in">
 
-            <p className="mb-2 lg:mb-4 text-accent-400 text-xs lg:text-sm tracking-widest uppercase font-semibold">
-              Real Pan
-            </p>
+            
 
-            <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-3 lg:mb-6 leading-tight whitespace-pre-line">
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-3 lg:mb-6 leading-tight whitespace-pre-line text-white drop-shadow-lg">
               {title}
             </h1>
 
@@ -123,12 +121,12 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <Link href={linkHref} className="btn-accent text-sm px-5 py-2.5 lg:px-6 lg:py-3">
+              <Link href={linkHref} className="bg-white text-[#1A2740] hover:bg-gray-100 text-sm px-5 py-2.5 lg:px-6 lg:py-3 rounded-full font-semibold transition-all shadow-lg">
                 {cta} →
               </Link>
               <Link
                 href={`/${locale}/about`}
-                className="btn-secondary bg-white/10 border-white/30 text-white hover:bg-white/20 text-sm px-5 py-2.5 lg:px-6 lg:py-3"
+                className="bg-[#D4972A] hover:bg-[#B87A20] text-white text-sm px-5 py-2.5 lg:px-6 lg:py-3 rounded-full font-semibold transition-all shadow-lg"
               >
                 {locale === 'pt' ? 'Sobre nós' : '会社案内'}
               </Link>
